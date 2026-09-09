@@ -71,7 +71,7 @@ export const PAGES = [
   {
     slug: 'servicios',
     title: 'Servicios | Isaminga Digital',
-    description: 'Diagnóstico y transformación digital, análisis de procesos y análisis presupuestario en TI.',
+    description: 'Transformación digital, análisis de procesos, análisis presupuestario en TI, desarrollo de sistemas a medida y automatización.',
     nav: 'Servicios',
     breadcrumb: 'Servicios',
     sections: ['servicios-intro', 'servicios-principales', 'cta'],
