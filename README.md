@@ -109,6 +109,11 @@ node tools/build.mjs --out=dist-preview
 - **Paleta**: el sitio usa la escala azul y gris pizarra del diseño de referencia. Para
   aplicar el Enfoque 1 o el Enfoque 2 del Manual se redefine `colors.blue` (y si hace falta
   `colors.slate`) en `tailwind.config.cjs` y se regenera.
-- **Tipografía de títulos**: Lexend para títulos e Inter para texto, como el diseño de
-  referencia. Roboto sigue en evaluación; si se adopta, cambiar `fontFamily.display` en
-  `tailwind.config.cjs` y la línea de Google Fonts en `src/partials/head.html`.
+- **Tipografía**: Lexend para títulos e Inter para texto, como el diseño de referencia, y
+  en las mismas versiones que sirve ese diseño (Inter 3.19, Lexend 1.007), autoalojadas en
+  `fonts/` (licencia OFL, sin peticiones a Google Fonts). Inter 4 se ve distinta (letras y
+  espaciado), por eso se fijó la 3.19. Roboto sigue en evaluación; si se adopta, agregar su
+  `@font-face` en `src/css/tailwind.css` y cambiar `fontFamily.display` en `tailwind.config.cjs`.
+- **Caché tras publicar**: las URLs de `css/styles.css` y `js/main.js` llevan `?v=<hash del
+  contenido>` (lo pone el generador), así una publicación nueva nunca se muestra con el CSS
+  viejo que GitHub Pages deja cacheado 10 minutos.
