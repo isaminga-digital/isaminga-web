@@ -96,6 +96,10 @@ node tools/build.mjs --out=dist-preview
   Marcelo (mensaje del hero, descripciones de los servicios, la cuarta pestaña de servicios,
   las etapas de "Cómo trabajamos", nombres y viñetas de las seis fases, preguntas frecuentes,
   trayectoria en "Quiénes somos").
+- **Soluciones digitales (cuarta pestaña de Servicios)**: reservada para el portafolio de
+  soluciones que Isaminga ofrece además de la consultoría (registrado 09-09-2026). Se completa
+  cuando exista el portafolio: descripción, captura, la bajada de `servicios-intro`, las meta
+  descripciones de `site.config.mjs` y el texto del pie (hoy solo mencionan consultoría).
 - **Testimonios y sectores**: placeholders. Los nombres son genéricos a propósito; los
   "logos" de sectores son ícono + nombre hasta tener logos de clientes autorizados.
 - **Capturas y fondos**: `img/captura-*.png` son maquetas propias de una aplicación genérica
