@@ -1,12 +1,62 @@
-  <!-- Datos verificados en el Diagnostico. Telefono confirmado para publicar
-       (04-09-2026). -->
+  <!-- Contacto (patrón del template: tarjeta centrada con formulario). El sitio
+       es estático y aún no tiene servicio de envío: el botón arma un correo
+       con los datos y abre el cliente de correo (js/main.js). Datos de
+       contacto verificados; teléfono confirmado para publicar (04-09-2026). -->
   <section class="section">
     <div class="container">
-      <h1>¿Comenzamos?</h1>
-      <p>Oficina en Trizano 250, Temuco. Atención con cita previa.</p>
-      <p><a href="mailto:marcelo.jaramillo@isamingadigital.cl">marcelo.jaramillo@isamingadigital.cl</a></p>
-      <p><a href="https://wa.me/56996471981">+56 9 9647 1981</a> (WhatsApp)</p>
-      <!-- Formulario de contacto: pendiente definir (sección 1.2 del Diagnóstico
-           propone nombre, empresa, mensaje como mínimo). -->
+      <article class="card contact-card">
+        <div class="card-header">
+          <h1 class="card-title">Contacto</h1>
+          <p class="card-description">Cuéntanos sobre tu empresa y coordinamos una reunión.</p>
+        </div>
+        <div class="card-content">
+          <form class="form" data-mailto="marcelo.jaramillo@isamingadigital.cl" novalidate>
+            <div class="field">
+              <label for="nombre">Nombre</label>
+              <input class="input" id="nombre" name="nombre" type="text" autocomplete="name" placeholder="Tu nombre">
+            </div>
+            <div class="field">
+              <label for="empresa">Empresa</label>
+              <input class="input" id="empresa" name="empresa" type="text" autocomplete="organization" placeholder="Nombre de la empresa">
+            </div>
+            <div class="field">
+              <label for="correo">Correo</label>
+              <input class="input" id="correo" name="correo" type="email" autocomplete="email" placeholder="tu@empresa.cl">
+            </div>
+            <div class="field">
+              <label for="mensaje">¿En qué te podemos ayudar?</label>
+              <textarea class="textarea" id="mensaje" name="mensaje" placeholder="Cuéntanos brevemente la situación de tu empresa"></textarea>
+            </div>
+            <button class="btn btn-primary" type="submit">Enviar mensaje</button>
+            <p class="form-note">Al enviar se abre tu programa de correo con el mensaje listo para mandar.</p>
+          </form>
+        </div>
+      </article>
+    </div>
+    <div class="container">
+      <div class="cards contact-info">
+        <article class="card">
+          <div class="card-content">
+            <svg class="card-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg>
+            <span class="label">Oficina</span>
+            <span>Trizano 250, Temuco</span>
+            <span class="label">Atención con cita previa</span>
+          </div>
+        </article>
+        <article class="card">
+          <div class="card-content">
+            <svg class="card-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7"/><rect x="2" y="4" width="20" height="16" rx="2"/></svg>
+            <span class="label">Correo</span>
+            <a href="mailto:marcelo.jaramillo@isamingadigital.cl">marcelo.jaramillo@isamingadigital.cl</a>
+          </div>
+        </article>
+        <article class="card">
+          <div class="card-content">
+            <svg class="card-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M2.992 16.342a2 2 0 0 1 .094 1.167l-1.065 3.29a1 1 0 0 0 1.236 1.168l3.413-.998a2 2 0 0 1 1.099.092 10 10 0 1 0-4.777-4.719"/></svg>
+            <span class="label">WhatsApp</span>
+            <a href="https://wa.me/56996471981" target="_blank" rel="noopener">+56 9 9647 1981</a>
+          </div>
+        </article>
+      </div>
     </div>
   </section>

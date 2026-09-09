@@ -96,7 +96,10 @@ function buildPage(site, page, sections, partials) {
     ctaCurrent: page.slug === 'contacto' ? ' aria-current="page"' : '',
   })
 
-  const html = [head, nav, '', '  <main>', body, '  </main>', '', partials.footer].join('\n')
+  // El pie también lista las páginas (columna "Menú"), con el mismo token.
+  const footer = fill(partials.footer, { navLinks: navLinks(page.slug) })
+
+  const html = [head, nav, '', '  <main>', body, '  </main>', '', footer].join('\n')
 
   return { title, description, canonical: urlOf(site, page.slug), html, page }
 }

@@ -10,14 +10,18 @@
   <link rel="canonical" href="{{canonical}}">
   <meta name="theme-color" content="#0448A3">
 
-  <!-- Favicon: pendiente producir desde el logo definitivo (ver Manual de marca) -->
-  <link rel="icon" type="image/png" href="/img/favicon.png">
+  <!-- Favicon derivado del isotipo del logo actual (ver Manual de marca:
+       pierde detalle bajo 40 px, se reemplaza cuando exista una version apta) -->
+  <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/img/icon-192.png">
+  <link rel="apple-touch-icon" href="/img/icon-192.png">
 
   <!-- Open Graph -->
   <meta property="og:title" content="{{title}}">
   <meta property="og:description" content="{{description}}">
   <meta property="og:type" content="website">
   <meta property="og:url" content="{{canonical}}">
+  <meta property="og:image" content="{{host}}/img/logo.png">
   <meta property="og:locale" content="{{locale}}">
   <meta property="og:site_name" content="Isaminga Digital">
 
@@ -25,15 +29,16 @@
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="{{title}}">
   <meta name="twitter:description" content="{{description}}">
+  <meta name="twitter:image" content="{{host}}/img/logo.png">
 
   <!-- Datos estructurados -->
 {{jsonld}}
-  <!-- Tipografia: Inter fija para parrafos. Roboto en evaluacion solo para
-       titulos/subtitulos (03-09-2026, sin confirmar). Mientras tanto todo en
-       Inter. Ver Tipografia-Isaminga.md -->
+  <!-- Tipografia: Inter para todo (parrafos fija; titulos tambien mientras
+       Roboto siga en evaluacion, 03-09-2026). Ver Tipografia-Isaminga.md -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/css/styles.css">
+  <script src="/js/main.js" defer></script>
 </head>
 <body>

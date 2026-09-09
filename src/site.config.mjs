@@ -6,10 +6,13 @@
  * generador de incba-web). Isaminga tiene un solo mercado y un solo dominio,
  * así que SITES tiene una única entrada y no hay hreflang ni variantes CL/dev.
  *
- * ESTADO (03-09-2026): andamiaje técnico. El contenido real de PAGES espera
- * las definiciones del Manual de marca (paleta y tono ya definidos, faltan
- * los textos finales de cada sección). No inventar copy de marketing acá:
- * cada sección placeholder está marcada como borrador.
+ * ESTADO (09-09-2026): estructura y presentación siguen el modelo de landing
+ * de kizivat/saas-kit (hero en dos columnas, nube de logos, features en
+ * zigzag, testimonios, tarjetas, bloque de cierre, contacto en tarjeta). El
+ * inicio se compone de varias secciones; las páginas internas reutilizan los
+ * mismos patrones. El texto de prosa es placeholder (Lorem Ipsum) donde falta
+ * el contenido real; los datos verificados (servicios, oficina, contacto,
+ * bajada) son los del Diagnóstico.
  */
 
 export const HOST = 'https://isamingadigital.cl'
@@ -40,10 +43,10 @@ export const MINIMO_PALABRAS_DEFAULT = 8
 export const LIMITES = { title: 60, description: 158 }
 
 /**
- * Páginas del sitio. Alcance inicial según el documento base del proyecto
- * (Desarrollo-Marca-Isaminga.md, sección 5): quiénes somos, servicios, método,
- * casos o sectores atendidos, contacto. Los títulos y descripciones de acá son
- * BORRADOR, se revisan y cierran junto con el Manual de marca.
+ * Páginas del sitio. Alcance según el documento base del proyecto
+ * (Desarrollo-Marca-Isaminga.md, sección 5). Cada página lista las secciones
+ * de src/sections/ que la componen, en orden. Exactamente una sección por
+ * página lleva el <h1>; las demás usan <h2>.
  */
 export const PAGES = [
   {
@@ -53,7 +56,7 @@ export const PAGES = [
       'Consultora de transformación digital en el sur de Chile: análisis de procesos y análisis presupuestario en tecnología.',
     nav: null,
     breadcrumb: null,
-    sections: ['inicio'],
+    sections: ['hero', 'sectores', 'servicios-resumen', 'testimonios', 'metodo-resumen', 'cta'],
   },
   {
     slug: 'quienes-somos',
@@ -61,7 +64,7 @@ export const PAGES = [
     description: 'Isaminga Digital: análisis de procesos y análisis presupuestario en tecnología, con una alianza de ingeniería para la implementación.',
     nav: 'Quiénes somos',
     breadcrumb: 'Quiénes somos',
-    sections: ['quienes-somos'],
+    sections: ['quienes-somos', 'cta'],
   },
   {
     slug: 'servicios',
@@ -69,7 +72,7 @@ export const PAGES = [
     description: 'Diagnóstico y transformación digital, análisis de procesos y análisis presupuestario en TI.',
     nav: 'Servicios',
     breadcrumb: 'Servicios',
-    sections: ['servicios'],
+    sections: ['servicios', 'cta'],
   },
   {
     slug: 'metodo',
@@ -77,7 +80,7 @@ export const PAGES = [
     description: 'Cómo trabaja Isaminga Digital: las fases del proceso, de diagnóstico a implementación.',
     nav: 'Método',
     breadcrumb: 'Método',
-    sections: ['metodo'],
+    sections: ['metodo', 'cta'],
   },
   {
     slug: 'contacto',
