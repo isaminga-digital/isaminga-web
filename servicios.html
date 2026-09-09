@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es-CL">
+<html lang="es-CL" class="h-full scroll-smooth bg-white antialiased">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,7 +8,7 @@
   <meta name="author" content="Isaminga Digital">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://isamingadigital.cl/servicios">
-  <meta name="theme-color" content="#0448A3">
+  <meta name="theme-color" content="#2563eb">
 
   <!-- Favicon derivado del isotipo del logo actual (ver Manual de marca:
        pierde detalle bajo 40 px, se reemplaza cuando exista una version apta) -->
@@ -52,146 +52,202 @@
     ]
   }
   </script>
-  <!-- Tipografia: Inter para todo (parrafos fija; titulos tambien mientras
-       Roboto siga en evaluacion, 03-09-2026). Ver Tipografia-Isaminga.md -->
+  <!-- Tipografia del diseno de referencia: Inter para texto y Lexend para
+       titulos (font-display). Roboto sigue en evaluacion, ver Tipografia-Isaminga.md -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lexend:wght@300;400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/css/styles.css">
   <script src="/js/main.js" defer></script>
 </head>
-<body>
+<body class="flex h-full flex-col">
 
-  <header class="site-header">
-    <div class="container nav-inner">
-      <a href="/" class="brand" aria-label="Isaminga Digital, inicio">
-        <img src="/img/logo-horizontal.png" alt="Isaminga Digital" class="brand-logo" width="166" height="44">
-      </a>
-      <nav class="main-nav" aria-label="Navegación principal">
-        <a href="/quienes-somos">Quiénes somos</a>
-        <a href="/servicios" aria-current="page">Servicios</a>
-        <a href="/metodo">Método</a>
-        <a href="/contacto">Contacto</a>
-      </nav>
-      <div class="nav-actions">
-        <a href="/contacto" class="btn btn-primary">Conversemos</a>
-      </div>
-      <button type="button" class="btn btn-ghost btn-icon nav-toggle" data-menu-toggle aria-controls="mobile-menu" aria-expanded="false">
-        <span class="sr-only">Menú</span>
-        <svg class="icon-menu" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 5h16"/><path d="M4 12h16"/><path d="M4 19h16"/></svg>
-        <svg class="icon-x" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
-      </button>
-    </div>
-    <div id="mobile-menu" class="mobile-menu" hidden>
-      <nav aria-label="Navegación móvil">
-        <a href="/quienes-somos">Quiénes somos</a>
-        <a href="/servicios" aria-current="page">Servicios</a>
-        <a href="/metodo">Método</a>
-        <a href="/contacto">Contacto</a>
-        <a href="/contacto" class="btn btn-primary">Conversemos</a>
+  <header class="py-10">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <nav class="relative z-50 flex justify-between">
+        <div class="flex items-center md:gap-x-12">
+          <a aria-label="Inicio" href="/">
+            <img src="/img/logo-horizontal.png" alt="Isaminga Digital" class="h-10 w-auto" width="151" height="40">
+          </a>
+          <div class="hidden md:flex md:gap-x-6">
+            <a class="inline-block rounded-lg px-2 py-1 text-sm text-slate-700 hover:bg-slate-100 hover:text-slate-900" href="/quienes-somos">Quiénes somos</a>
+            <a class="inline-block rounded-lg px-2 py-1 text-sm text-slate-700 hover:bg-slate-100 hover:text-slate-900" href="/servicios" aria-current="page">Servicios</a>
+            <a class="inline-block rounded-lg px-2 py-1 text-sm text-slate-700 hover:bg-slate-100 hover:text-slate-900" href="/metodo">Método</a>
+          </div>
+        </div>
+        <div class="flex items-center gap-x-5 md:gap-x-8">
+          <div class="hidden md:block">
+            <a class="inline-block rounded-lg px-2 py-1 text-sm text-slate-700 hover:bg-slate-100 hover:text-slate-900" href="/contacto">Contacto</a>
+          </div>
+          <a class="group inline-flex items-center justify-center rounded-full py-2 px-4 text-sm font-semibold focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-2 bg-blue-600 text-white hover:text-slate-100 hover:bg-blue-500 active:bg-blue-800 active:text-blue-100 focus-visible:outline-blue-600" href="https://wa.me/56996471981" target="_blank" rel="noopener">
+            <span>Conversemos <span class="hidden lg:inline">hoy</span></span>
+          </a>
+          <div class="-mr-1 md:hidden">
+            <div data-mobile-nav>
+              <button class="relative z-10 flex h-8 w-8 items-center justify-center ui-not-focus-visible:outline-none" aria-label="Abrir la navegación" type="button" aria-expanded="false" aria-controls="menu-movil" data-mobile-toggle>
+                <svg aria-hidden="true" class="h-3.5 w-3.5 overflow-visible stroke-slate-700" fill="none" stroke-width="2" stroke-linecap="round">
+                  <path d="M0 1H14M0 7H14M0 13H14" class="origin-center transition" data-icon-menu></path>
+                  <path d="M2 2L12 12M12 2L2 12" class="origin-center transition scale-90 opacity-0" data-icon-close></path>
+                </svg>
+              </button>
+              <div class="fixed inset-0 bg-slate-300/50 hidden" data-mobile-overlay></div>
+              <div id="menu-movil" class="absolute inset-x-0 top-full mt-4 flex origin-top flex-col rounded-2xl bg-white p-4 text-lg tracking-tight text-slate-900 shadow-xl ring-1 ring-slate-900/5 hidden" data-mobile-panel>
+                <a class="block w-full p-2" href="/quienes-somos">Quiénes somos</a>
+                <a class="block w-full p-2" href="/servicios" aria-current="page">Servicios</a>
+                <a class="block w-full p-2" href="/metodo">Método</a>
+                <hr class="m-2 border-slate-300/40">
+                <a class="block w-full p-2" href="/contacto">Contacto</a>
+              </div>
+            </div>
+          </div>
+        </div>
       </nav>
     </div>
   </header>
 
 
   <main>
-  <!-- Página de servicios: mismo patrón de features en zigzag que el inicio,
-       con el encabezado principal de la página. Servicios reales (Diagnóstico); descripciones
-       en LOREM IPSUM hasta tener el texto definitivo. -->
-  <section class="section">
-    <div class="container">
-      <div class="section-header">
-        <h1 class="section-title">Servicios</h1>
-        <p class="section-description text-balance">Diagnóstico y transformación digital, análisis de procesos y análisis presupuestario en tecnología.</p>
+  <!-- Encabezado de la página de servicios (lleva el h1). Descripción en LOREM IPSUM. -->
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pb-16 pt-20 text-center lg:pt-32">
+    <h1 class="mx-auto max-w-4xl font-display text-5xl font-medium tracking-tight text-slate-900 sm:text-7xl">Servicios</h1>
+    <p class="mx-auto mt-6 max-w-2xl text-lg tracking-tight text-slate-700">Diagnóstico y transformación digital, análisis de procesos y análisis presupuestario en tecnología. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+  </div>
+
+  <!-- Servicios en pestañas sobre fondo azul (lista vertical en escritorio,
+       píldoras deslizables en móvil). Servicios reales del Diagnóstico; la
+       cuarta pestaña y las descripciones son LOREM IPSUM hasta tener texto. -->
+  <section id="servicios" aria-label="Servicios de Isaminga Digital" class="relative overflow-hidden bg-blue-600 pb-28 pt-20 sm:py-32">
+    <img alt="" loading="lazy" width="2245" height="1636" decoding="async" class="absolute left-1/2 top-1/2 max-w-none translate-x-[-44%] translate-y-[-42%]" src="/img/fondo-servicios.jpg">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative">
+      <div class="max-w-2xl md:mx-auto md:text-center xl:max-w-none">
+        <h2 class="font-display text-3xl tracking-tight text-white sm:text-4xl md:text-5xl">Servicios para ordenar la tecnología de su empresa.</h2>
+        <p class="mt-6 text-lg tracking-tight text-blue-100">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
       </div>
-    </div>
-    <div class="container">
-      <dl class="features">
-        <div class="feature-item">
-          <svg class="feature-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m8 11 2 2 4-4"/><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
-          <div>
-            <dt class="feature-term">Diagnóstico y transformación digital</dt>
-            <dd class="feature-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</dd>
+      <div class="mt-16 grid grid-cols-1 items-center gap-y-2 pt-10 sm:gap-y-6 md:mt-20 lg:grid-cols-12 lg:pt-0" data-tabs="servicios">
+        <div class="-mx-4 flex overflow-x-auto pb-4 sm:mx-0 sm:overflow-visible sm:pb-0 lg:col-span-5">
+          <div class="relative z-10 flex gap-x-4 whitespace-nowrap px-4 sm:mx-auto sm:px-0 lg:mx-0 lg:block lg:gap-x-0 lg:gap-y-1 lg:whitespace-normal" role="tablist" aria-orientation="horizontal">
+            <div class="group relative rounded-full px-4 py-1 lg:rounded-l-xl lg:rounded-r-none lg:p-6 bg-white lg:bg-white/10 lg:ring-1 lg:ring-inset lg:ring-white/10" data-tab>
+              <h3>
+                <button class="font-display text-lg ui-not-focus-visible:outline-none text-blue-600 lg:text-white" id="tab-servicio-1" role="tab" type="button" aria-selected="true" tabindex="0" aria-controls="panel-servicio-1">
+                  <span class="absolute inset-0 rounded-full lg:rounded-l-xl lg:rounded-r-none"></span>
+                  Diagnóstico y transformación digital
+                </button>
+              </h3>
+              <p class="mt-2 hidden text-sm lg:block text-white">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            </div>
+            <div class="group relative rounded-full px-4 py-1 lg:rounded-l-xl lg:rounded-r-none lg:p-6 hover:bg-white/10 lg:hover:bg-white/5" data-tab>
+              <h3>
+                <button class="font-display text-lg ui-not-focus-visible:outline-none text-blue-100 hover:text-white lg:text-white" id="tab-servicio-2" role="tab" type="button" aria-selected="false" tabindex="-1" aria-controls="panel-servicio-2">
+                  <span class="absolute inset-0 rounded-full lg:rounded-l-xl lg:rounded-r-none"></span>
+                  Análisis de procesos
+                </button>
+              </h3>
+              <p class="mt-2 hidden text-sm lg:block text-blue-100 group-hover:text-white">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            </div>
+            <div class="group relative rounded-full px-4 py-1 lg:rounded-l-xl lg:rounded-r-none lg:p-6 hover:bg-white/10 lg:hover:bg-white/5" data-tab>
+              <h3>
+                <button class="font-display text-lg ui-not-focus-visible:outline-none text-blue-100 hover:text-white lg:text-white" id="tab-servicio-3" role="tab" type="button" aria-selected="false" tabindex="-1" aria-controls="panel-servicio-3">
+                  <span class="absolute inset-0 rounded-full lg:rounded-l-xl lg:rounded-r-none"></span>
+                  Análisis presupuestario en TI
+                </button>
+              </h3>
+              <p class="mt-2 hidden text-sm lg:block text-blue-100 group-hover:text-white">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+            </div>
+            <div class="group relative rounded-full px-4 py-1 lg:rounded-l-xl lg:rounded-r-none lg:p-6 hover:bg-white/10 lg:hover:bg-white/5" data-tab>
+              <h3>
+                <button class="font-display text-lg ui-not-focus-visible:outline-none text-blue-100 hover:text-white lg:text-white" id="tab-servicio-4" role="tab" type="button" aria-selected="false" tabindex="-1" aria-controls="panel-servicio-4">
+                  <span class="absolute inset-0 rounded-full lg:rounded-l-xl lg:rounded-r-none"></span>
+                  Lorem ipsum
+                </button>
+              </h3>
+              <p class="mt-2 hidden text-sm lg:block text-blue-100 group-hover:text-white">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            </div>
           </div>
         </div>
-        <div class="feature-showcase"><div class="showcase-box">Imagen</div></div>
-        <div class="feature-item">
-          <svg class="feature-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect width="8" height="8" x="3" y="3" rx="2"/><path d="M7 11v4a2 2 0 0 0 2 2h4"/><rect width="8" height="8" x="13" y="13" rx="2"/></svg>
-          <div>
-            <dt class="feature-term">Análisis de procesos</dt>
-            <dd class="feature-desc">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</dd>
+        <div class="lg:col-span-7">
+          <div id="panel-servicio-1" role="tabpanel" tabindex="0" aria-labelledby="tab-servicio-1" data-panel>
+            <div class="relative sm:px-6 lg:hidden">
+              <div class="absolute -inset-x-4 bottom-[-4.25rem] top-[-6.5rem] bg-white/10 ring-1 ring-inset ring-white/10 sm:inset-x-0 sm:rounded-t-xl"></div>
+              <p class="relative mx-auto max-w-2xl text-base text-white sm:text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            </div>
+            <div class="mt-10 w-[45rem] overflow-hidden rounded-xl bg-slate-50 shadow-xl shadow-blue-900/20 sm:w-auto lg:mt-0 lg:w-[67.8125rem]">
+              <img alt="" width="2174" height="1464" decoding="async" class="w-full" src="/img/captura-diagnostico.png">
+            </div>
+          </div>
+          <div id="panel-servicio-2" role="tabpanel" tabindex="-1" aria-labelledby="tab-servicio-2" hidden style="display:none" data-panel>
+            <div class="relative sm:px-6 lg:hidden">
+              <div class="absolute -inset-x-4 bottom-[-4.25rem] top-[-6.5rem] bg-white/10 ring-1 ring-inset ring-white/10 sm:inset-x-0 sm:rounded-t-xl"></div>
+              <p class="relative mx-auto max-w-2xl text-base text-white sm:text-center">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            </div>
+            <div class="mt-10 w-[45rem] overflow-hidden rounded-xl bg-slate-50 shadow-xl shadow-blue-900/20 sm:w-auto lg:mt-0 lg:w-[67.8125rem]">
+              <img alt="" loading="lazy" width="2174" height="1464" decoding="async" class="w-full" src="/img/captura-procesos.png">
+            </div>
+          </div>
+          <div id="panel-servicio-3" role="tabpanel" tabindex="-1" aria-labelledby="tab-servicio-3" hidden style="display:none" data-panel>
+            <div class="relative sm:px-6 lg:hidden">
+              <div class="absolute -inset-x-4 bottom-[-4.25rem] top-[-6.5rem] bg-white/10 ring-1 ring-inset ring-white/10 sm:inset-x-0 sm:rounded-t-xl"></div>
+              <p class="relative mx-auto max-w-2xl text-base text-white sm:text-center">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+            </div>
+            <div class="mt-10 w-[45rem] overflow-hidden rounded-xl bg-slate-50 shadow-xl shadow-blue-900/20 sm:w-auto lg:mt-0 lg:w-[67.8125rem]">
+              <img alt="" loading="lazy" width="2174" height="1464" decoding="async" class="w-full" src="/img/captura-presupuesto.png">
+            </div>
+          </div>
+          <div id="panel-servicio-4" role="tabpanel" tabindex="-1" aria-labelledby="tab-servicio-4" hidden style="display:none" data-panel>
+            <div class="relative sm:px-6 lg:hidden">
+              <div class="absolute -inset-x-4 bottom-[-4.25rem] top-[-6.5rem] bg-white/10 ring-1 ring-inset ring-white/10 sm:inset-x-0 sm:rounded-t-xl"></div>
+              <p class="relative mx-auto max-w-2xl text-base text-white sm:text-center">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            </div>
+            <div class="mt-10 w-[45rem] overflow-hidden rounded-xl bg-slate-50 shadow-xl shadow-blue-900/20 sm:w-auto lg:mt-0 lg:w-[67.8125rem]">
+              <img alt="" loading="lazy" width="2174" height="1464" decoding="async" class="w-full" src="/img/captura-reportes.png">
+            </div>
           </div>
         </div>
-        <div class="feature-showcase"><div class="showcase-box">Imagen</div></div>
-        <div class="feature-item">
-          <svg class="feature-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect width="16" height="20" x="4" y="2" rx="2"/><line x1="8" x2="16" y1="6" y2="6"/><line x1="16" x2="16" y1="14" y2="18"/><path d="M16 10h.01"/><path d="M12 10h.01"/><path d="M8 10h.01"/><path d="M12 14h.01"/><path d="M8 14h.01"/><path d="M12 18h.01"/><path d="M8 18h.01"/></svg>
-          <div>
-            <dt class="feature-term">Análisis presupuestario en TI</dt>
-            <dd class="feature-desc">Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit.</dd>
-          </div>
-        </div>
-        <div class="feature-showcase"><div class="showcase-box">Imagen</div></div>
-      </dl>
+      </div>
     </div>
   </section>
 
-  <!-- Bloque de cierre reutilizable (inicio y páginas internas). Datos reales:
-       oficina y canales de contacto verificados en el Diagnóstico. -->
-  <section class="section">
-    <div class="container">
-      <div class="cta-box">
-        <h2 class="section-title">¿Comenzamos?</h2>
-        <p class="section-description text-balance">Oficina en Trizano 250, Temuco. Atención con cita previa. Cuéntanos sobre tu empresa y coordinamos una reunión.</p>
-        <div class="actions">
-          <a class="btn btn-primary" href="/contacto">Conversemos</a>
-          <a class="btn btn-outline" href="https://wa.me/56996471981" target="_blank" rel="noopener">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M2.992 16.342a2 2 0 0 1 .094 1.167l-1.065 3.29a1 1 0 0 0 1.236 1.168l3.413-.998a2 2 0 0 1 1.099.092 10 10 0 1 0-4.777-4.719"/></svg>
-            Escribir por WhatsApp
-          </a>
-        </div>
+  <!-- Bloque de cierre sobre fondo azul. Datos reales: oficina y modalidad. -->
+  <section id="comenzar" class="relative overflow-hidden bg-blue-600 py-32">
+    <img alt="" loading="lazy" width="2347" height="1244" decoding="async" class="absolute left-1/2 top-1/2 max-w-none -translate-x-1/2 -translate-y-1/2" src="/img/fondo-cta.jpg">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative">
+      <div class="mx-auto max-w-lg text-center">
+        <h2 class="font-display text-3xl tracking-tight text-white sm:text-4xl">¿Comenzamos hoy?</h2>
+        <p class="mt-4 text-lg tracking-tight text-white">Oficina en Trizano 250, Temuco. Atención con cita previa. Cuéntenos sobre su empresa y coordinamos una reunión.</p>
+        <a class="group inline-flex items-center justify-center rounded-full py-2 px-4 text-sm font-semibold focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-2 bg-white text-slate-900 hover:bg-blue-50 active:bg-blue-200 active:text-slate-600 focus-visible:outline-white mt-10" href="/contacto">Conversemos</a>
       </div>
     </div>
   </section>
 
   </main>
 
-  <footer class="site-footer">
-    <div class="container footer-inner">
-      <div class="footer-row">
-        <div class="footer-brand">
-          <a href="/" class="brand" aria-label="Isaminga Digital, inicio">
-            <img src="/img/logo-horizontal.png" alt="Isaminga Digital" class="brand-logo" width="166" height="44">
-          </a>
-          <p class="tagline">Innovación · Soporte · Automatización</p>
-        </div>
-        <div class="footer-grid">
-          <div class="footer-col">
-            <span class="footer-title">Menú</span>
-            <nav aria-label="Navegación del pie de página">
-        <a href="/quienes-somos">Quiénes somos</a>
-        <a href="/servicios" aria-current="page">Servicios</a>
-        <a href="/metodo">Método</a>
-        <a href="/contacto">Contacto</a>
-            </nav>
+  <footer class="bg-slate-50">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="py-16">
+        <img src="/img/logo-horizontal.png" alt="Isaminga Digital" class="mx-auto h-10 w-auto" width="151" height="40">
+        <nav class="mt-10 text-sm" aria-label="Enlaces rápidos">
+          <div class="-my-1 flex justify-center gap-x-6">
+            <a class="inline-block rounded-lg px-2 py-1 text-sm text-slate-700 hover:bg-slate-100 hover:text-slate-900" href="/quienes-somos">Quiénes somos</a>
+            <a class="inline-block rounded-lg px-2 py-1 text-sm text-slate-700 hover:bg-slate-100 hover:text-slate-900" href="/servicios" aria-current="page">Servicios</a>
+            <a class="inline-block rounded-lg px-2 py-1 text-sm text-slate-700 hover:bg-slate-100 hover:text-slate-900" href="/metodo">Método</a>
           </div>
-          <div class="footer-col">
-            <span class="footer-title">Contacto</span>
-            <nav aria-label="Contacto">
-              <a href="mailto:marcelo.jaramillo@isamingadigital.cl">marcelo.jaramillo@isamingadigital.cl</a>
-              <a href="https://wa.me/56996471981" target="_blank" rel="noopener">+56 9 9647 1981 (WhatsApp)</a>
-              <span>Trizano 250, Temuco</span>
-            </nav>
-          </div>
-          <div class="footer-col">
-            <span class="footer-title">Atención</span>
-            <nav aria-label="Atención">
-              <span>Con cita previa</span>
-              <span>Sur de Chile</span>
-            </nav>
-          </div>
-        </div>
+        </nav>
       </div>
-      <p class="footer-copy">&copy; 2026 Isaminga Digital. Consultoría de transformación digital: análisis de procesos y análisis presupuestario en tecnología.</p>
+      <div class="flex flex-col items-center border-t border-slate-400/10 py-10 sm:flex-row-reverse sm:justify-between">
+        <div class="flex gap-x-6">
+          <a class="group" aria-label="Escribir a Isaminga Digital por correo" href="mailto:marcelo.jaramillo@isamingadigital.cl">
+            <svg class="h-6 w-6 fill-slate-500 group-hover:fill-slate-700" aria-hidden="true" viewBox="0 0 24 24">
+              <path d="M1.5 8.67v8.58a3 3 0 0 0 3 3h15a3 3 0 0 0 3-3V8.67l-8.928 5.493a3 3 0 0 1-3.144 0L1.5 8.67Z"></path>
+              <path d="M22.5 6.908V6.75a3 3 0 0 0-3-3h-15a3 3 0 0 0-3 3v.158l9.714 5.978a1.5 1.5 0 0 0 1.572 0L22.5 6.908Z"></path>
+            </svg>
+          </a>
+          <a class="group" aria-label="Isaminga Digital en WhatsApp" href="https://wa.me/56996471981" target="_blank" rel="noopener">
+            <svg class="h-6 w-6 fill-slate-500 group-hover:fill-slate-700" aria-hidden="true" viewBox="0 0 24 24">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"></path>
+            </svg>
+          </a>
+        </div>
+        <p class="mt-6 text-sm text-slate-500 sm:mt-0">Copyright &copy; 2026 Isaminga Digital. Todos los derechos reservados.</p>
+      </div>
     </div>
   </footer>
 </body>

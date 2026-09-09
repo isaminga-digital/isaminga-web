@@ -8,6 +8,13 @@
  * arman con los partials de src/partials/ y las secciones de src/sections/;
  * todo lo que describe cada página sale de src/site.config.mjs.
  *
+ * Layouts: 'default' (header + main + footer) y 'slim' (panel angosto con
+ * imagen de fondo, sin header ni footer; lo usa Contacto, como la página de
+ * acceso del diseño de referencia).
+ *
+ * El CSS (css/styles.css) lo genera Tailwind a partir de las clases usadas en
+ * src/ y js/: `npm run build:css`. `npm run build` hace las dos cosas.
+ *
  * El build es determinista y valida antes de escribir: si algo no cumple,
  * aborta sin tocar el disco y dice qué.
  */
@@ -30,6 +37,10 @@ function fill(tpl, vars) {
 
 const urlOf = (site, slug) => (slug ? `${site.host}/${slug}` : `${site.host}/`)
 const pathOf = (slug) => (slug ? `/${slug}` : '/')
+
+// Clases de los enlaces de navegación del diseño de referencia.
+const CLASE_ENLACE = 'inline-block rounded-lg px-2 py-1 text-sm text-slate-700 hover:bg-slate-100 hover:text-slate-900'
+const CLASE_ENLACE_MOVIL = 'block w-full p-2'
 
 function jsonLd(site, page) {
   const blocks = []
@@ -61,17 +72,19 @@ function jsonLd(site, page) {
     .join('\n')
 }
 
-function navLinks(currentSlug) {
+function navLinks(currentSlug, clase, sangria) {
+  const pad = ' '.repeat(sangria)
   return PAGES.filter((p) => p.nav)
     .map((p) => {
       const current = p.slug === currentSlug ? ' aria-current="page"' : ''
-      return `        <a href="${pathOf(p.slug)}"${current}>${p.nav}</a>`
+      return `${pad}<a class="${clase}" href="${pathOf(p.slug)}"${current}>${p.nav}</a>`
     })
     .join('\n')
 }
 
 function buildPage(site, page, sections, partials) {
   const vars = { lang: site.lang, host: site.host, locale: site.locale, robots: site.robots }
+  const layout = page.layout || 'default'
 
   const title = page.title
   const description = page.description
@@ -92,14 +105,20 @@ function buildPage(site, page, sections, partials) {
   })
 
   const nav = fill(partials.nav, {
-    navLinks: navLinks(page.slug),
+    navLinks: navLinks(page.slug, CLASE_ENLACE, 12),
+    mobileLinks: navLinks(page.slug, CLASE_ENLACE_MOVIL, 16),
     ctaCurrent: page.slug === 'contacto' ? ' aria-current="page"' : '',
   })
 
-  // El pie también lista las páginas (columna "Menú"), con el mismo token.
-  const footer = fill(partials.footer, { navLinks: navLinks(page.slug) })
+  // El pie también lista las páginas (enlaces rápidos), con el mismo token.
+  const footer = fill(partials.footer, { navLinks: navLinks(page.slug, CLASE_ENLACE, 12) })
 
-  const html = [head, nav, '', '  <main>', body, '  </main>', '', footer].join('\n')
+  const partes =
+    layout === 'slim'
+      ? [head, partials.slimOpen, '      <main class="mx-auto w-full max-w-md sm:px-4 md:w-96 md:max-w-sm md:px-0">', body, '      </main>', partials.slimClose]
+      : [head, nav, '', '  <main>', body, '  </main>', '', footer]
+
+  const html = partes.join('\n')
 
   return { title, description, canonical: urlOf(site, page.slug), html, page }
 }
@@ -172,6 +191,8 @@ export function build({ siteId, out }) {
     head: read('partials', 'head.html'),
     nav: read('partials', 'nav.html'),
     footer: read('partials', 'footer.html'),
+    slimOpen: read('partials', 'slim-open.html'),
+    slimClose: read('partials', 'slim-close.html'),
   }
 
   const sections = {}

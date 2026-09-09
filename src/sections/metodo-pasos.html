@@ -1,0 +1,128 @@
+  <!-- "Cómo trabajamos" en tres columnas con panel deslizante en escritorio
+       (apilado en móvil). Etiquetas neutras (Etapa 1, 2, 3); frases y
+       descripciones en LOREM IPSUM hasta tener el texto del método. -->
+  <section id="como-trabajamos" aria-label="Cómo trabajamos" class="pb-14 pt-20 sm:pb-20 sm:pt-32 lg:pb-32">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="mx-auto max-w-2xl md:text-center">
+        <h2 class="font-display text-3xl tracking-tight text-slate-900 sm:text-4xl">Cómo trabajamos, paso a paso.</h2>
+        <p class="mt-4 text-lg tracking-tight text-slate-700">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      </div>
+
+      <!-- Móvil y tablet: las tres etapas apiladas -->
+      <div class="-mx-4 mt-20 flex flex-col gap-y-10 overflow-hidden px-4 sm:-mx-6 sm:px-6 lg:hidden">
+        <div>
+          <div class="mx-auto max-w-2xl">
+            <div class="w-9 rounded-lg bg-blue-600">
+              <svg aria-hidden="true" class="h-9 w-9 p-2" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="m8 11 2 2 4-4"/><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+            </div>
+            <h3 class="mt-6 text-sm font-medium text-blue-600">Etapa 1</h3>
+            <p class="mt-2 font-display text-xl text-slate-900">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <p class="mt-4 text-sm text-slate-600">Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
+          </div>
+          <div class="relative mt-10 pb-10">
+            <div class="absolute -inset-x-4 bottom-0 top-8 bg-slate-200 sm:-inset-x-6"></div>
+            <div class="relative mx-auto w-[52.75rem] overflow-hidden rounded-xl bg-white shadow-lg shadow-slate-900/5 ring-1 ring-slate-500/10">
+              <img alt="" loading="lazy" width="1688" height="856" decoding="async" class="w-full" src="/img/captura-resumen.png">
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="mx-auto max-w-2xl">
+            <div class="w-9 rounded-lg bg-blue-600">
+              <svg aria-hidden="true" class="h-9 w-9 p-2" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect width="8" height="8" x="3" y="3" rx="2"/><path d="M7 11v4a2 2 0 0 0 2 2h4"/><rect width="8" height="8" x="13" y="13" rx="2"/></svg>
+            </div>
+            <h3 class="mt-6 text-sm font-medium text-blue-600">Etapa 2</h3>
+            <p class="mt-2 font-display text-xl text-slate-900">Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
+            <p class="mt-4 text-sm text-slate-600">Laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum.</p>
+          </div>
+          <div class="relative mt-10 pb-10">
+            <div class="absolute -inset-x-4 bottom-0 top-8 bg-slate-200 sm:-inset-x-6"></div>
+            <div class="relative mx-auto w-[52.75rem] overflow-hidden rounded-xl bg-white shadow-lg shadow-slate-900/5 ring-1 ring-slate-500/10">
+              <img alt="" loading="lazy" width="1688" height="856" decoding="async" class="w-full" src="/img/captura-flujo.png">
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="mx-auto max-w-2xl">
+            <div class="w-9 rounded-lg bg-blue-600">
+              <svg aria-hidden="true" class="h-9 w-9 p-2" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect width="16" height="20" x="4" y="2" rx="2"/><line x1="8" x2="16" y1="6" y2="6"/><line x1="16" x2="16" y1="14" y2="18"/><path d="M16 10h.01"/><path d="M12 10h.01"/><path d="M8 10h.01"/><path d="M12 14h.01"/><path d="M8 14h.01"/><path d="M12 18h.01"/><path d="M8 18h.01"/></svg>
+            </div>
+            <h3 class="mt-6 text-sm font-medium text-blue-600">Etapa 3</h3>
+            <p class="mt-2 font-display text-xl text-slate-900">Excepteur sint occaecat cupidatat non proident.</p>
+            <p class="mt-4 text-sm text-slate-600">Sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem.</p>
+          </div>
+          <div class="relative mt-10 pb-10">
+            <div class="absolute -inset-x-4 bottom-0 top-8 bg-slate-200 sm:-inset-x-6"></div>
+            <div class="relative mx-auto w-[52.75rem] overflow-hidden rounded-xl bg-white shadow-lg shadow-slate-900/5 ring-1 ring-slate-500/10">
+              <img alt="" loading="lazy" width="1688" height="856" decoding="async" class="w-full" src="/img/captura-costos.png">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Escritorio: pestañas en tres columnas y panel deslizante -->
+      <div class="hidden lg:mt-20 lg:block" data-tabs="metodo">
+        <div class="grid grid-cols-3 gap-x-8" role="tablist" aria-orientation="horizontal">
+          <div class="relative" data-tab>
+            <div class="w-9 rounded-lg bg-blue-600" data-icon>
+              <svg aria-hidden="true" class="h-9 w-9 p-2" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="m8 11 2 2 4-4"/><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+            </div>
+            <h3 class="mt-6 text-sm font-medium text-blue-600">
+              <button class="ui-not-focus-visible:outline-none" id="tab-metodo-1" role="tab" type="button" aria-selected="true" tabindex="0" aria-controls="panel-metodo-1">
+                <span class="absolute inset-0"></span>
+                Etapa 1
+              </button>
+            </h3>
+            <p class="mt-2 font-display text-xl text-slate-900">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <p class="mt-4 text-sm text-slate-600">Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
+          </div>
+          <div class="relative opacity-75 hover:opacity-100" data-tab>
+            <div class="w-9 rounded-lg bg-slate-500" data-icon>
+              <svg aria-hidden="true" class="h-9 w-9 p-2" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect width="8" height="8" x="3" y="3" rx="2"/><path d="M7 11v4a2 2 0 0 0 2 2h4"/><rect width="8" height="8" x="13" y="13" rx="2"/></svg>
+            </div>
+            <h3 class="mt-6 text-sm font-medium text-slate-600">
+              <button class="ui-not-focus-visible:outline-none" id="tab-metodo-2" role="tab" type="button" aria-selected="false" tabindex="-1" aria-controls="panel-metodo-2">
+                <span class="absolute inset-0"></span>
+                Etapa 2
+              </button>
+            </h3>
+            <p class="mt-2 font-display text-xl text-slate-900">Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
+            <p class="mt-4 text-sm text-slate-600">Laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum.</p>
+          </div>
+          <div class="relative opacity-75 hover:opacity-100" data-tab>
+            <div class="w-9 rounded-lg bg-slate-500" data-icon>
+              <svg aria-hidden="true" class="h-9 w-9 p-2" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect width="16" height="20" x="4" y="2" rx="2"/><line x1="8" x2="16" y1="6" y2="6"/><line x1="16" x2="16" y1="14" y2="18"/><path d="M16 10h.01"/><path d="M12 10h.01"/><path d="M8 10h.01"/><path d="M12 14h.01"/><path d="M8 14h.01"/><path d="M12 18h.01"/><path d="M8 18h.01"/></svg>
+            </div>
+            <h3 class="mt-6 text-sm font-medium text-slate-600">
+              <button class="ui-not-focus-visible:outline-none" id="tab-metodo-3" role="tab" type="button" aria-selected="false" tabindex="-1" aria-controls="panel-metodo-3">
+                <span class="absolute inset-0"></span>
+                Etapa 3
+              </button>
+            </h3>
+            <p class="mt-2 font-display text-xl text-slate-900">Excepteur sint occaecat cupidatat non proident.</p>
+            <p class="mt-4 text-sm text-slate-600">Sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem.</p>
+          </div>
+        </div>
+        <div class="relative mt-20 overflow-hidden rounded-4xl bg-slate-200 px-14 py-16 xl:px-16">
+          <div class="-mx-5 flex">
+            <div class="px-5 transition duration-500 ease-in-out ui-not-focus-visible:outline-none" style="transform:translateX(-0%)" aria-hidden="false" id="panel-metodo-1" role="tabpanel" tabindex="0" aria-labelledby="tab-metodo-1" data-panel>
+              <div class="w-[52.75rem] overflow-hidden rounded-xl bg-white shadow-lg shadow-slate-900/5 ring-1 ring-slate-500/10">
+                <img alt="" loading="lazy" width="1688" height="856" decoding="async" class="w-full" src="/img/captura-resumen.png">
+              </div>
+            </div>
+            <div class="px-5 transition duration-500 ease-in-out ui-not-focus-visible:outline-none opacity-60" style="transform:translateX(-0%)" aria-hidden="true" id="panel-metodo-2" role="tabpanel" tabindex="-1" aria-labelledby="tab-metodo-2" data-panel>
+              <div class="w-[52.75rem] overflow-hidden rounded-xl bg-white shadow-lg shadow-slate-900/5 ring-1 ring-slate-500/10">
+                <img alt="" loading="lazy" width="1688" height="856" decoding="async" class="w-full" src="/img/captura-flujo.png">
+              </div>
+            </div>
+            <div class="px-5 transition duration-500 ease-in-out ui-not-focus-visible:outline-none opacity-60" style="transform:translateX(-0%)" aria-hidden="true" id="panel-metodo-3" role="tabpanel" tabindex="-1" aria-labelledby="tab-metodo-3" data-panel>
+              <div class="w-[52.75rem] overflow-hidden rounded-xl bg-white shadow-lg shadow-slate-900/5 ring-1 ring-slate-500/10">
+                <img alt="" loading="lazy" width="1688" height="856" decoding="async" class="w-full" src="/img/captura-costos.png">
+              </div>
+            </div>
+          </div>
+          <div class="pointer-events-none absolute inset-0 rounded-4xl ring-1 ring-inset ring-slate-900/10"></div>
+        </div>
+      </div>
+    </div>
+  </section>

@@ -25,7 +25,7 @@ for (const p of PAGES) {
 
   const h1 = (html.match(/<h1[\s>]/g) || []).length
   if (h1 !== 1) falla(`${ruta}: ${h1} etiquetas <h1>`)
-  if (!/<html lang="es-[A-Z]{2}">/.test(html)) falla(`${ruta}: falta lang="es-*" en <html>`)
+  if (!/<html lang="es-[A-Z]{2}"[^>]*>/.test(html)) falla(`${ruta}: falta lang="es-*" en <html>`)
   if (!html.includes('application/ld+json')) falla(`${ruta}: sin datos estructurados`)
 }
 

@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Sin anillo de foco al hacer clic con el mouse; se conserva con teclado. */
+.ui-not-focus-visible\:outline-none:focus:not(:focus-visible) {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}

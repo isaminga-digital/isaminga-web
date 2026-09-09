@@ -1,23 +1,74 @@
-  <!-- Hero en dos columnas (patrón del template): eyebrow con degradado, título
-       con énfasis subrayado, texto, dos botones y visual a la derecha (el
-       isotipo real, para mantener las imágenes de marca). Título: BORRADOR.
-       Párrafo: LOREM IPSUM hasta tener el mensaje principal con Marcelo. -->
-  <section class="section">
-    <div class="container hero">
-      <div class="hero-copy">
-        <p class="hero-eyebrow">Isaminga Digital</p>
-        <h1 class="hero-title">Transformación digital con la <em>confianza</em> del sur de Chile</h1>
-        <p class="hero-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-        <div class="hero-actions">
-          <a class="btn btn-primary" href="/contacto">Conversemos</a>
-          <a class="btn btn-secondary" href="/servicios">
-            Ver servicios
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-          </a>
-        </div>
-      </div>
-      <div class="hero-visual">
-        <img src="/img/isotipo.png" alt="" width="550" height="550">
-      </div>
+  <!-- Hero centrado + sectores (equivalente a la nube de logos del diseño de
+       referencia). Titular y sectores salen del Diagnóstico; el párrafo es
+       LOREM IPSUM hasta tener el mensaje principal. Los "logos" de sectores
+       son SVG propios (ícono + nombre) hasta tener logos de clientes. -->
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pb-16 pt-20 text-center lg:pt-32">
+    <h1 class="mx-auto max-w-4xl font-display text-5xl font-medium tracking-tight text-slate-900 sm:text-7xl">
+      Transformación digital
+      <span class="relative whitespace-nowrap text-blue-600">
+        <svg aria-hidden="true" viewBox="0 0 418 42" class="absolute left-0 top-2/3 h-[0.58em] w-full fill-blue-300/70" preserveAspectRatio="none">
+          <path d="M3 33c60-11 130-17 205-16 74 1 138 9 206 20 3 1 2 5-1 5-70-9-134-15-205-15-73 0-142 7-203 15-3 1-5-8-2-9Z"></path>
+        </svg>
+        <span class="relative">con método.</span>
+      </span>
+    </h1>
+    <p class="mx-auto mt-6 max-w-2xl text-lg tracking-tight text-slate-700">Consultoría para empresas del sur de Chile. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
+    <div class="mt-10 flex justify-center gap-x-6">
+      <a class="group inline-flex items-center justify-center rounded-full py-2 px-4 text-sm font-semibold focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-2 bg-slate-900 text-white hover:bg-slate-700 hover:text-slate-100 active:bg-slate-800 active:text-slate-300 focus-visible:outline-slate-900" href="/contacto">Conversemos</a>
+      <a class="group inline-flex ring-1 items-center justify-center rounded-full py-2 px-4 text-sm focus:outline-none ring-slate-200 text-slate-700 hover:text-slate-900 hover:ring-slate-300 active:bg-slate-100 active:text-slate-600 focus-visible:outline-blue-600 focus-visible:ring-slate-300" href="/servicios">
+        <svg aria-hidden="true" class="h-3 w-3 flex-none fill-blue-600 group-active:fill-current" viewBox="0 0 12 12">
+          <path d="M1 5h6.6L4.9 2.3 6.2 1 11 6l-4.8 5-1.3-1.3L7.6 7H1z"></path>
+        </svg>
+        <span class="ml-3">Ver servicios</span>
+      </a>
     </div>
-  </section>
+    <div class="mt-36 lg:mt-44">
+      <p class="font-display text-base text-slate-900">Sectores que atendemos en el sur de Chile</p>
+      <ul role="list" class="mt-8 flex items-center justify-center gap-x-8 sm:flex-col sm:gap-x-0 sm:gap-y-10 xl:flex-row xl:gap-x-12 xl:gap-y-0">
+        <li>
+          <ul role="list" class="flex flex-col items-center gap-y-8 sm:flex-row sm:gap-x-12 sm:gap-y-0">
+            <li class="flex">
+              <svg role="img" aria-label="Construcción" width="184" height="48" viewBox="0 0 184 48" class="overflow-visible">
+                <g transform="translate(0 9) scale(1.25)" fill="none" stroke="#0f172a" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M10 12h4"/><path d="M10 8h4"/><path d="M14 21v-3a2 2 0 0 0-4 0v3"/><path d="M6 10H4a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-2"/><path d="M6 21V5a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v16"/></g>
+                <text x="40" y="31" font-family="Lexend, sans-serif" font-size="20" font-weight="500" fill="#0f172a">Construcción</text>
+              </svg>
+            </li>
+            <li class="flex">
+              <svg role="img" aria-label="Comercio" width="136" height="48" viewBox="0 0 136 48" class="overflow-visible">
+                <g transform="translate(0 9) scale(1.25)" fill="none" stroke="#0f172a" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="m2.05 2.05 1.099-.028a1 1 0 0 1 1.008.815l2.69 14.347A1 1 0 0 0 7.83 18H18"/><path d="M4.563 5h16.435a1 1 0 0 1 .981 1.204l-1.026 6.226A2 2 0 0 1 18.962 14H6.25"/><circle cx="18" cy="20" r="2"/><circle cx="8" cy="20" r="2"/></g>
+                <text x="40" y="31" font-family="Lexend, sans-serif" font-size="20" font-weight="500" fill="#0f172a">Comercio</text>
+              </svg>
+            </li>
+            <li class="flex">
+              <svg role="img" aria-label="Agroindustria" width="196" height="48" viewBox="0 0 196 48" class="overflow-visible">
+                <g transform="translate(0 9) scale(1.25)" fill="none" stroke="#0f172a" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="m10 11 11 .9a1 1 0 0 1 .8 1.1l-.665 4.158a1 1 0 0 1-.988.842H20"/><path d="M16 18h-5"/><path d="M18 5a1 1 0 0 0-1 1v5.573"/><path d="M3 4h8.129a1 1 0 0 1 .99.863L13 11.246"/><path d="M4 11V4"/><path d="M7 15h.01"/><path d="M8 10.1V4"/><circle cx="18" cy="18" r="2"/><circle cx="7" cy="15" r="5"/></g>
+                <text x="40" y="31" font-family="Lexend, sans-serif" font-size="20" font-weight="500" fill="#0f172a">Agroindustria</text>
+              </svg>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <ul role="list" class="flex flex-col items-center gap-y-8 sm:flex-row sm:gap-x-12 sm:gap-y-0">
+            <li class="flex">
+              <svg role="img" aria-label="Industria" width="148" height="48" viewBox="0 0 148 48" class="overflow-visible">
+                <g transform="translate(0 9) scale(1.25)" fill="none" stroke="#0f172a" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 16h.01"/><path d="M16 16h.01"/><path d="M3 19a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V8.5a.5.5 0 0 0-.769-.422l-4.462 2.844A.5.5 0 0 1 15 10.5v-2a.5.5 0 0 0-.769-.422L9.77 10.922A.5.5 0 0 1 9 10.5V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2z"/><path d="M8 16h.01"/></g>
+                <text x="40" y="31" font-family="Lexend, sans-serif" font-size="20" font-weight="500" fill="#0f172a">Industria</text>
+              </svg>
+            </li>
+            <li class="flex">
+              <svg role="img" aria-label="Transporte" width="160" height="48" viewBox="0 0 160 48" class="overflow-visible">
+                <g transform="translate(0 9) scale(1.25)" fill="none" stroke="#0f172a" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"/><path d="M15 18H9"/><path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.624l-3.48-4.35A1 1 0 0 0 17.52 8H14"/><circle cx="17" cy="18" r="2"/><circle cx="7" cy="18" r="2"/></g>
+                <text x="40" y="31" font-family="Lexend, sans-serif" font-size="20" font-weight="500" fill="#0f172a">Transporte</text>
+              </svg>
+            </li>
+            <li class="flex">
+              <svg role="img" aria-label="Servicios" width="148" height="48" viewBox="0 0 148 48" class="overflow-visible">
+                <g transform="translate(0 9) scale(1.25)" fill="none" stroke="#0f172a" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M16 20V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/><rect width="20" height="14" x="2" y="6" rx="2"/></g>
+                <text x="40" y="31" font-family="Lexend, sans-serif" font-size="20" font-weight="500" fill="#0f172a">Servicios</text>
+              </svg>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>

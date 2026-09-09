@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{lang}}">
+<html lang="{{lang}}" class="h-full scroll-smooth bg-white antialiased">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,7 +8,7 @@
   <meta name="author" content="Isaminga Digital">
   <meta name="robots" content="{{robots}}">
   <link rel="canonical" href="{{canonical}}">
-  <meta name="theme-color" content="#0448A3">
+  <meta name="theme-color" content="#2563eb">
 
   <!-- Favicon derivado del isotipo del logo actual (ver Manual de marca:
        pierde detalle bajo 40 px, se reemplaza cuando exista una version apta) -->
@@ -33,12 +33,12 @@
 
   <!-- Datos estructurados -->
 {{jsonld}}
-  <!-- Tipografia: Inter para todo (parrafos fija; titulos tambien mientras
-       Roboto siga en evaluacion, 03-09-2026). Ver Tipografia-Isaminga.md -->
+  <!-- Tipografia del diseno de referencia: Inter para texto y Lexend para
+       titulos (font-display). Roboto sigue en evaluacion, ver Tipografia-Isaminga.md -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lexend:wght@300;400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/css/styles.css">
   <script src="/js/main.js" defer></script>
 </head>
-<body>
+<body class="flex h-full flex-col">

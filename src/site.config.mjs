@@ -6,13 +6,13 @@
  * generador de incba-web). Isaminga tiene un solo mercado y un solo dominio,
  * así que SITES tiene una única entrada y no hay hreflang ni variantes CL/dev.
  *
- * ESTADO (09-09-2026): estructura y presentación siguen el modelo de landing
- * de kizivat/saas-kit (hero en dos columnas, nube de logos, features en
- * zigzag, testimonios, tarjetas, bloque de cierre, contacto en tarjeta). El
- * inicio se compone de varias secciones; las páginas internas reutilizan los
- * mismos patrones. El texto de prosa es placeholder (Lorem Ipsum) donde falta
- * el contenido real; los datos verificados (servicios, oficina, contacto,
- * bajada) son los del Diagnóstico.
+ * ESTADO (09-09-2026): la estructura y la presentación reproducen el diseño
+ * de referencia elegido por Camilo (landing con hero, sectores, servicios en
+ * pestañas sobre fondo azul, método en pestañas, bloque de cierre,
+ * testimonios en tres columnas, fases en tarjetas sobre fondo oscuro,
+ * preguntas frecuentes y pie centrado). El texto de prosa es placeholder
+ * (Lorem Ipsum) donde falta el contenido real; los datos verificados
+ * (servicios, oficina, contacto, sectores) son los del Diagnóstico.
  */
 
 export const HOST = 'https://isamingadigital.cl'
@@ -46,7 +46,9 @@ export const LIMITES = { title: 60, description: 158 }
  * Páginas del sitio. Alcance según el documento base del proyecto
  * (Desarrollo-Marca-Isaminga.md, sección 5). Cada página lista las secciones
  * de src/sections/ que la componen, en orden. Exactamente una sección por
- * página lleva el <h1>; las demás usan <h2>.
+ * página lleva el <h1>; las demás usan <h2>. `nav` es la etiqueta del menú
+ * (null = fuera del menú; Contacto va como enlace fijo en el header y el pie).
+ * `layout: 'slim'` usa el panel angosto con imagen de fondo.
  */
 export const PAGES = [
   {
@@ -56,7 +58,7 @@ export const PAGES = [
       'Consultora de transformación digital en el sur de Chile: análisis de procesos y análisis presupuestario en tecnología.',
     nav: null,
     breadcrumb: null,
-    sections: ['hero', 'sectores', 'servicios-resumen', 'testimonios', 'metodo-resumen', 'cta'],
+    sections: ['hero', 'servicios-principales', 'metodo-pasos', 'cta', 'testimonios', 'metodo-fases-resumen', 'faq'],
   },
   {
     slug: 'quienes-somos',
@@ -72,7 +74,7 @@ export const PAGES = [
     description: 'Diagnóstico y transformación digital, análisis de procesos y análisis presupuestario en TI.',
     nav: 'Servicios',
     breadcrumb: 'Servicios',
-    sections: ['servicios', 'cta'],
+    sections: ['servicios-intro', 'servicios-principales', 'cta'],
   },
   {
     slug: 'metodo',
@@ -80,14 +82,15 @@ export const PAGES = [
     description: 'Cómo trabaja Isaminga Digital: las fases del proceso, de diagnóstico a implementación.',
     nav: 'Método',
     breadcrumb: 'Método',
-    sections: ['metodo', 'cta'],
+    sections: ['metodo-intro', 'metodo-fases', 'cta'],
   },
   {
     slug: 'contacto',
     title: 'Contacto | Isaminga Digital',
     description: 'Hablemos de tu empresa. Oficina en Temuco, atención con cita previa.',
-    nav: 'Contacto',
+    nav: null,
     breadcrumb: 'Contacto',
+    layout: 'slim',
     sections: ['contacto'],
   },
 ]

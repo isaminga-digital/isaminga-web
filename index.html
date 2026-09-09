@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es-CL">
+<html lang="es-CL" class="h-full scroll-smooth bg-white antialiased">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,7 +8,7 @@
   <meta name="author" content="Isaminga Digital">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://isamingadigital.cl/">
-  <meta name="theme-color" content="#0448A3">
+  <meta name="theme-color" content="#2563eb">
 
   <!-- Favicon derivado del isotipo del logo actual (ver Manual de marca:
        pierde detalle bajo 40 px, se reemplaza cuando exista una version apta) -->
@@ -46,344 +46,653 @@
     }
   }
   </script>
-  <!-- Tipografia: Inter para todo (parrafos fija; titulos tambien mientras
-       Roboto siga en evaluacion, 03-09-2026). Ver Tipografia-Isaminga.md -->
+  <!-- Tipografia del diseno de referencia: Inter para texto y Lexend para
+       titulos (font-display). Roboto sigue en evaluacion, ver Tipografia-Isaminga.md -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lexend:wght@300;400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/css/styles.css">
   <script src="/js/main.js" defer></script>
 </head>
-<body>
+<body class="flex h-full flex-col">
 
-  <header class="site-header">
-    <div class="container nav-inner">
-      <a href="/" class="brand" aria-label="Isaminga Digital, inicio">
-        <img src="/img/logo-horizontal.png" alt="Isaminga Digital" class="brand-logo" width="166" height="44">
-      </a>
-      <nav class="main-nav" aria-label="Navegación principal">
-        <a href="/quienes-somos">Quiénes somos</a>
-        <a href="/servicios">Servicios</a>
-        <a href="/metodo">Método</a>
-        <a href="/contacto">Contacto</a>
-      </nav>
-      <div class="nav-actions">
-        <a href="/contacto" class="btn btn-primary">Conversemos</a>
-      </div>
-      <button type="button" class="btn btn-ghost btn-icon nav-toggle" data-menu-toggle aria-controls="mobile-menu" aria-expanded="false">
-        <span class="sr-only">Menú</span>
-        <svg class="icon-menu" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 5h16"/><path d="M4 12h16"/><path d="M4 19h16"/></svg>
-        <svg class="icon-x" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
-      </button>
-    </div>
-    <div id="mobile-menu" class="mobile-menu" hidden>
-      <nav aria-label="Navegación móvil">
-        <a href="/quienes-somos">Quiénes somos</a>
-        <a href="/servicios">Servicios</a>
-        <a href="/metodo">Método</a>
-        <a href="/contacto">Contacto</a>
-        <a href="/contacto" class="btn btn-primary">Conversemos</a>
+  <header class="py-10">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <nav class="relative z-50 flex justify-between">
+        <div class="flex items-center md:gap-x-12">
+          <a aria-label="Inicio" href="/">
+            <img src="/img/logo-horizontal.png" alt="Isaminga Digital" class="h-10 w-auto" width="151" height="40">
+          </a>
+          <div class="hidden md:flex md:gap-x-6">
+            <a class="inline-block rounded-lg px-2 py-1 text-sm text-slate-700 hover:bg-slate-100 hover:text-slate-900" href="/quienes-somos">Quiénes somos</a>
+            <a class="inline-block rounded-lg px-2 py-1 text-sm text-slate-700 hover:bg-slate-100 hover:text-slate-900" href="/servicios">Servicios</a>
+            <a class="inline-block rounded-lg px-2 py-1 text-sm text-slate-700 hover:bg-slate-100 hover:text-slate-900" href="/metodo">Método</a>
+          </div>
+        </div>
+        <div class="flex items-center gap-x-5 md:gap-x-8">
+          <div class="hidden md:block">
+            <a class="inline-block rounded-lg px-2 py-1 text-sm text-slate-700 hover:bg-slate-100 hover:text-slate-900" href="/contacto">Contacto</a>
+          </div>
+          <a class="group inline-flex items-center justify-center rounded-full py-2 px-4 text-sm font-semibold focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-2 bg-blue-600 text-white hover:text-slate-100 hover:bg-blue-500 active:bg-blue-800 active:text-blue-100 focus-visible:outline-blue-600" href="https://wa.me/56996471981" target="_blank" rel="noopener">
+            <span>Conversemos <span class="hidden lg:inline">hoy</span></span>
+          </a>
+          <div class="-mr-1 md:hidden">
+            <div data-mobile-nav>
+              <button class="relative z-10 flex h-8 w-8 items-center justify-center ui-not-focus-visible:outline-none" aria-label="Abrir la navegación" type="button" aria-expanded="false" aria-controls="menu-movil" data-mobile-toggle>
+                <svg aria-hidden="true" class="h-3.5 w-3.5 overflow-visible stroke-slate-700" fill="none" stroke-width="2" stroke-linecap="round">
+                  <path d="M0 1H14M0 7H14M0 13H14" class="origin-center transition" data-icon-menu></path>
+                  <path d="M2 2L12 12M12 2L2 12" class="origin-center transition scale-90 opacity-0" data-icon-close></path>
+                </svg>
+              </button>
+              <div class="fixed inset-0 bg-slate-300/50 hidden" data-mobile-overlay></div>
+              <div id="menu-movil" class="absolute inset-x-0 top-full mt-4 flex origin-top flex-col rounded-2xl bg-white p-4 text-lg tracking-tight text-slate-900 shadow-xl ring-1 ring-slate-900/5 hidden" data-mobile-panel>
+                <a class="block w-full p-2" href="/quienes-somos">Quiénes somos</a>
+                <a class="block w-full p-2" href="/servicios">Servicios</a>
+                <a class="block w-full p-2" href="/metodo">Método</a>
+                <hr class="m-2 border-slate-300/40">
+                <a class="block w-full p-2" href="/contacto">Contacto</a>
+              </div>
+            </div>
+          </div>
+        </div>
       </nav>
     </div>
   </header>
 
 
   <main>
-  <!-- Hero en dos columnas (patrón del template): eyebrow con degradado, título
-       con énfasis subrayado, texto, dos botones y visual a la derecha (el
-       isotipo real, para mantener las imágenes de marca). Título: BORRADOR.
-       Párrafo: LOREM IPSUM hasta tener el mensaje principal con Marcelo. -->
-  <section class="section">
-    <div class="container hero">
-      <div class="hero-copy">
-        <p class="hero-eyebrow">Isaminga Digital</p>
-        <h1 class="hero-title">Transformación digital con la <em>confianza</em> del sur de Chile</h1>
-        <p class="hero-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-        <div class="hero-actions">
-          <a class="btn btn-primary" href="/contacto">Conversemos</a>
-          <a class="btn btn-secondary" href="/servicios">
-            Ver servicios
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-          </a>
-        </div>
+  <!-- Hero centrado + sectores (equivalente a la nube de logos del diseño de
+       referencia). Titular y sectores salen del Diagnóstico; el párrafo es
+       LOREM IPSUM hasta tener el mensaje principal. Los "logos" de sectores
+       son SVG propios (ícono + nombre) hasta tener logos de clientes. -->
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pb-16 pt-20 text-center lg:pt-32">
+    <h1 class="mx-auto max-w-4xl font-display text-5xl font-medium tracking-tight text-slate-900 sm:text-7xl">
+      Transformación digital
+      <span class="relative whitespace-nowrap text-blue-600">
+        <svg aria-hidden="true" viewBox="0 0 418 42" class="absolute left-0 top-2/3 h-[0.58em] w-full fill-blue-300/70" preserveAspectRatio="none">
+          <path d="M3 33c60-11 130-17 205-16 74 1 138 9 206 20 3 1 2 5-1 5-70-9-134-15-205-15-73 0-142 7-203 15-3 1-5-8-2-9Z"></path>
+        </svg>
+        <span class="relative">con método.</span>
+      </span>
+    </h1>
+    <p class="mx-auto mt-6 max-w-2xl text-lg tracking-tight text-slate-700">Consultoría para empresas del sur de Chile. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
+    <div class="mt-10 flex justify-center gap-x-6">
+      <a class="group inline-flex items-center justify-center rounded-full py-2 px-4 text-sm font-semibold focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-2 bg-slate-900 text-white hover:bg-slate-700 hover:text-slate-100 active:bg-slate-800 active:text-slate-300 focus-visible:outline-slate-900" href="/contacto">Conversemos</a>
+      <a class="group inline-flex ring-1 items-center justify-center rounded-full py-2 px-4 text-sm focus:outline-none ring-slate-200 text-slate-700 hover:text-slate-900 hover:ring-slate-300 active:bg-slate-100 active:text-slate-600 focus-visible:outline-blue-600 focus-visible:ring-slate-300" href="/servicios">
+        <svg aria-hidden="true" class="h-3 w-3 flex-none fill-blue-600 group-active:fill-current" viewBox="0 0 12 12">
+          <path d="M1 5h6.6L4.9 2.3 6.2 1 11 6l-4.8 5-1.3-1.3L7.6 7H1z"></path>
+        </svg>
+        <span class="ml-3">Ver servicios</span>
+      </a>
+    </div>
+    <div class="mt-36 lg:mt-44">
+      <p class="font-display text-base text-slate-900">Sectores que atendemos en el sur de Chile</p>
+      <ul role="list" class="mt-8 flex items-center justify-center gap-x-8 sm:flex-col sm:gap-x-0 sm:gap-y-10 xl:flex-row xl:gap-x-12 xl:gap-y-0">
+        <li>
+          <ul role="list" class="flex flex-col items-center gap-y-8 sm:flex-row sm:gap-x-12 sm:gap-y-0">
+            <li class="flex">
+              <svg role="img" aria-label="Construcción" width="184" height="48" viewBox="0 0 184 48" class="overflow-visible">
+                <g transform="translate(0 9) scale(1.25)" fill="none" stroke="#0f172a" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M10 12h4"/><path d="M10 8h4"/><path d="M14 21v-3a2 2 0 0 0-4 0v3"/><path d="M6 10H4a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-2"/><path d="M6 21V5a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v16"/></g>
+                <text x="40" y="31" font-family="Lexend, sans-serif" font-size="20" font-weight="500" fill="#0f172a">Construcción</text>
+              </svg>
+            </li>
+            <li class="flex">
+              <svg role="img" aria-label="Comercio" width="136" height="48" viewBox="0 0 136 48" class="overflow-visible">
+                <g transform="translate(0 9) scale(1.25)" fill="none" stroke="#0f172a" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="m2.05 2.05 1.099-.028a1 1 0 0 1 1.008.815l2.69 14.347A1 1 0 0 0 7.83 18H18"/><path d="M4.563 5h16.435a1 1 0 0 1 .981 1.204l-1.026 6.226A2 2 0 0 1 18.962 14H6.25"/><circle cx="18" cy="20" r="2"/><circle cx="8" cy="20" r="2"/></g>
+                <text x="40" y="31" font-family="Lexend, sans-serif" font-size="20" font-weight="500" fill="#0f172a">Comercio</text>
+              </svg>
+            </li>
+            <li class="flex">
+              <svg role="img" aria-label="Agroindustria" width="196" height="48" viewBox="0 0 196 48" class="overflow-visible">
+                <g transform="translate(0 9) scale(1.25)" fill="none" stroke="#0f172a" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="m10 11 11 .9a1 1 0 0 1 .8 1.1l-.665 4.158a1 1 0 0 1-.988.842H20"/><path d="M16 18h-5"/><path d="M18 5a1 1 0 0 0-1 1v5.573"/><path d="M3 4h8.129a1 1 0 0 1 .99.863L13 11.246"/><path d="M4 11V4"/><path d="M7 15h.01"/><path d="M8 10.1V4"/><circle cx="18" cy="18" r="2"/><circle cx="7" cy="15" r="5"/></g>
+                <text x="40" y="31" font-family="Lexend, sans-serif" font-size="20" font-weight="500" fill="#0f172a">Agroindustria</text>
+              </svg>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <ul role="list" class="flex flex-col items-center gap-y-8 sm:flex-row sm:gap-x-12 sm:gap-y-0">
+            <li class="flex">
+              <svg role="img" aria-label="Industria" width="148" height="48" viewBox="0 0 148 48" class="overflow-visible">
+                <g transform="translate(0 9) scale(1.25)" fill="none" stroke="#0f172a" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 16h.01"/><path d="M16 16h.01"/><path d="M3 19a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V8.5a.5.5 0 0 0-.769-.422l-4.462 2.844A.5.5 0 0 1 15 10.5v-2a.5.5 0 0 0-.769-.422L9.77 10.922A.5.5 0 0 1 9 10.5V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2z"/><path d="M8 16h.01"/></g>
+                <text x="40" y="31" font-family="Lexend, sans-serif" font-size="20" font-weight="500" fill="#0f172a">Industria</text>
+              </svg>
+            </li>
+            <li class="flex">
+              <svg role="img" aria-label="Transporte" width="160" height="48" viewBox="0 0 160 48" class="overflow-visible">
+                <g transform="translate(0 9) scale(1.25)" fill="none" stroke="#0f172a" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"/><path d="M15 18H9"/><path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.624l-3.48-4.35A1 1 0 0 0 17.52 8H14"/><circle cx="17" cy="18" r="2"/><circle cx="7" cy="18" r="2"/></g>
+                <text x="40" y="31" font-family="Lexend, sans-serif" font-size="20" font-weight="500" fill="#0f172a">Transporte</text>
+              </svg>
+            </li>
+            <li class="flex">
+              <svg role="img" aria-label="Servicios" width="148" height="48" viewBox="0 0 148 48" class="overflow-visible">
+                <g transform="translate(0 9) scale(1.25)" fill="none" stroke="#0f172a" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M16 20V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/><rect width="20" height="14" x="2" y="6" rx="2"/></g>
+                <text x="40" y="31" font-family="Lexend, sans-serif" font-size="20" font-weight="500" fill="#0f172a">Servicios</text>
+              </svg>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Servicios en pestañas sobre fondo azul (lista vertical en escritorio,
+       píldoras deslizables en móvil). Servicios reales del Diagnóstico; la
+       cuarta pestaña y las descripciones son LOREM IPSUM hasta tener texto. -->
+  <section id="servicios" aria-label="Servicios de Isaminga Digital" class="relative overflow-hidden bg-blue-600 pb-28 pt-20 sm:py-32">
+    <img alt="" loading="lazy" width="2245" height="1636" decoding="async" class="absolute left-1/2 top-1/2 max-w-none translate-x-[-44%] translate-y-[-42%]" src="/img/fondo-servicios.jpg">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative">
+      <div class="max-w-2xl md:mx-auto md:text-center xl:max-w-none">
+        <h2 class="font-display text-3xl tracking-tight text-white sm:text-4xl md:text-5xl">Servicios para ordenar la tecnología de su empresa.</h2>
+        <p class="mt-6 text-lg tracking-tight text-blue-100">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
       </div>
-      <div class="hero-visual">
-        <img src="/img/isotipo.png" alt="" width="550" height="550">
+      <div class="mt-16 grid grid-cols-1 items-center gap-y-2 pt-10 sm:gap-y-6 md:mt-20 lg:grid-cols-12 lg:pt-0" data-tabs="servicios">
+        <div class="-mx-4 flex overflow-x-auto pb-4 sm:mx-0 sm:overflow-visible sm:pb-0 lg:col-span-5">
+          <div class="relative z-10 flex gap-x-4 whitespace-nowrap px-4 sm:mx-auto sm:px-0 lg:mx-0 lg:block lg:gap-x-0 lg:gap-y-1 lg:whitespace-normal" role="tablist" aria-orientation="horizontal">
+            <div class="group relative rounded-full px-4 py-1 lg:rounded-l-xl lg:rounded-r-none lg:p-6 bg-white lg:bg-white/10 lg:ring-1 lg:ring-inset lg:ring-white/10" data-tab>
+              <h3>
+                <button class="font-display text-lg ui-not-focus-visible:outline-none text-blue-600 lg:text-white" id="tab-servicio-1" role="tab" type="button" aria-selected="true" tabindex="0" aria-controls="panel-servicio-1">
+                  <span class="absolute inset-0 rounded-full lg:rounded-l-xl lg:rounded-r-none"></span>
+                  Diagnóstico y transformación digital
+                </button>
+              </h3>
+              <p class="mt-2 hidden text-sm lg:block text-white">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            </div>
+            <div class="group relative rounded-full px-4 py-1 lg:rounded-l-xl lg:rounded-r-none lg:p-6 hover:bg-white/10 lg:hover:bg-white/5" data-tab>
+              <h3>
+                <button class="font-display text-lg ui-not-focus-visible:outline-none text-blue-100 hover:text-white lg:text-white" id="tab-servicio-2" role="tab" type="button" aria-selected="false" tabindex="-1" aria-controls="panel-servicio-2">
+                  <span class="absolute inset-0 rounded-full lg:rounded-l-xl lg:rounded-r-none"></span>
+                  Análisis de procesos
+                </button>
+              </h3>
+              <p class="mt-2 hidden text-sm lg:block text-blue-100 group-hover:text-white">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            </div>
+            <div class="group relative rounded-full px-4 py-1 lg:rounded-l-xl lg:rounded-r-none lg:p-6 hover:bg-white/10 lg:hover:bg-white/5" data-tab>
+              <h3>
+                <button class="font-display text-lg ui-not-focus-visible:outline-none text-blue-100 hover:text-white lg:text-white" id="tab-servicio-3" role="tab" type="button" aria-selected="false" tabindex="-1" aria-controls="panel-servicio-3">
+                  <span class="absolute inset-0 rounded-full lg:rounded-l-xl lg:rounded-r-none"></span>
+                  Análisis presupuestario en TI
+                </button>
+              </h3>
+              <p class="mt-2 hidden text-sm lg:block text-blue-100 group-hover:text-white">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+            </div>
+            <div class="group relative rounded-full px-4 py-1 lg:rounded-l-xl lg:rounded-r-none lg:p-6 hover:bg-white/10 lg:hover:bg-white/5" data-tab>
+              <h3>
+                <button class="font-display text-lg ui-not-focus-visible:outline-none text-blue-100 hover:text-white lg:text-white" id="tab-servicio-4" role="tab" type="button" aria-selected="false" tabindex="-1" aria-controls="panel-servicio-4">
+                  <span class="absolute inset-0 rounded-full lg:rounded-l-xl lg:rounded-r-none"></span>
+                  Lorem ipsum
+                </button>
+              </h3>
+              <p class="mt-2 hidden text-sm lg:block text-blue-100 group-hover:text-white">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            </div>
+          </div>
+        </div>
+        <div class="lg:col-span-7">
+          <div id="panel-servicio-1" role="tabpanel" tabindex="0" aria-labelledby="tab-servicio-1" data-panel>
+            <div class="relative sm:px-6 lg:hidden">
+              <div class="absolute -inset-x-4 bottom-[-4.25rem] top-[-6.5rem] bg-white/10 ring-1 ring-inset ring-white/10 sm:inset-x-0 sm:rounded-t-xl"></div>
+              <p class="relative mx-auto max-w-2xl text-base text-white sm:text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            </div>
+            <div class="mt-10 w-[45rem] overflow-hidden rounded-xl bg-slate-50 shadow-xl shadow-blue-900/20 sm:w-auto lg:mt-0 lg:w-[67.8125rem]">
+              <img alt="" width="2174" height="1464" decoding="async" class="w-full" src="/img/captura-diagnostico.png">
+            </div>
+          </div>
+          <div id="panel-servicio-2" role="tabpanel" tabindex="-1" aria-labelledby="tab-servicio-2" hidden style="display:none" data-panel>
+            <div class="relative sm:px-6 lg:hidden">
+              <div class="absolute -inset-x-4 bottom-[-4.25rem] top-[-6.5rem] bg-white/10 ring-1 ring-inset ring-white/10 sm:inset-x-0 sm:rounded-t-xl"></div>
+              <p class="relative mx-auto max-w-2xl text-base text-white sm:text-center">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            </div>
+            <div class="mt-10 w-[45rem] overflow-hidden rounded-xl bg-slate-50 shadow-xl shadow-blue-900/20 sm:w-auto lg:mt-0 lg:w-[67.8125rem]">
+              <img alt="" loading="lazy" width="2174" height="1464" decoding="async" class="w-full" src="/img/captura-procesos.png">
+            </div>
+          </div>
+          <div id="panel-servicio-3" role="tabpanel" tabindex="-1" aria-labelledby="tab-servicio-3" hidden style="display:none" data-panel>
+            <div class="relative sm:px-6 lg:hidden">
+              <div class="absolute -inset-x-4 bottom-[-4.25rem] top-[-6.5rem] bg-white/10 ring-1 ring-inset ring-white/10 sm:inset-x-0 sm:rounded-t-xl"></div>
+              <p class="relative mx-auto max-w-2xl text-base text-white sm:text-center">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+            </div>
+            <div class="mt-10 w-[45rem] overflow-hidden rounded-xl bg-slate-50 shadow-xl shadow-blue-900/20 sm:w-auto lg:mt-0 lg:w-[67.8125rem]">
+              <img alt="" loading="lazy" width="2174" height="1464" decoding="async" class="w-full" src="/img/captura-presupuesto.png">
+            </div>
+          </div>
+          <div id="panel-servicio-4" role="tabpanel" tabindex="-1" aria-labelledby="tab-servicio-4" hidden style="display:none" data-panel>
+            <div class="relative sm:px-6 lg:hidden">
+              <div class="absolute -inset-x-4 bottom-[-4.25rem] top-[-6.5rem] bg-white/10 ring-1 ring-inset ring-white/10 sm:inset-x-0 sm:rounded-t-xl"></div>
+              <p class="relative mx-auto max-w-2xl text-base text-white sm:text-center">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            </div>
+            <div class="mt-10 w-[45rem] overflow-hidden rounded-xl bg-slate-50 shadow-xl shadow-blue-900/20 sm:w-auto lg:mt-0 lg:w-[67.8125rem]">
+              <img alt="" loading="lazy" width="2174" height="1464" decoding="async" class="w-full" src="/img/captura-reportes.png">
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- Equivalente a la "nube de logos" del template. Sin logos de clientes
-       autorizados todavía, se muestran los sectores atendidos (salen de los
-       arquetipos del Diagnóstico). Descripción: LOREM IPSUM. -->
-  <section class="section">
-    <div class="container">
-      <div class="section-header">
-        <h2 class="section-title">Sectores que atendemos</h2>
-        <p class="section-description text-balance">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+  <!-- "Cómo trabajamos" en tres columnas con panel deslizante en escritorio
+       (apilado en móvil). Etiquetas neutras (Etapa 1, 2, 3); frases y
+       descripciones en LOREM IPSUM hasta tener el texto del método. -->
+  <section id="como-trabajamos" aria-label="Cómo trabajamos" class="pb-14 pt-20 sm:pb-20 sm:pt-32 lg:pb-32">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="mx-auto max-w-2xl md:text-center">
+        <h2 class="font-display text-3xl tracking-tight text-slate-900 sm:text-4xl">Cómo trabajamos, paso a paso.</h2>
+        <p class="mt-4 text-lg tracking-tight text-slate-700">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      </div>
+
+      <!-- Móvil y tablet: las tres etapas apiladas -->
+      <div class="-mx-4 mt-20 flex flex-col gap-y-10 overflow-hidden px-4 sm:-mx-6 sm:px-6 lg:hidden">
+        <div>
+          <div class="mx-auto max-w-2xl">
+            <div class="w-9 rounded-lg bg-blue-600">
+              <svg aria-hidden="true" class="h-9 w-9 p-2" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="m8 11 2 2 4-4"/><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+            </div>
+            <h3 class="mt-6 text-sm font-medium text-blue-600">Etapa 1</h3>
+            <p class="mt-2 font-display text-xl text-slate-900">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <p class="mt-4 text-sm text-slate-600">Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
+          </div>
+          <div class="relative mt-10 pb-10">
+            <div class="absolute -inset-x-4 bottom-0 top-8 bg-slate-200 sm:-inset-x-6"></div>
+            <div class="relative mx-auto w-[52.75rem] overflow-hidden rounded-xl bg-white shadow-lg shadow-slate-900/5 ring-1 ring-slate-500/10">
+              <img alt="" loading="lazy" width="1688" height="856" decoding="async" class="w-full" src="/img/captura-resumen.png">
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="mx-auto max-w-2xl">
+            <div class="w-9 rounded-lg bg-blue-600">
+              <svg aria-hidden="true" class="h-9 w-9 p-2" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect width="8" height="8" x="3" y="3" rx="2"/><path d="M7 11v4a2 2 0 0 0 2 2h4"/><rect width="8" height="8" x="13" y="13" rx="2"/></svg>
+            </div>
+            <h3 class="mt-6 text-sm font-medium text-blue-600">Etapa 2</h3>
+            <p class="mt-2 font-display text-xl text-slate-900">Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
+            <p class="mt-4 text-sm text-slate-600">Laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum.</p>
+          </div>
+          <div class="relative mt-10 pb-10">
+            <div class="absolute -inset-x-4 bottom-0 top-8 bg-slate-200 sm:-inset-x-6"></div>
+            <div class="relative mx-auto w-[52.75rem] overflow-hidden rounded-xl bg-white shadow-lg shadow-slate-900/5 ring-1 ring-slate-500/10">
+              <img alt="" loading="lazy" width="1688" height="856" decoding="async" class="w-full" src="/img/captura-flujo.png">
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="mx-auto max-w-2xl">
+            <div class="w-9 rounded-lg bg-blue-600">
+              <svg aria-hidden="true" class="h-9 w-9 p-2" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect width="16" height="20" x="4" y="2" rx="2"/><line x1="8" x2="16" y1="6" y2="6"/><line x1="16" x2="16" y1="14" y2="18"/><path d="M16 10h.01"/><path d="M12 10h.01"/><path d="M8 10h.01"/><path d="M12 14h.01"/><path d="M8 14h.01"/><path d="M12 18h.01"/><path d="M8 18h.01"/></svg>
+            </div>
+            <h3 class="mt-6 text-sm font-medium text-blue-600">Etapa 3</h3>
+            <p class="mt-2 font-display text-xl text-slate-900">Excepteur sint occaecat cupidatat non proident.</p>
+            <p class="mt-4 text-sm text-slate-600">Sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem.</p>
+          </div>
+          <div class="relative mt-10 pb-10">
+            <div class="absolute -inset-x-4 bottom-0 top-8 bg-slate-200 sm:-inset-x-6"></div>
+            <div class="relative mx-auto w-[52.75rem] overflow-hidden rounded-xl bg-white shadow-lg shadow-slate-900/5 ring-1 ring-slate-500/10">
+              <img alt="" loading="lazy" width="1688" height="856" decoding="async" class="w-full" src="/img/captura-costos.png">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Escritorio: pestañas en tres columnas y panel deslizante -->
+      <div class="hidden lg:mt-20 lg:block" data-tabs="metodo">
+        <div class="grid grid-cols-3 gap-x-8" role="tablist" aria-orientation="horizontal">
+          <div class="relative" data-tab>
+            <div class="w-9 rounded-lg bg-blue-600" data-icon>
+              <svg aria-hidden="true" class="h-9 w-9 p-2" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="m8 11 2 2 4-4"/><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+            </div>
+            <h3 class="mt-6 text-sm font-medium text-blue-600">
+              <button class="ui-not-focus-visible:outline-none" id="tab-metodo-1" role="tab" type="button" aria-selected="true" tabindex="0" aria-controls="panel-metodo-1">
+                <span class="absolute inset-0"></span>
+                Etapa 1
+              </button>
+            </h3>
+            <p class="mt-2 font-display text-xl text-slate-900">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <p class="mt-4 text-sm text-slate-600">Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
+          </div>
+          <div class="relative opacity-75 hover:opacity-100" data-tab>
+            <div class="w-9 rounded-lg bg-slate-500" data-icon>
+              <svg aria-hidden="true" class="h-9 w-9 p-2" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect width="8" height="8" x="3" y="3" rx="2"/><path d="M7 11v4a2 2 0 0 0 2 2h4"/><rect width="8" height="8" x="13" y="13" rx="2"/></svg>
+            </div>
+            <h3 class="mt-6 text-sm font-medium text-slate-600">
+              <button class="ui-not-focus-visible:outline-none" id="tab-metodo-2" role="tab" type="button" aria-selected="false" tabindex="-1" aria-controls="panel-metodo-2">
+                <span class="absolute inset-0"></span>
+                Etapa 2
+              </button>
+            </h3>
+            <p class="mt-2 font-display text-xl text-slate-900">Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
+            <p class="mt-4 text-sm text-slate-600">Laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum.</p>
+          </div>
+          <div class="relative opacity-75 hover:opacity-100" data-tab>
+            <div class="w-9 rounded-lg bg-slate-500" data-icon>
+              <svg aria-hidden="true" class="h-9 w-9 p-2" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect width="16" height="20" x="4" y="2" rx="2"/><line x1="8" x2="16" y1="6" y2="6"/><line x1="16" x2="16" y1="14" y2="18"/><path d="M16 10h.01"/><path d="M12 10h.01"/><path d="M8 10h.01"/><path d="M12 14h.01"/><path d="M8 14h.01"/><path d="M12 18h.01"/><path d="M8 18h.01"/></svg>
+            </div>
+            <h3 class="mt-6 text-sm font-medium text-slate-600">
+              <button class="ui-not-focus-visible:outline-none" id="tab-metodo-3" role="tab" type="button" aria-selected="false" tabindex="-1" aria-controls="panel-metodo-3">
+                <span class="absolute inset-0"></span>
+                Etapa 3
+              </button>
+            </h3>
+            <p class="mt-2 font-display text-xl text-slate-900">Excepteur sint occaecat cupidatat non proident.</p>
+            <p class="mt-4 text-sm text-slate-600">Sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem.</p>
+          </div>
+        </div>
+        <div class="relative mt-20 overflow-hidden rounded-4xl bg-slate-200 px-14 py-16 xl:px-16">
+          <div class="-mx-5 flex">
+            <div class="px-5 transition duration-500 ease-in-out ui-not-focus-visible:outline-none" style="transform:translateX(-0%)" aria-hidden="false" id="panel-metodo-1" role="tabpanel" tabindex="0" aria-labelledby="tab-metodo-1" data-panel>
+              <div class="w-[52.75rem] overflow-hidden rounded-xl bg-white shadow-lg shadow-slate-900/5 ring-1 ring-slate-500/10">
+                <img alt="" loading="lazy" width="1688" height="856" decoding="async" class="w-full" src="/img/captura-resumen.png">
+              </div>
+            </div>
+            <div class="px-5 transition duration-500 ease-in-out ui-not-focus-visible:outline-none opacity-60" style="transform:translateX(-0%)" aria-hidden="true" id="panel-metodo-2" role="tabpanel" tabindex="-1" aria-labelledby="tab-metodo-2" data-panel>
+              <div class="w-[52.75rem] overflow-hidden rounded-xl bg-white shadow-lg shadow-slate-900/5 ring-1 ring-slate-500/10">
+                <img alt="" loading="lazy" width="1688" height="856" decoding="async" class="w-full" src="/img/captura-flujo.png">
+              </div>
+            </div>
+            <div class="px-5 transition duration-500 ease-in-out ui-not-focus-visible:outline-none opacity-60" style="transform:translateX(-0%)" aria-hidden="true" id="panel-metodo-3" role="tabpanel" tabindex="-1" aria-labelledby="tab-metodo-3" data-panel>
+              <div class="w-[52.75rem] overflow-hidden rounded-xl bg-white shadow-lg shadow-slate-900/5 ring-1 ring-slate-500/10">
+                <img alt="" loading="lazy" width="1688" height="856" decoding="async" class="w-full" src="/img/captura-costos.png">
+              </div>
+            </div>
+          </div>
+          <div class="pointer-events-none absolute inset-0 rounded-4xl ring-1 ring-inset ring-slate-900/10"></div>
+        </div>
       </div>
     </div>
-    <div class="container">
-      <ul class="logos">
+  </section>
+
+  <!-- Bloque de cierre sobre fondo azul. Datos reales: oficina y modalidad. -->
+  <section id="comenzar" class="relative overflow-hidden bg-blue-600 py-32">
+    <img alt="" loading="lazy" width="2347" height="1244" decoding="async" class="absolute left-1/2 top-1/2 max-w-none -translate-x-1/2 -translate-y-1/2" src="/img/fondo-cta.jpg">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative">
+      <div class="mx-auto max-w-lg text-center">
+        <h2 class="font-display text-3xl tracking-tight text-white sm:text-4xl">¿Comenzamos hoy?</h2>
+        <p class="mt-4 text-lg tracking-tight text-white">Oficina en Trizano 250, Temuco. Atención con cita previa. Cuéntenos sobre su empresa y coordinamos una reunión.</p>
+        <a class="group inline-flex items-center justify-center rounded-full py-2 px-4 text-sm font-semibold focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-2 bg-white text-slate-900 hover:bg-blue-50 active:bg-blue-200 active:text-slate-600 focus-visible:outline-white mt-10" href="/contacto">Conversemos</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonios en tres columnas. Placeholders a propósito (citas LOREM
+       IPSUM, "Nombre Apellido", avatar genérico): no hay testimonios
+       autorizados todavía. -->
+  <section id="testimonios" aria-label="Lo que dicen los clientes" class="bg-slate-50 py-20 sm:py-32">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="mx-auto max-w-2xl md:text-center">
+        <h2 class="font-display text-3xl tracking-tight text-slate-900 sm:text-4xl">Lo que dicen nuestros clientes.</h2>
+        <p class="mt-4 text-lg tracking-tight text-slate-700">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      </div>
+      <ul role="list" class="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-6 sm:gap-8 lg:mt-20 lg:max-w-none lg:grid-cols-3">
         <li>
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M10 12h4"/><path d="M10 8h4"/><path d="M14 21v-3a2 2 0 0 0-4 0v3"/><path d="M6 10H4a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-2"/><path d="M6 21V5a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v16"/></svg>
-          <span>Construcción</span>
+          <ul role="list" class="flex flex-col gap-y-6 sm:gap-y-8">
+            <li>
+              <figure class="relative rounded-2xl bg-white p-6 shadow-xl shadow-slate-900/10">
+                <span aria-hidden="true" class="absolute left-4 -top-2 select-none font-display text-[9rem] leading-none text-slate-100">&ldquo;</span>
+                <blockquote class="relative">
+                  <p class="text-lg tracking-tight text-slate-900">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                </blockquote>
+                <figcaption class="relative mt-6 flex items-center justify-between border-t border-slate-100 pt-6">
+                  <div>
+                    <div class="font-display text-base text-slate-900">Nombre Apellido</div>
+                    <div class="mt-1 text-sm text-slate-500">Cargo, Empresa</div>
+                  </div>
+                  <div class="overflow-hidden rounded-full bg-slate-50">
+                    <svg class="h-14 w-14 p-3 text-slate-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                  </div>
+                </figcaption>
+              </figure>
+            </li>
+            <li>
+              <figure class="relative rounded-2xl bg-white p-6 shadow-xl shadow-slate-900/10">
+                <span aria-hidden="true" class="absolute left-4 -top-2 select-none font-display text-[9rem] leading-none text-slate-100">&ldquo;</span>
+                <blockquote class="relative">
+                  <p class="text-lg tracking-tight text-slate-900">Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>
+                </blockquote>
+                <figcaption class="relative mt-6 flex items-center justify-between border-t border-slate-100 pt-6">
+                  <div>
+                    <div class="font-display text-base text-slate-900">Nombre Apellido</div>
+                    <div class="mt-1 text-sm text-slate-500">Cargo, Empresa</div>
+                  </div>
+                  <div class="overflow-hidden rounded-full bg-slate-50">
+                    <svg class="h-14 w-14 p-3 text-slate-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                  </div>
+                </figcaption>
+              </figure>
+            </li>
+          </ul>
         </li>
         <li>
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m2.05 2.05 1.099-.028a1 1 0 0 1 1.008.815l2.69 14.347A1 1 0 0 0 7.83 18H18"/><path d="M4.563 5h16.435a1 1 0 0 1 .981 1.204l-1.026 6.226A2 2 0 0 1 18.962 14H6.25"/><circle cx="18" cy="20" r="2"/><circle cx="8" cy="20" r="2"/></svg>
-          <span>Comercio y retail</span>
+          <ul role="list" class="flex flex-col gap-y-6 sm:gap-y-8">
+            <li>
+              <figure class="relative rounded-2xl bg-white p-6 shadow-xl shadow-slate-900/10">
+                <span aria-hidden="true" class="absolute left-4 -top-2 select-none font-display text-[9rem] leading-none text-slate-100">&ldquo;</span>
+                <blockquote class="relative">
+                  <p class="text-lg tracking-tight text-slate-900">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore.</p>
+                </blockquote>
+                <figcaption class="relative mt-6 flex items-center justify-between border-t border-slate-100 pt-6">
+                  <div>
+                    <div class="font-display text-base text-slate-900">Nombre Apellido</div>
+                    <div class="mt-1 text-sm text-slate-500">Cargo, Empresa</div>
+                  </div>
+                  <div class="overflow-hidden rounded-full bg-slate-50">
+                    <svg class="h-14 w-14 p-3 text-slate-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                  </div>
+                </figcaption>
+              </figure>
+            </li>
+            <li>
+              <figure class="relative rounded-2xl bg-white p-6 shadow-xl shadow-slate-900/10">
+                <span aria-hidden="true" class="absolute left-4 -top-2 select-none font-display text-[9rem] leading-none text-slate-100">&ldquo;</span>
+                <blockquote class="relative">
+                  <p class="text-lg tracking-tight text-slate-900">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores.</p>
+                </blockquote>
+                <figcaption class="relative mt-6 flex items-center justify-between border-t border-slate-100 pt-6">
+                  <div>
+                    <div class="font-display text-base text-slate-900">Nombre Apellido</div>
+                    <div class="mt-1 text-sm text-slate-500">Cargo, Empresa</div>
+                  </div>
+                  <div class="overflow-hidden rounded-full bg-slate-50">
+                    <svg class="h-14 w-14 p-3 text-slate-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                  </div>
+                </figcaption>
+              </figure>
+            </li>
+          </ul>
         </li>
         <li>
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m10 11 11 .9a1 1 0 0 1 .8 1.1l-.665 4.158a1 1 0 0 1-.988.842H20"/><path d="M16 18h-5"/><path d="M18 5a1 1 0 0 0-1 1v5.573"/><path d="M3 4h8.129a1 1 0 0 1 .99.863L13 11.246"/><path d="M4 11V4"/><path d="M7 15h.01"/><path d="M8 10.1V4"/><circle cx="18" cy="18" r="2"/><circle cx="7" cy="15" r="5"/></svg>
-          <span>Agroindustria</span>
-        </li>
-        <li>
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 16h.01"/><path d="M16 16h.01"/><path d="M3 19a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V8.5a.5.5 0 0 0-.769-.422l-4.462 2.844A.5.5 0 0 1 15 10.5v-2a.5.5 0 0 0-.769-.422L9.77 10.922A.5.5 0 0 1 9 10.5V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2z"/><path d="M8 16h.01"/></svg>
-          <span>Industria</span>
-        </li>
-        <li>
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"/><path d="M15 18H9"/><path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.624l-3.48-4.35A1 1 0 0 0 17.52 8H14"/><circle cx="17" cy="18" r="2"/><circle cx="7" cy="18" r="2"/></svg>
-          <span>Transporte y logística</span>
-        </li>
-        <li>
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M16 20V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/><rect width="20" height="14" x="2" y="6" rx="2"/></svg>
-          <span>Servicios</span>
+          <ul role="list" class="flex flex-col gap-y-6 sm:gap-y-8">
+            <li>
+              <figure class="relative rounded-2xl bg-white p-6 shadow-xl shadow-slate-900/10">
+                <span aria-hidden="true" class="absolute left-4 -top-2 select-none font-display text-[9rem] leading-none text-slate-100">&ldquo;</span>
+                <blockquote class="relative">
+                  <p class="text-lg tracking-tight text-slate-900">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium.</p>
+                </blockquote>
+                <figcaption class="relative mt-6 flex items-center justify-between border-t border-slate-100 pt-6">
+                  <div>
+                    <div class="font-display text-base text-slate-900">Nombre Apellido</div>
+                    <div class="mt-1 text-sm text-slate-500">Cargo, Empresa</div>
+                  </div>
+                  <div class="overflow-hidden rounded-full bg-slate-50">
+                    <svg class="h-14 w-14 p-3 text-slate-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                  </div>
+                </figcaption>
+              </figure>
+            </li>
+            <li>
+              <figure class="relative rounded-2xl bg-white p-6 shadow-xl shadow-slate-900/10">
+                <span aria-hidden="true" class="absolute left-4 -top-2 select-none font-display text-[9rem] leading-none text-slate-100">&ldquo;</span>
+                <blockquote class="relative">
+                  <p class="text-lg tracking-tight text-slate-900">Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae.</p>
+                </blockquote>
+                <figcaption class="relative mt-6 flex items-center justify-between border-t border-slate-100 pt-6">
+                  <div>
+                    <div class="font-display text-base text-slate-900">Nombre Apellido</div>
+                    <div class="mt-1 text-sm text-slate-500">Cargo, Empresa</div>
+                  </div>
+                  <div class="overflow-hidden rounded-full bg-slate-50">
+                    <svg class="h-14 w-14 p-3 text-slate-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                  </div>
+                </figcaption>
+              </figure>
+            </li>
+          </ul>
         </li>
       </ul>
     </div>
   </section>
 
-  <!-- Features en zigzag (patrón del template): ícono + término + descripción,
-       con un bloque visual al lado que alterna de columna. Los tres servicios
-       son reales (Diagnóstico); las descripciones son LOREM IPSUM. -->
-  <section class="section" id="servicios">
-    <div class="container">
-      <div class="section-header">
-        <h2 class="section-title">Servicios</h2>
-        <p class="section-description text-balance">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
+  <!-- Fases del método en tarjetas sobre fondo oscuro (tres en el inicio; las
+       seis en /metodo). Nombres, descripciones y viñetas en LOREM IPSUM hasta
+       tener el texto real de las fases. -->
+  <section id="metodo" aria-label="Método de trabajo" class="bg-slate-900 py-20 sm:py-32">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="md:text-center">
+        <h2 class="font-display text-3xl tracking-tight text-white sm:text-4xl">
+          <span class="relative whitespace-nowrap">
+            <svg aria-hidden="true" viewBox="0 0 281 40" preserveAspectRatio="none" class="absolute left-0 top-1/2 h-[1em] w-full fill-blue-400">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M4 27c40-9 110-13 190-10 30 1 58 4 82 9 3 1 2 5-1 5-42-6-95-9-160-7-45 1-84 6-109 12-3 1-5-8-2-9Z"></path>
+            </svg>
+            <span class="relative">Un método claro,</span>
+          </span>
+          por etapas.
+        </h2>
+        <p class="mt-4 text-lg text-slate-400">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
       </div>
-    </div>
-    <div class="container">
-      <dl class="features">
-        <div class="feature-item">
-          <svg class="feature-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m8 11 2 2 4-4"/><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
-          <div>
-            <dt class="feature-term">Diagnóstico y transformación digital</dt>
-            <dd class="feature-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</dd>
-          </div>
-        </div>
-        <div class="feature-showcase"><div class="showcase-box">Imagen</div></div>
-        <div class="feature-item">
-          <svg class="feature-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect width="8" height="8" x="3" y="3" rx="2"/><path d="M7 11v4a2 2 0 0 0 2 2h4"/><rect width="8" height="8" x="13" y="13" rx="2"/></svg>
-          <div>
-            <dt class="feature-term">Análisis de procesos</dt>
-            <dd class="feature-desc">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</dd>
-          </div>
-        </div>
-        <div class="feature-showcase"><div class="showcase-box">Imagen</div></div>
-        <div class="feature-item">
-          <svg class="feature-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect width="16" height="20" x="4" y="2" rx="2"/><line x1="8" x2="16" y1="6" y2="6"/><line x1="16" x2="16" y1="14" y2="18"/><path d="M16 10h.01"/><path d="M12 10h.01"/><path d="M8 10h.01"/><path d="M12 14h.01"/><path d="M8 14h.01"/><path d="M12 18h.01"/><path d="M8 18h.01"/></svg>
-          <div>
-            <dt class="feature-term">Análisis presupuestario en TI</dt>
-            <dd class="feature-desc">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</dd>
-          </div>
-        </div>
-        <div class="feature-showcase"><div class="showcase-box">Imagen</div></div>
-      </dl>
-      <div class="features-more">
-        <a class="btn btn-link" href="/servicios">
-          Ver todos los servicios
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Testimonios (patrón del template: tarjetas en mosaico, carrusel por
-       desplazamiento en móvil). TODO PLACEHOLDER: nombres y cargos genéricos,
-       citas en LOREM IPSUM. No hay testimonios reales autorizados todavía. -->
-  <section class="section">
-    <div class="container">
-      <div class="section-header">
-        <h2 class="section-title">Lo que dicen nuestros clientes</h2>
-        <p class="section-description text-balance">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-      </div>
-    </div>
-    <div class="container">
-      <div class="testimonials">
-        <figure>
-          <article class="card">
-            <figcaption class="card-header testimonial-author">
-              <span class="avatar" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></span>
-              <div>
-                <p class="card-title">Nombre Apellido</p>
-                <p class="card-description">Cargo, Empresa</p>
-              </div>
-            </figcaption>
-            <div class="card-content">
-              <blockquote>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</blockquote>
-            </div>
-          </article>
-        </figure>
-        <figure>
-          <article class="card">
-            <figcaption class="card-header testimonial-author">
-              <span class="avatar" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></span>
-              <div>
-                <p class="card-title">Nombre Apellido</p>
-                <p class="card-description">Cargo, Empresa</p>
-              </div>
-            </figcaption>
-            <div class="card-content">
-              <blockquote>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</blockquote>
-            </div>
-          </article>
-        </figure>
-        <figure>
-          <article class="card">
-            <figcaption class="card-header testimonial-author">
-              <span class="avatar" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></span>
-              <div>
-                <p class="card-title">Nombre Apellido</p>
-                <p class="card-description">Cargo, Empresa</p>
-              </div>
-            </figcaption>
-            <div class="card-content">
-              <blockquote>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</blockquote>
-            </div>
-          </article>
-        </figure>
+      <div class="-mx-4 mt-16 grid max-w-2xl grid-cols-1 gap-y-10 sm:mx-auto lg:-mx-8 lg:max-w-none lg:grid-cols-3 xl:mx-0 xl:gap-x-8">
+        <section class="flex flex-col rounded-3xl px-6 sm:px-8 lg:py-8">
+          <h3 class="mt-5 font-display text-lg text-white">Lorem ipsum</h3>
+          <p class="mt-2 text-base text-slate-400">Dolor sit amet, consectetur adipiscing elit sed do eiusmod.</p>
+          <p class="order-first font-display text-5xl font-light tracking-tight text-white">Fase 1</p>
+          <ul role="list" class="order-last mt-10 flex flex-col gap-y-3 text-sm text-slate-200">
+            <li class="flex"><svg aria-hidden="true" class="h-6 w-6 flex-none fill-current stroke-current text-slate-400" viewBox="0 0 24 24"><path d="M9.307 12.248a.75.75 0 1 0-1.114 1.004l1.114-1.004ZM11 15.25l-.557.502a.75.75 0 0 0 1.15-.043L11 15.25Zm4.844-5.041a.75.75 0 0 0-1.188-.918l1.188.918Zm-7.651 3.043 2.25 2.5 1.114-1.004-2.25-2.5-1.114 1.004Zm3.4 2.457 4.25-5.5-1.187-.918-4.25 5.5 1.188.918Z" stroke-width="0"></path><circle cx="12" cy="12" r="8.25" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></circle></svg><span class="ml-4">Lorem ipsum dolor sit amet</span></li>
+            <li class="flex"><svg aria-hidden="true" class="h-6 w-6 flex-none fill-current stroke-current text-slate-400" viewBox="0 0 24 24"><path d="M9.307 12.248a.75.75 0 1 0-1.114 1.004l1.114-1.004ZM11 15.25l-.557.502a.75.75 0 0 0 1.15-.043L11 15.25Zm4.844-5.041a.75.75 0 0 0-1.188-.918l1.188.918Zm-7.651 3.043 2.25 2.5 1.114-1.004-2.25-2.5-1.114 1.004Zm3.4 2.457 4.25-5.5-1.187-.918-4.25 5.5 1.188.918Z" stroke-width="0"></path><circle cx="12" cy="12" r="8.25" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></circle></svg><span class="ml-4">Consectetur adipiscing elit</span></li>
+            <li class="flex"><svg aria-hidden="true" class="h-6 w-6 flex-none fill-current stroke-current text-slate-400" viewBox="0 0 24 24"><path d="M9.307 12.248a.75.75 0 1 0-1.114 1.004l1.114-1.004ZM11 15.25l-.557.502a.75.75 0 0 0 1.15-.043L11 15.25Zm4.844-5.041a.75.75 0 0 0-1.188-.918l1.188.918Zm-7.651 3.043 2.25 2.5 1.114-1.004-2.25-2.5-1.114 1.004Zm3.4 2.457 4.25-5.5-1.187-.918-4.25 5.5 1.188.918Z" stroke-width="0"></path><circle cx="12" cy="12" r="8.25" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></circle></svg><span class="ml-4">Sed do eiusmod tempor</span></li>
+            <li class="flex"><svg aria-hidden="true" class="h-6 w-6 flex-none fill-current stroke-current text-slate-400" viewBox="0 0 24 24"><path d="M9.307 12.248a.75.75 0 1 0-1.114 1.004l1.114-1.004ZM11 15.25l-.557.502a.75.75 0 0 0 1.15-.043L11 15.25Zm4.844-5.041a.75.75 0 0 0-1.188-.918l1.188.918Zm-7.651 3.043 2.25 2.5 1.114-1.004-2.25-2.5-1.114 1.004Zm3.4 2.457 4.25-5.5-1.187-.918-4.25 5.5 1.188.918Z" stroke-width="0"></path><circle cx="12" cy="12" r="8.25" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></circle></svg><span class="ml-4">Incididunt ut labore</span></li>
+            <li class="flex"><svg aria-hidden="true" class="h-6 w-6 flex-none fill-current stroke-current text-slate-400" viewBox="0 0 24 24"><path d="M9.307 12.248a.75.75 0 1 0-1.114 1.004l1.114-1.004ZM11 15.25l-.557.502a.75.75 0 0 0 1.15-.043L11 15.25Zm4.844-5.041a.75.75 0 0 0-1.188-.918l1.188.918Zm-7.651 3.043 2.25 2.5 1.114-1.004-2.25-2.5-1.114 1.004Zm3.4 2.457 4.25-5.5-1.187-.918-4.25 5.5 1.188.918Z" stroke-width="0"></path><circle cx="12" cy="12" r="8.25" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></circle></svg><span class="ml-4">Et dolore magna aliqua</span></li>
+          </ul>
+          <a class="group inline-flex ring-1 items-center justify-center rounded-full py-2 px-4 text-sm focus:outline-none ring-slate-700 text-white hover:ring-slate-500 active:ring-slate-700 active:text-slate-400 focus-visible:outline-white mt-8" aria-label="Ver la fase 1 del método" href="/metodo">Ver el método</a>
+        </section>
+        <section class="flex flex-col rounded-3xl px-6 sm:px-8 order-first bg-blue-600 py-8 lg:order-none">
+          <h3 class="mt-5 font-display text-lg text-white">Dolor sit amet</h3>
+          <p class="mt-2 text-base text-white">Consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
+          <p class="order-first font-display text-5xl font-light tracking-tight text-white">Fase 2</p>
+          <ul role="list" class="order-last mt-10 flex flex-col gap-y-3 text-sm text-white">
+            <li class="flex"><svg aria-hidden="true" class="h-6 w-6 flex-none fill-current stroke-current text-white" viewBox="0 0 24 24"><path d="M9.307 12.248a.75.75 0 1 0-1.114 1.004l1.114-1.004ZM11 15.25l-.557.502a.75.75 0 0 0 1.15-.043L11 15.25Zm4.844-5.041a.75.75 0 0 0-1.188-.918l1.188.918Zm-7.651 3.043 2.25 2.5 1.114-1.004-2.25-2.5-1.114 1.004Zm3.4 2.457 4.25-5.5-1.187-.918-4.25 5.5 1.188.918Z" stroke-width="0"></path><circle cx="12" cy="12" r="8.25" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></circle></svg><span class="ml-4">Ut enim ad minim veniam</span></li>
+            <li class="flex"><svg aria-hidden="true" class="h-6 w-6 flex-none fill-current stroke-current text-white" viewBox="0 0 24 24"><path d="M9.307 12.248a.75.75 0 1 0-1.114 1.004l1.114-1.004ZM11 15.25l-.557.502a.75.75 0 0 0 1.15-.043L11 15.25Zm4.844-5.041a.75.75 0 0 0-1.188-.918l1.188.918Zm-7.651 3.043 2.25 2.5 1.114-1.004-2.25-2.5-1.114 1.004Zm3.4 2.457 4.25-5.5-1.187-.918-4.25 5.5 1.188.918Z" stroke-width="0"></path><circle cx="12" cy="12" r="8.25" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></circle></svg><span class="ml-4">Quis nostrud exercitation</span></li>
+            <li class="flex"><svg aria-hidden="true" class="h-6 w-6 flex-none fill-current stroke-current text-white" viewBox="0 0 24 24"><path d="M9.307 12.248a.75.75 0 1 0-1.114 1.004l1.114-1.004ZM11 15.25l-.557.502a.75.75 0 0 0 1.15-.043L11 15.25Zm4.844-5.041a.75.75 0 0 0-1.188-.918l1.188.918Zm-7.651 3.043 2.25 2.5 1.114-1.004-2.25-2.5-1.114 1.004Zm3.4 2.457 4.25-5.5-1.187-.918-4.25 5.5 1.188.918Z" stroke-width="0"></path><circle cx="12" cy="12" r="8.25" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></circle></svg><span class="ml-4">Ullamco laboris nisi</span></li>
+            <li class="flex"><svg aria-hidden="true" class="h-6 w-6 flex-none fill-current stroke-current text-white" viewBox="0 0 24 24"><path d="M9.307 12.248a.75.75 0 1 0-1.114 1.004l1.114-1.004ZM11 15.25l-.557.502a.75.75 0 0 0 1.15-.043L11 15.25Zm4.844-5.041a.75.75 0 0 0-1.188-.918l1.188.918Zm-7.651 3.043 2.25 2.5 1.114-1.004-2.25-2.5-1.114 1.004Zm3.4 2.457 4.25-5.5-1.187-.918-4.25 5.5 1.188.918Z" stroke-width="0"></path><circle cx="12" cy="12" r="8.25" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></circle></svg><span class="ml-4">Ut aliquip ex ea commodo</span></li>
+            <li class="flex"><svg aria-hidden="true" class="h-6 w-6 flex-none fill-current stroke-current text-white" viewBox="0 0 24 24"><path d="M9.307 12.248a.75.75 0 1 0-1.114 1.004l1.114-1.004ZM11 15.25l-.557.502a.75.75 0 0 0 1.15-.043L11 15.25Zm4.844-5.041a.75.75 0 0 0-1.188-.918l1.188.918Zm-7.651 3.043 2.25 2.5 1.114-1.004-2.25-2.5-1.114 1.004Zm3.4 2.457 4.25-5.5-1.187-.918-4.25 5.5 1.188.918Z" stroke-width="0"></path><circle cx="12" cy="12" r="8.25" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></circle></svg><span class="ml-4">Consequat duis aute irure</span></li>
+            <li class="flex"><svg aria-hidden="true" class="h-6 w-6 flex-none fill-current stroke-current text-white" viewBox="0 0 24 24"><path d="M9.307 12.248a.75.75 0 1 0-1.114 1.004l1.114-1.004ZM11 15.25l-.557.502a.75.75 0 0 0 1.15-.043L11 15.25Zm4.844-5.041a.75.75 0 0 0-1.188-.918l1.188.918Zm-7.651 3.043 2.25 2.5 1.114-1.004-2.25-2.5-1.114 1.004Zm3.4 2.457 4.25-5.5-1.187-.918-4.25 5.5 1.188.918Z" stroke-width="0"></path><circle cx="12" cy="12" r="8.25" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></circle></svg><span class="ml-4">Dolor in reprehenderit</span></li>
+            <li class="flex"><svg aria-hidden="true" class="h-6 w-6 flex-none fill-current stroke-current text-white" viewBox="0 0 24 24"><path d="M9.307 12.248a.75.75 0 1 0-1.114 1.004l1.114-1.004ZM11 15.25l-.557.502a.75.75 0 0 0 1.15-.043L11 15.25Zm4.844-5.041a.75.75 0 0 0-1.188-.918l1.188.918Zm-7.651 3.043 2.25 2.5 1.114-1.004-2.25-2.5-1.114 1.004Zm3.4 2.457 4.25-5.5-1.187-.918-4.25 5.5 1.188.918Z" stroke-width="0"></path><circle cx="12" cy="12" r="8.25" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></circle></svg><span class="ml-4">In voluptate velit esse</span></li>
+          </ul>
+          <a class="group inline-flex items-center justify-center rounded-full py-2 px-4 text-sm font-semibold focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-2 bg-white text-slate-900 hover:bg-blue-50 active:bg-blue-200 active:text-slate-600 focus-visible:outline-white mt-8" aria-label="Ver la fase 2 del método" href="/metodo">Ver el método</a>
+        </section>
+        <section class="flex flex-col rounded-3xl px-6 sm:px-8 lg:py-8">
+          <h3 class="mt-5 font-display text-lg text-white">Consectetur</h3>
+          <p class="mt-2 text-base text-slate-400">Adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
+          <p class="order-first font-display text-5xl font-light tracking-tight text-white">Fase 3</p>
+          <ul role="list" class="order-last mt-10 flex flex-col gap-y-3 text-sm text-slate-200">
+            <li class="flex"><svg aria-hidden="true" class="h-6 w-6 flex-none fill-current stroke-current text-slate-400" viewBox="0 0 24 24"><path d="M9.307 12.248a.75.75 0 1 0-1.114 1.004l1.114-1.004ZM11 15.25l-.557.502a.75.75 0 0 0 1.15-.043L11 15.25Zm4.844-5.041a.75.75 0 0 0-1.188-.918l1.188.918Zm-7.651 3.043 2.25 2.5 1.114-1.004-2.25-2.5-1.114 1.004Zm3.4 2.457 4.25-5.5-1.187-.918-4.25 5.5 1.188.918Z" stroke-width="0"></path><circle cx="12" cy="12" r="8.25" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></circle></svg><span class="ml-4">Cillum dolore eu fugiat</span></li>
+            <li class="flex"><svg aria-hidden="true" class="h-6 w-6 flex-none fill-current stroke-current text-slate-400" viewBox="0 0 24 24"><path d="M9.307 12.248a.75.75 0 1 0-1.114 1.004l1.114-1.004ZM11 15.25l-.557.502a.75.75 0 0 0 1.15-.043L11 15.25Zm4.844-5.041a.75.75 0 0 0-1.188-.918l1.188.918Zm-7.651 3.043 2.25 2.5 1.114-1.004-2.25-2.5-1.114 1.004Zm3.4 2.457 4.25-5.5-1.187-.918-4.25 5.5 1.188.918Z" stroke-width="0"></path><circle cx="12" cy="12" r="8.25" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></circle></svg><span class="ml-4">Nulla pariatur excepteur</span></li>
+            <li class="flex"><svg aria-hidden="true" class="h-6 w-6 flex-none fill-current stroke-current text-slate-400" viewBox="0 0 24 24"><path d="M9.307 12.248a.75.75 0 1 0-1.114 1.004l1.114-1.004ZM11 15.25l-.557.502a.75.75 0 0 0 1.15-.043L11 15.25Zm4.844-5.041a.75.75 0 0 0-1.188-.918l1.188.918Zm-7.651 3.043 2.25 2.5 1.114-1.004-2.25-2.5-1.114 1.004Zm3.4 2.457 4.25-5.5-1.187-.918-4.25 5.5 1.188.918Z" stroke-width="0"></path><circle cx="12" cy="12" r="8.25" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></circle></svg><span class="ml-4">Sint occaecat cupidatat</span></li>
+            <li class="flex"><svg aria-hidden="true" class="h-6 w-6 flex-none fill-current stroke-current text-slate-400" viewBox="0 0 24 24"><path d="M9.307 12.248a.75.75 0 1 0-1.114 1.004l1.114-1.004ZM11 15.25l-.557.502a.75.75 0 0 0 1.15-.043L11 15.25Zm4.844-5.041a.75.75 0 0 0-1.188-.918l1.188.918Zm-7.651 3.043 2.25 2.5 1.114-1.004-2.25-2.5-1.114 1.004Zm3.4 2.457 4.25-5.5-1.187-.918-4.25 5.5 1.188.918Z" stroke-width="0"></path><circle cx="12" cy="12" r="8.25" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></circle></svg><span class="ml-4">Non proident sunt in culpa</span></li>
+            <li class="flex"><svg aria-hidden="true" class="h-6 w-6 flex-none fill-current stroke-current text-slate-400" viewBox="0 0 24 24"><path d="M9.307 12.248a.75.75 0 1 0-1.114 1.004l1.114-1.004ZM11 15.25l-.557.502a.75.75 0 0 0 1.15-.043L11 15.25Zm4.844-5.041a.75.75 0 0 0-1.188-.918l1.188.918Zm-7.651 3.043 2.25 2.5 1.114-1.004-2.25-2.5-1.114 1.004Zm3.4 2.457 4.25-5.5-1.187-.918-4.25 5.5 1.188.918Z" stroke-width="0"></path><circle cx="12" cy="12" r="8.25" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></circle></svg><span class="ml-4">Qui officia deserunt</span></li>
+          </ul>
+          <a class="group inline-flex ring-1 items-center justify-center rounded-full py-2 px-4 text-sm focus:outline-none ring-slate-700 text-white hover:ring-slate-500 active:ring-slate-700 active:text-slate-400 focus-visible:outline-white mt-8" aria-label="Ver la fase 3 del método" href="/metodo">Ver el método</a>
+        </section>
       </div>
     </div>
   </section>
 
-  <!-- Resumen del método en tarjetas tipo "plan" del template (insignia,
-       título, lista con checks). Las fases reales no están transcritas en el
-       proyecto: LOREM IPSUM hasta que Marcelo las entregue. -->
-  <section class="section" id="metodo">
-    <div class="container">
-      <div class="section-header">
-        <h2 class="section-title">Método</h2>
-        <p class="section-description text-balance">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+  <!-- Preguntas frecuentes en tres columnas. Preguntas y respuestas en
+       LOREM IPSUM hasta tener las reales; el correo de apoyo es el real. -->
+  <section id="preguntas" aria-labelledby="faq-title" class="relative overflow-hidden bg-slate-50 py-20 sm:py-32">
+    <img alt="" loading="lazy" width="1558" height="946" decoding="async" class="absolute left-1/2 top-0 max-w-none -translate-y-1/4 translate-x-[-30%]" src="/img/fondo-faq.jpg">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative">
+      <div class="mx-auto max-w-2xl lg:mx-0">
+        <h2 id="faq-title" class="font-display text-3xl tracking-tight text-slate-900 sm:text-4xl">Preguntas frecuentes</h2>
+        <p class="mt-4 text-lg tracking-tight text-slate-700">Si no encuentra lo que busca, escríbanos a <a class="font-medium text-blue-600 hover:underline" href="mailto:marcelo.jaramillo@isamingadigital.cl">marcelo.jaramillo@isamingadigital.cl</a> y le respondemos a la brevedad.</p>
       </div>
-    </div>
-    <div class="container">
-      <div class="plans">
-        <div class="plan">
-          <article class="card">
-            <span class="badge">Fase 1</span>
-            <div class="card-header">
-              <h3 class="card-title">Lorem ipsum</h3>
-              <p class="card-description">Dolor sit amet consectetur</p>
-            </div>
-            <div class="card-content"><p>Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p></div>
-            <div class="card-footer">
-              <ul class="plan-features">
-                <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 6 9 17l-5-5"/></svg>Lorem ipsum dolor</li>
-                <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 6 9 17l-5-5"/></svg>Sit amet consectetur</li>
-              </ul>
-            </div>
-          </article>
-        </div>
-        <div class="plan">
-          <article class="card">
-            <span class="badge">Fase 2</span>
-            <div class="card-header">
-              <h3 class="card-title">Dolor sit amet</h3>
-              <p class="card-description">Consectetur adipiscing elit</p>
-            </div>
-            <div class="card-content"><p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p></div>
-            <div class="card-footer">
-              <ul class="plan-features">
-                <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 6 9 17l-5-5"/></svg>Adipiscing elit sed</li>
-                <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 6 9 17l-5-5"/></svg>Eiusmod tempor</li>
-              </ul>
-            </div>
-          </article>
-        </div>
-        <div class="plan">
-          <article class="card">
-            <span class="badge">Fase 3</span>
-            <div class="card-header">
-              <h3 class="card-title">Consectetur</h3>
-              <p class="card-description">Sed do eiusmod tempor</p>
-            </div>
-            <div class="card-content"><p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum.</p></div>
-            <div class="card-footer">
-              <ul class="plan-features">
-                <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 6 9 17l-5-5"/></svg>Incididunt ut labore</li>
-                <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 6 9 17l-5-5"/></svg>Et dolore magna</li>
-              </ul>
-            </div>
-          </article>
-        </div>
-      </div>
-      <div class="features-more">
-        <a class="btn btn-link" href="/metodo">
-          Ver el método completo
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Bloque de cierre reutilizable (inicio y páginas internas). Datos reales:
-       oficina y canales de contacto verificados en el Diagnóstico. -->
-  <section class="section">
-    <div class="container">
-      <div class="cta-box">
-        <h2 class="section-title">¿Comenzamos?</h2>
-        <p class="section-description text-balance">Oficina en Trizano 250, Temuco. Atención con cita previa. Cuéntanos sobre tu empresa y coordinamos una reunión.</p>
-        <div class="actions">
-          <a class="btn btn-primary" href="/contacto">Conversemos</a>
-          <a class="btn btn-outline" href="https://wa.me/56996471981" target="_blank" rel="noopener">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M2.992 16.342a2 2 0 0 1 .094 1.167l-1.065 3.29a1 1 0 0 0 1.236 1.168l3.413-.998a2 2 0 0 1 1.099.092 10 10 0 1 0-4.777-4.719"/></svg>
-            Escribir por WhatsApp
-          </a>
-        </div>
-      </div>
+      <ul role="list" class="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-8 lg:max-w-none lg:grid-cols-3">
+        <li>
+          <ul role="list" class="flex flex-col gap-y-8">
+            <li>
+              <h3 class="font-display text-lg leading-7 text-slate-900">¿Lorem ipsum dolor sit amet?</h3>
+              <p class="mt-4 text-sm text-slate-700">Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            </li>
+            <li>
+              <h3 class="font-display text-lg leading-7 text-slate-900">¿Ut enim ad minim veniam, quis nostrud exercitation?</h3>
+              <p class="mt-4 text-sm text-slate-700">Ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            </li>
+            <li>
+              <h3 class="font-display text-lg leading-7 text-slate-900">¿Duis aute irure dolor in reprehenderit?</h3>
+              <p class="mt-4 text-sm text-slate-700">In voluptate velit esse cillum dolore eu fugiat nulla pariatur, sunt in culpa qui officia.</p>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <ul role="list" class="flex flex-col gap-y-8">
+            <li>
+              <h3 class="font-display text-lg leading-7 text-slate-900">¿Excepteur sint occaecat cupidatat non proident?</h3>
+              <p class="mt-4 text-sm text-slate-700">Sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            </li>
+            <li>
+              <h3 class="font-display text-lg leading-7 text-slate-900">¿Sed ut perspiciatis unde omnis iste natus error sit voluptatem?</h3>
+              <p class="mt-4 text-sm text-slate-700">Accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+            </li>
+            <li>
+              <h3 class="font-display text-lg leading-7 text-slate-900">¿Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit?</h3>
+              <p class="mt-4 text-sm text-slate-700">Sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt, neque porro quisquam est.</p>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <ul role="list" class="flex flex-col gap-y-8">
+            <li>
+              <h3 class="font-display text-lg leading-7 text-slate-900">¿Qui dolorem ipsum quia dolor sit amet?</h3>
+              <p class="mt-4 text-sm text-slate-700">Consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.</p>
+            </li>
+            <li>
+              <h3 class="font-display text-lg leading-7 text-slate-900">¿Ut enim ad minima veniam, quis nostrum exercitationem?</h3>
+              <p class="mt-4 text-sm text-slate-700">Ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur.</p>
+            </li>
+            <li>
+              <h3 class="font-display text-lg leading-7 text-slate-900">¿Quis autem vel eum iure reprehenderit qui in ea voluptate?</h3>
+              <p class="mt-4 text-sm text-slate-700">Velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur.</p>
+            </li>
+          </ul>
+        </li>
+      </ul>
     </div>
   </section>
 
   </main>
 
-  <footer class="site-footer">
-    <div class="container footer-inner">
-      <div class="footer-row">
-        <div class="footer-brand">
-          <a href="/" class="brand" aria-label="Isaminga Digital, inicio">
-            <img src="/img/logo-horizontal.png" alt="Isaminga Digital" class="brand-logo" width="166" height="44">
-          </a>
-          <p class="tagline">Innovación · Soporte · Automatización</p>
-        </div>
-        <div class="footer-grid">
-          <div class="footer-col">
-            <span class="footer-title">Menú</span>
-            <nav aria-label="Navegación del pie de página">
-        <a href="/quienes-somos">Quiénes somos</a>
-        <a href="/servicios">Servicios</a>
-        <a href="/metodo">Método</a>
-        <a href="/contacto">Contacto</a>
-            </nav>
+  <footer class="bg-slate-50">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="py-16">
+        <img src="/img/logo-horizontal.png" alt="Isaminga Digital" class="mx-auto h-10 w-auto" width="151" height="40">
+        <nav class="mt-10 text-sm" aria-label="Enlaces rápidos">
+          <div class="-my-1 flex justify-center gap-x-6">
+            <a class="inline-block rounded-lg px-2 py-1 text-sm text-slate-700 hover:bg-slate-100 hover:text-slate-900" href="/quienes-somos">Quiénes somos</a>
+            <a class="inline-block rounded-lg px-2 py-1 text-sm text-slate-700 hover:bg-slate-100 hover:text-slate-900" href="/servicios">Servicios</a>
+            <a class="inline-block rounded-lg px-2 py-1 text-sm text-slate-700 hover:bg-slate-100 hover:text-slate-900" href="/metodo">Método</a>
           </div>
-          <div class="footer-col">
-            <span class="footer-title">Contacto</span>
-            <nav aria-label="Contacto">
-              <a href="mailto:marcelo.jaramillo@isamingadigital.cl">marcelo.jaramillo@isamingadigital.cl</a>
-              <a href="https://wa.me/56996471981" target="_blank" rel="noopener">+56 9 9647 1981 (WhatsApp)</a>
-              <span>Trizano 250, Temuco</span>
-            </nav>
-          </div>
-          <div class="footer-col">
-            <span class="footer-title">Atención</span>
-            <nav aria-label="Atención">
-              <span>Con cita previa</span>
-              <span>Sur de Chile</span>
-            </nav>
-          </div>
-        </div>
+        </nav>
       </div>
-      <p class="footer-copy">&copy; 2026 Isaminga Digital. Consultoría de transformación digital: análisis de procesos y análisis presupuestario en tecnología.</p>
+      <div class="flex flex-col items-center border-t border-slate-400/10 py-10 sm:flex-row-reverse sm:justify-between">
+        <div class="flex gap-x-6">
+          <a class="group" aria-label="Escribir a Isaminga Digital por correo" href="mailto:marcelo.jaramillo@isamingadigital.cl">
+            <svg class="h-6 w-6 fill-slate-500 group-hover:fill-slate-700" aria-hidden="true" viewBox="0 0 24 24">
+              <path d="M1.5 8.67v8.58a3 3 0 0 0 3 3h15a3 3 0 0 0 3-3V8.67l-8.928 5.493a3 3 0 0 1-3.144 0L1.5 8.67Z"></path>
+              <path d="M22.5 6.908V6.75a3 3 0 0 0-3-3h-15a3 3 0 0 0-3 3v.158l9.714 5.978a1.5 1.5 0 0 0 1.572 0L22.5 6.908Z"></path>
+            </svg>
+          </a>
+          <a class="group" aria-label="Isaminga Digital en WhatsApp" href="https://wa.me/56996471981" target="_blank" rel="noopener">
+            <svg class="h-6 w-6 fill-slate-500 group-hover:fill-slate-700" aria-hidden="true" viewBox="0 0 24 24">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"></path>
+            </svg>
+          </a>
+        </div>
+        <p class="mt-6 text-sm text-slate-500 sm:mt-0">Copyright &copy; 2026 Isaminga Digital. Todos los derechos reservados.</p>
+      </div>
     </div>
   </footer>
 </body>

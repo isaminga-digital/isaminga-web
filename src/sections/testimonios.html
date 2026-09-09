@@ -1,57 +1,127 @@
-  <!-- Testimonios (patrón del template: tarjetas en mosaico, carrusel por
-       desplazamiento en móvil). TODO PLACEHOLDER: nombres y cargos genéricos,
-       citas en LOREM IPSUM. No hay testimonios reales autorizados todavía. -->
-  <section class="section">
-    <div class="container">
-      <div class="section-header">
-        <h2 class="section-title">Lo que dicen nuestros clientes</h2>
-        <p class="section-description text-balance">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+  <!-- Testimonios en tres columnas. Placeholders a propósito (citas LOREM
+       IPSUM, "Nombre Apellido", avatar genérico): no hay testimonios
+       autorizados todavía. -->
+  <section id="testimonios" aria-label="Lo que dicen los clientes" class="bg-slate-50 py-20 sm:py-32">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="mx-auto max-w-2xl md:text-center">
+        <h2 class="font-display text-3xl tracking-tight text-slate-900 sm:text-4xl">Lo que dicen nuestros clientes.</h2>
+        <p class="mt-4 text-lg tracking-tight text-slate-700">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
       </div>
-    </div>
-    <div class="container">
-      <div class="testimonials">
-        <figure>
-          <article class="card">
-            <figcaption class="card-header testimonial-author">
-              <span class="avatar" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></span>
-              <div>
-                <p class="card-title">Nombre Apellido</p>
-                <p class="card-description">Cargo, Empresa</p>
-              </div>
-            </figcaption>
-            <div class="card-content">
-              <blockquote>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</blockquote>
-            </div>
-          </article>
-        </figure>
-        <figure>
-          <article class="card">
-            <figcaption class="card-header testimonial-author">
-              <span class="avatar" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></span>
-              <div>
-                <p class="card-title">Nombre Apellido</p>
-                <p class="card-description">Cargo, Empresa</p>
-              </div>
-            </figcaption>
-            <div class="card-content">
-              <blockquote>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</blockquote>
-            </div>
-          </article>
-        </figure>
-        <figure>
-          <article class="card">
-            <figcaption class="card-header testimonial-author">
-              <span class="avatar" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></span>
-              <div>
-                <p class="card-title">Nombre Apellido</p>
-                <p class="card-description">Cargo, Empresa</p>
-              </div>
-            </figcaption>
-            <div class="card-content">
-              <blockquote>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</blockquote>
-            </div>
-          </article>
-        </figure>
-      </div>
+      <ul role="list" class="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-6 sm:gap-8 lg:mt-20 lg:max-w-none lg:grid-cols-3">
+        <li>
+          <ul role="list" class="flex flex-col gap-y-6 sm:gap-y-8">
+            <li>
+              <figure class="relative rounded-2xl bg-white p-6 shadow-xl shadow-slate-900/10">
+                <span aria-hidden="true" class="absolute left-4 -top-2 select-none font-display text-[9rem] leading-none text-slate-100">&ldquo;</span>
+                <blockquote class="relative">
+                  <p class="text-lg tracking-tight text-slate-900">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                </blockquote>
+                <figcaption class="relative mt-6 flex items-center justify-between border-t border-slate-100 pt-6">
+                  <div>
+                    <div class="font-display text-base text-slate-900">Nombre Apellido</div>
+                    <div class="mt-1 text-sm text-slate-500">Cargo, Empresa</div>
+                  </div>
+                  <div class="overflow-hidden rounded-full bg-slate-50">
+                    <svg class="h-14 w-14 p-3 text-slate-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                  </div>
+                </figcaption>
+              </figure>
+            </li>
+            <li>
+              <figure class="relative rounded-2xl bg-white p-6 shadow-xl shadow-slate-900/10">
+                <span aria-hidden="true" class="absolute left-4 -top-2 select-none font-display text-[9rem] leading-none text-slate-100">&ldquo;</span>
+                <blockquote class="relative">
+                  <p class="text-lg tracking-tight text-slate-900">Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>
+                </blockquote>
+                <figcaption class="relative mt-6 flex items-center justify-between border-t border-slate-100 pt-6">
+                  <div>
+                    <div class="font-display text-base text-slate-900">Nombre Apellido</div>
+                    <div class="mt-1 text-sm text-slate-500">Cargo, Empresa</div>
+                  </div>
+                  <div class="overflow-hidden rounded-full bg-slate-50">
+                    <svg class="h-14 w-14 p-3 text-slate-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                  </div>
+                </figcaption>
+              </figure>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <ul role="list" class="flex flex-col gap-y-6 sm:gap-y-8">
+            <li>
+              <figure class="relative rounded-2xl bg-white p-6 shadow-xl shadow-slate-900/10">
+                <span aria-hidden="true" class="absolute left-4 -top-2 select-none font-display text-[9rem] leading-none text-slate-100">&ldquo;</span>
+                <blockquote class="relative">
+                  <p class="text-lg tracking-tight text-slate-900">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore.</p>
+                </blockquote>
+                <figcaption class="relative mt-6 flex items-center justify-between border-t border-slate-100 pt-6">
+                  <div>
+                    <div class="font-display text-base text-slate-900">Nombre Apellido</div>
+                    <div class="mt-1 text-sm text-slate-500">Cargo, Empresa</div>
+                  </div>
+                  <div class="overflow-hidden rounded-full bg-slate-50">
+                    <svg class="h-14 w-14 p-3 text-slate-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                  </div>
+                </figcaption>
+              </figure>
+            </li>
+            <li>
+              <figure class="relative rounded-2xl bg-white p-6 shadow-xl shadow-slate-900/10">
+                <span aria-hidden="true" class="absolute left-4 -top-2 select-none font-display text-[9rem] leading-none text-slate-100">&ldquo;</span>
+                <blockquote class="relative">
+                  <p class="text-lg tracking-tight text-slate-900">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores.</p>
+                </blockquote>
+                <figcaption class="relative mt-6 flex items-center justify-between border-t border-slate-100 pt-6">
+                  <div>
+                    <div class="font-display text-base text-slate-900">Nombre Apellido</div>
+                    <div class="mt-1 text-sm text-slate-500">Cargo, Empresa</div>
+                  </div>
+                  <div class="overflow-hidden rounded-full bg-slate-50">
+                    <svg class="h-14 w-14 p-3 text-slate-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                  </div>
+                </figcaption>
+              </figure>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <ul role="list" class="flex flex-col gap-y-6 sm:gap-y-8">
+            <li>
+              <figure class="relative rounded-2xl bg-white p-6 shadow-xl shadow-slate-900/10">
+                <span aria-hidden="true" class="absolute left-4 -top-2 select-none font-display text-[9rem] leading-none text-slate-100">&ldquo;</span>
+                <blockquote class="relative">
+                  <p class="text-lg tracking-tight text-slate-900">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium.</p>
+                </blockquote>
+                <figcaption class="relative mt-6 flex items-center justify-between border-t border-slate-100 pt-6">
+                  <div>
+                    <div class="font-display text-base text-slate-900">Nombre Apellido</div>
+                    <div class="mt-1 text-sm text-slate-500">Cargo, Empresa</div>
+                  </div>
+                  <div class="overflow-hidden rounded-full bg-slate-50">
+                    <svg class="h-14 w-14 p-3 text-slate-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                  </div>
+                </figcaption>
+              </figure>
+            </li>
+            <li>
+              <figure class="relative rounded-2xl bg-white p-6 shadow-xl shadow-slate-900/10">
+                <span aria-hidden="true" class="absolute left-4 -top-2 select-none font-display text-[9rem] leading-none text-slate-100">&ldquo;</span>
+                <blockquote class="relative">
+                  <p class="text-lg tracking-tight text-slate-900">Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae.</p>
+                </blockquote>
+                <figcaption class="relative mt-6 flex items-center justify-between border-t border-slate-100 pt-6">
+                  <div>
+                    <div class="font-display text-base text-slate-900">Nombre Apellido</div>
+                    <div class="mt-1 text-sm text-slate-500">Cargo, Empresa</div>
+                  </div>
+                  <div class="overflow-hidden rounded-full bg-slate-50">
+                    <svg class="h-14 w-14 p-3 text-slate-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                  </div>
+                </figcaption>
+              </figure>
+            </li>
+          </ul>
+        </li>
+      </ul>
     </div>
   </section>

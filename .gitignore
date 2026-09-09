@@ -1,3 +1,4 @@
-# Salida de build (se publica sola vía GitHub Actions o al comitear la raíz)
 dist/
 dist-preview/
+node_modules/
+dist-pruebas/

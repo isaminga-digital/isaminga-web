@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es-CL">
+<html lang="es-CL" class="h-full scroll-smooth bg-white antialiased">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,7 +8,7 @@
   <meta name="author" content="Isaminga Digital">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://isamingadigital.cl/contacto">
-  <meta name="theme-color" content="#0448A3">
+  <meta name="theme-color" content="#2563eb">
 
   <!-- Favicon derivado del isotipo del logo actual (ver Manual de marca:
        pierde detalle bajo 40 px, se reemplaza cuando exista una version apta) -->
@@ -52,152 +52,60 @@
     ]
   }
   </script>
-  <!-- Tipografia: Inter para todo (parrafos fija; titulos tambien mientras
-       Roboto siga en evaluacion, 03-09-2026). Ver Tipografia-Isaminga.md -->
+  <!-- Tipografia del diseno de referencia: Inter para texto y Lexend para
+       titulos (font-display). Roboto sigue en evaluacion, ver Tipografia-Isaminga.md -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lexend:wght@300;400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/css/styles.css">
   <script src="/js/main.js" defer></script>
 </head>
-<body>
+<body class="flex h-full flex-col">
 
-  <header class="site-header">
-    <div class="container nav-inner">
-      <a href="/" class="brand" aria-label="Isaminga Digital, inicio">
-        <img src="/img/logo-horizontal.png" alt="Isaminga Digital" class="brand-logo" width="166" height="44">
-      </a>
-      <nav class="main-nav" aria-label="Navegación principal">
-        <a href="/quienes-somos">Quiénes somos</a>
-        <a href="/servicios">Servicios</a>
-        <a href="/metodo">Método</a>
-        <a href="/contacto" aria-current="page">Contacto</a>
-      </nav>
-      <div class="nav-actions">
-        <a href="/contacto" class="btn btn-primary" aria-current="page">Conversemos</a>
-      </div>
-      <button type="button" class="btn btn-ghost btn-icon nav-toggle" data-menu-toggle aria-controls="mobile-menu" aria-expanded="false">
-        <span class="sr-only">Menú</span>
-        <svg class="icon-menu" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 5h16"/><path d="M4 12h16"/><path d="M4 19h16"/></svg>
-        <svg class="icon-x" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
-      </button>
-    </div>
-    <div id="mobile-menu" class="mobile-menu" hidden>
-      <nav aria-label="Navegación móvil">
-        <a href="/quienes-somos">Quiénes somos</a>
-        <a href="/servicios">Servicios</a>
-        <a href="/metodo">Método</a>
-        <a href="/contacto" aria-current="page">Contacto</a>
-        <a href="/contacto" class="btn btn-primary">Conversemos</a>
-      </nav>
-    </div>
-  </header>
+  <div class="relative flex min-h-full shrink-0 justify-center md:px-12 lg:px-0">
+    <div class="relative z-10 flex flex-1 flex-col bg-white px-4 py-10 shadow-2xl sm:justify-center md:flex-none md:px-28">
 
-
-  <main>
-  <!-- Contacto (patrón del template: tarjeta centrada con formulario). El sitio
-       es estático y aún no tiene servicio de envío: el botón arma un correo
-       con los datos y abre el cliente de correo (js/main.js). Datos de
-       contacto verificados; teléfono confirmado para publicar (04-09-2026). -->
-  <section class="section">
-    <div class="container">
-      <article class="card contact-card">
-        <div class="card-header">
-          <h1 class="card-title">Contacto</h1>
-          <p class="card-description">Cuéntanos sobre tu empresa y coordinamos una reunión.</p>
-        </div>
-        <div class="card-content">
-          <form class="form" data-mailto="marcelo.jaramillo@isamingadigital.cl" novalidate>
-            <div class="field">
-              <label for="nombre">Nombre</label>
-              <input class="input" id="nombre" name="nombre" type="text" autocomplete="name" placeholder="Tu nombre">
-            </div>
-            <div class="field">
-              <label for="empresa">Empresa</label>
-              <input class="input" id="empresa" name="empresa" type="text" autocomplete="organization" placeholder="Nombre de la empresa">
-            </div>
-            <div class="field">
-              <label for="correo">Correo</label>
-              <input class="input" id="correo" name="correo" type="email" autocomplete="email" placeholder="tu@empresa.cl">
-            </div>
-            <div class="field">
-              <label for="mensaje">¿En qué te podemos ayudar?</label>
-              <textarea class="textarea" id="mensaje" name="mensaje" placeholder="Cuéntanos brevemente la situación de tu empresa"></textarea>
-            </div>
-            <button class="btn btn-primary" type="submit">Enviar mensaje</button>
-            <p class="form-note">Al enviar se abre tu programa de correo con el mensaje listo para mandar.</p>
-          </form>
-        </div>
-      </article>
-    </div>
-    <div class="container">
-      <div class="cards contact-info">
-        <article class="card">
-          <div class="card-content">
-            <svg class="card-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg>
-            <span class="label">Oficina</span>
-            <span>Trizano 250, Temuco</span>
-            <span class="label">Atención con cita previa</span>
-          </div>
-        </article>
-        <article class="card">
-          <div class="card-content">
-            <svg class="card-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7"/><rect x="2" y="4" width="20" height="16" rx="2"/></svg>
-            <span class="label">Correo</span>
-            <a href="mailto:marcelo.jaramillo@isamingadigital.cl">marcelo.jaramillo@isamingadigital.cl</a>
-          </div>
-        </article>
-        <article class="card">
-          <div class="card-content">
-            <svg class="card-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M2.992 16.342a2 2 0 0 1 .094 1.167l-1.065 3.29a1 1 0 0 0 1.236 1.168l3.413-.998a2 2 0 0 1 1.099.092 10 10 0 1 0-4.777-4.719"/></svg>
-            <span class="label">WhatsApp</span>
-            <a href="https://wa.me/56996471981" target="_blank" rel="noopener">+56 9 9647 1981</a>
-          </div>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  </main>
-
-  <footer class="site-footer">
-    <div class="container footer-inner">
-      <div class="footer-row">
-        <div class="footer-brand">
-          <a href="/" class="brand" aria-label="Isaminga Digital, inicio">
-            <img src="/img/logo-horizontal.png" alt="Isaminga Digital" class="brand-logo" width="166" height="44">
+      <main class="mx-auto w-full max-w-md sm:px-4 md:w-96 md:max-w-sm md:px-0">
+        <!-- Contacto con el layout angosto (panel blanco + imagen de fondo).
+             Datos reales: WhatsApp, oficina, correo. El envío arma un correo
+             en el programa del visitante (sitio estático, ver js/main.js). -->
+        <div class="flex">
+          <a aria-label="Inicio" href="/">
+            <img src="/img/logo-horizontal.png" alt="Isaminga Digital" class="h-10 w-auto" width="151" height="40">
           </a>
-          <p class="tagline">Innovación · Soporte · Automatización</p>
         </div>
-        <div class="footer-grid">
-          <div class="footer-col">
-            <span class="footer-title">Menú</span>
-            <nav aria-label="Navegación del pie de página">
-        <a href="/quienes-somos">Quiénes somos</a>
-        <a href="/servicios">Servicios</a>
-        <a href="/metodo">Método</a>
-        <a href="/contacto" aria-current="page">Contacto</a>
-            </nav>
+        <h1 class="mt-20 text-lg font-semibold text-gray-900">Hablemos de su empresa</h1>
+        <p class="mt-2 text-sm text-gray-700">¿Prefiere WhatsApp? <a class="font-medium text-blue-600 hover:underline" href="https://wa.me/56996471981" target="_blank" rel="noopener">Escríbanos al +56 9 9647 1981</a> y coordinamos una reunión.</p>
+        <form class="mt-10 grid grid-cols-1 gap-y-8" action="#" data-mailto="marcelo.jaramillo@isamingadigital.cl">
+          <div>
+            <label for="nombre" class="mb-3 block text-sm font-medium text-gray-700">Nombre</label>
+            <input id="nombre" name="nombre" type="text" autocomplete="name" required class="block w-full appearance-none rounded-md border border-gray-200 bg-gray-50 px-3 py-2 text-gray-900 placeholder-gray-400 focus:border-blue-500 focus:bg-white focus:outline-none focus:ring-blue-500 sm:text-sm">
           </div>
-          <div class="footer-col">
-            <span class="footer-title">Contacto</span>
-            <nav aria-label="Contacto">
-              <a href="mailto:marcelo.jaramillo@isamingadigital.cl">marcelo.jaramillo@isamingadigital.cl</a>
-              <a href="https://wa.me/56996471981" target="_blank" rel="noopener">+56 9 9647 1981 (WhatsApp)</a>
-              <span>Trizano 250, Temuco</span>
-            </nav>
+          <div>
+            <label for="empresa" class="mb-3 block text-sm font-medium text-gray-700">Empresa</label>
+            <input id="empresa" name="empresa" type="text" autocomplete="organization" class="block w-full appearance-none rounded-md border border-gray-200 bg-gray-50 px-3 py-2 text-gray-900 placeholder-gray-400 focus:border-blue-500 focus:bg-white focus:outline-none focus:ring-blue-500 sm:text-sm">
           </div>
-          <div class="footer-col">
-            <span class="footer-title">Atención</span>
-            <nav aria-label="Atención">
-              <span>Con cita previa</span>
-              <span>Sur de Chile</span>
-            </nav>
+          <div>
+            <label for="correo" class="mb-3 block text-sm font-medium text-gray-700">Correo electrónico</label>
+            <input id="correo" name="correo" type="email" autocomplete="email" required class="block w-full appearance-none rounded-md border border-gray-200 bg-gray-50 px-3 py-2 text-gray-900 placeholder-gray-400 focus:border-blue-500 focus:bg-white focus:outline-none focus:ring-blue-500 sm:text-sm">
           </div>
-        </div>
-      </div>
-      <p class="footer-copy">&copy; 2026 Isaminga Digital. Consultoría de transformación digital: análisis de procesos y análisis presupuestario en tecnología.</p>
+          <div>
+            <label for="mensaje" class="mb-3 block text-sm font-medium text-gray-700">Mensaje</label>
+            <textarea id="mensaje" name="mensaje" rows="4" required class="block w-full appearance-none rounded-md border border-gray-200 bg-gray-50 px-3 py-2 text-gray-900 placeholder-gray-400 focus:border-blue-500 focus:bg-white focus:outline-none focus:ring-blue-500 sm:text-sm"></textarea>
+          </div>
+          <div>
+            <button class="group inline-flex items-center justify-center rounded-full py-2 px-4 text-sm font-semibold focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-2 bg-blue-600 text-white hover:text-slate-100 hover:bg-blue-500 active:bg-blue-800 active:text-blue-100 focus-visible:outline-blue-600 w-full" type="submit">
+              <span>Enviar <span aria-hidden="true">&rarr;</span></span>
+            </button>
+          </div>
+        </form>
+        <p class="mt-10 text-sm text-gray-700">Oficina en Trizano 250, Temuco. Atención con cita previa.<br><a class="font-medium text-blue-600 hover:underline" href="mailto:marcelo.jaramillo@isamingadigital.cl">marcelo.jaramillo@isamingadigital.cl</a></p>
+
+      </main>
     </div>
-  </footer>
+    <div class="hidden sm:contents lg:relative lg:block lg:flex-1">
+      <img alt="" class="absolute inset-0 h-full w-full object-cover" src="/img/fondo-contacto.jpg" width="1664" height="1866">
+    </div>
+  </div>
 </body>
 </html>
