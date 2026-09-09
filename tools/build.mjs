@@ -20,6 +20,7 @@
  */
 
 import { readFileSync, writeFileSync, readdirSync, rmSync, mkdirSync, cpSync, existsSync } from 'node:fs'
+import { createHash } from 'node:crypto'
 import { join, dirname, resolve } from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { HOST, SITES, PAGES, LIMITES, MINIMO_PALABRAS_DEFAULT } from '../src/site.config.mjs'
@@ -82,8 +83,17 @@ function navLinks(currentSlug, clase, sangria) {
     .join('\n')
 }
 
+// Versión corta del contenido de css/ y js/: va como ?v= en las URLs para que
+// una publicación nueva no conviva con un CSS viejo en la caché del navegador
+// (GitHub Pages cachea 10 minutos).
+function versionDe(...archivos) {
+  const h = createHash('sha1')
+  for (const a of archivos) if (existsSync(join(ROOT, a))) h.update(readFileSync(join(ROOT, a)))
+  return h.digest('hex').slice(0, 8)
+}
+
 function buildPage(site, page, sections, partials) {
-  const vars = { lang: site.lang, host: site.host, locale: site.locale, robots: site.robots }
+  const vars = { lang: site.lang, host: site.host, locale: site.locale, robots: site.robots, cssv: versionDe('css/styles.css'), jsv: versionDe('js/main.js') }
   const layout = page.layout || 'default'
 
   const title = page.title
