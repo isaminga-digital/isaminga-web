@@ -113,7 +113,8 @@ main { flex: 1; display: flex; flex-direction: column; gap: 5rem; padding: 2rem 
 .site-header { position: sticky; top: 0; z-index: 10; border-bottom: 1px solid var(--border); background: var(--card); padding: 1rem 0; }
 .nav-inner { display: grid; grid-template-columns: auto auto; align-items: center; justify-content: space-between; }
 .brand { display: inline-flex; align-items: center; }
-.brand-logo { height: 2.5rem; width: auto; }
+.brand-logo { height: 2.75rem; width: auto; }
+.footer-brand .brand-logo { height: 3rem; }
 .main-nav { display: none; }
 .nav-actions { display: none; }
 .nav-toggle { justify-self: end; }
