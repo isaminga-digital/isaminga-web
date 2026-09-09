@@ -1,7 +1,8 @@
 /* Isaminga Digital — hoja de estilos base.
-   Paleta: Enfoque 1 (extraída del logo) como placeholder, PENDIENTE de que
-   Marcelo elija entre los 2 enfoques de Paleta-Isaminga.md. Cambiar solo estos
-   tokens cuando se confirme; el resto del CSS no debería tocarse. */
+   Paleta: Enfoque 1 (extraída del logo), tomada como supuesto de trabajo
+   (09-09-2026) mientras Marcelo confirma entre los 2 enfoques de
+   Paleta-Isaminga.md, mismo criterio que el Manual de marca. Cambiar solo
+   estos tokens si elige el Enfoque 2; el resto del CSS no debería tocarse. */
 
 :root {
   --azul: #0448A3;
