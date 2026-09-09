@@ -88,7 +88,8 @@ function navLinks(currentSlug, clase, sangria) {
 // (GitHub Pages cachea 10 minutos).
 function versionDe(...archivos) {
   const h = createHash('sha1')
-  for (const a of archivos) if (existsSync(join(ROOT, a))) h.update(readFileSync(join(ROOT, a)))
+  // Saltos de línea normalizados: el hash tiene que dar igual en Windows (CRLF) y en la CI (LF).
+  for (const a of archivos) if (existsSync(join(ROOT, a))) h.update(readFileSync(join(ROOT, a), 'utf8').split(String.fromCharCode(13)).join(''))
   return h.digest('hex').slice(0, 8)
 }
 
