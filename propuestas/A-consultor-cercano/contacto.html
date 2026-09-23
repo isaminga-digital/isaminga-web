@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="es-CL">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contacto | Isaminga Digital</title>
+  <meta name="description" content="Conversemos sobre tu empresa. Oficina en Trizano 250, Temuco, con atención presencial y cita previa. Correo y WhatsApp.">
+  <meta name="robots" content="noindex">
+  <link rel="icon" type="image/png" href="../../img/favicon.png">
+  <link rel="stylesheet" href="estilos.css">
+  <script>document.documentElement.classList.add('js')</script>
+</head>
+<body>
+  <a class="saltar" href="#contenido">Saltar al contenido</a>
+  <header class="encabezado">
+    <div class="contenedor">
+      <a class="logo" href="index.html" aria-label="Isaminga Digital, inicio">
+        <img src="../../img/logo-horizontal.png" alt="Isaminga Digital" width="151" height="40">
+      </a>
+      <nav class="menu" aria-label="Principal">
+        <a href="servicios.html">Servicios</a>
+        <a href="index.html#como-trabajamos">Cómo trabajamos</a>
+        <a href="quienes-somos.html">Quiénes somos</a>
+        <a class="boton boton-principal" href="contacto.html" aria-current="page">Conversemos</a>
+      </nav>
+      <button class="boton-menu" type="button" data-menu-boton aria-expanded="false" aria-controls="menu-movil" aria-label="Abrir menú">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+      </button>
+    </div>
+    <nav id="menu-movil" class="menu-movil" aria-label="Principal, móvil" hidden>
+      <ul>
+        <li><a href="servicios.html">Servicios</a></li>
+        <li><a href="index.html#como-trabajamos">Cómo trabajamos</a></li>
+        <li><a href="quienes-somos.html">Quiénes somos</a></li>
+        <li><a class="boton boton-principal" href="contacto.html" aria-current="page">Conversemos</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="contenido">
+    <section class="cabecera">
+      <div class="contenedor">
+        <p class="antetitulo">Contacto</p>
+        <h1>Conversemos sobre tu empresa.</h1>
+        <p class="bajada">Cuéntanos en pocas líneas qué te preocupa. Te respondemos para coordinar una reunión.</p>
+      </div>
+    </section>
+
+    <section aria-label="Formulario y datos de contacto">
+      <div class="contenedor contacto">
+        <form class="formulario" data-mailto="marcelo.jaramillo@isamingadigital.cl">
+          <div class="campo">
+            <label for="nombre">Nombre</label>
+            <input id="nombre" name="nombre" type="text" autocomplete="name" required>
+          </div>
+          <div class="campo">
+            <label for="empresa">Empresa</label>
+            <input id="empresa" name="empresa" type="text" autocomplete="organization">
+          </div>
+          <div class="campo ancho">
+            <label for="correo">Correo electrónico</label>
+            <input id="correo" name="correo" type="email" autocomplete="email" required>
+          </div>
+          <div class="campo ancho">
+            <label for="mensaje">¿Qué te gustaría resolver?</label>
+            <textarea id="mensaje" name="mensaje" required></textarea>
+          </div>
+          <div class="ancho">
+            <button class="boton boton-principal" type="submit" style="cursor:pointer;font:inherit;font-weight:600">Enviar mensaje</button>
+          </div>
+          <p class="nota ancho">Al enviar se abre tu programa de correo con el mensaje listo.</p>
+        </form>
+
+        <div class="canales">
+          <div class="canal">
+            <div class="sector-icono"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg></div>
+            <div>
+              <h2>¿Prefieres WhatsApp?</h2>
+              <p>Escríbenos al <a href="https://wa.me/56996471981" target="_blank" rel="noopener">+56 9 9647 1981</a> y coordinamos.</p>
+            </div>
+          </div>
+          <div class="canal">
+            <div class="sector-icono"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg></div>
+            <div>
+              <h2>Oficina</h2>
+              <p>Trizano 250, Temuco. Atención presencial con cita previa.</p>
+            </div>
+          </div>
+          <div class="canal">
+            <div class="sector-icono"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg></div>
+            <div>
+              <h2>Correo</h2>
+              <p><a href="mailto:marcelo.jaramillo@isamingadigital.cl" style="overflow-wrap:anywhere">marcelo.jaramillo@isamingadigital.cl</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="pie">
+    <div class="contenedor">
+      <div class="pie-grilla">
+        <div>
+          <img src="../../img/logo-horizontal.png" alt="Isaminga Digital" width="151" height="40">
+          <p>Consultoría de transformación digital con presencia en el sur de Chile.</p>
+        </div>
+        <nav aria-label="Enlaces del pie">
+          <h2>Sitio</h2>
+          <ul>
+            <li><a href="servicios.html">Servicios</a></li>
+            <li><a href="index.html#como-trabajamos">Cómo trabajamos</a></li>
+            <li><a href="quienes-somos.html">Quiénes somos</a></li>
+            <li><a href="contacto.html" aria-current="page">Contacto</a></li>
+          </ul>
+        </nav>
+        <div>
+          <h2>Oficina</h2>
+          <ul>
+            <li>Trizano 250, Temuco</li>
+            <li>Atención con cita previa</li>
+            <li><a href="mailto:marcelo.jaramillo@isamingadigital.cl" style="overflow-wrap:anywhere">marcelo.jaramillo@isamingadigital.cl</a></li>
+            <li><a href="https://wa.me/56996471981" target="_blank" rel="noopener">WhatsApp +56 9 9647 1981</a></li>
+          </ul>
+        </div>
+      </div>
+      <p class="pie-legal">© 2026 Isaminga Digital. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+  <script src="app.js"></script>
+</body>
+</html>
