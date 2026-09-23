@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es-CL">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contacto | Isaminga Digital</title>
+  <meta name="description" content="Hablemos de lo que viene para tu empresa. Oficina en Trizano 250, Temuco, con cita previa. Escríbenos por correo o por WhatsApp.">
+  <meta name="robots" content="noindex">
+  <link rel="icon" type="image/png" href="../../img/favicon.png">
+  <link rel="stylesheet" href="estilos.css">
+  <script>document.documentElement.classList.add('js')</script>
+</head>
+<body>
+  <a class="saltar" href="#contenido">Saltar al contenido</a>
+  <header class="encabezado">
+    <div class="encabezado-caja">
+      <a class="logo" href="index.html" aria-label="Isaminga Digital, inicio">
+        <img src="../../img/logo-horizontal.png" alt="Isaminga Digital" width="136" height="36">
+      </a>
+      <nav class="menu" aria-label="Principal">
+        <a href="servicios.html">Servicios</a>
+        <a href="index.html#metodo">Método</a>
+        <a href="quienes-somos.html">Quiénes somos</a>
+        <a class="boton boton-oscuro" href="contacto.html" aria-current="page">Conversemos</a>
+      </nav>
+      <button class="boton-menu" type="button" data-menu-boton aria-expanded="false" aria-controls="menu-movil" aria-label="Abrir menú">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="4" x2="20" y1="7" y2="7"/><line x1="8" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="17" y2="17"/></svg>
+      </button>
+    </div>
+    <nav id="menu-movil" class="menu-movil" aria-label="Principal, móvil" hidden>
+      <ul>
+        <li><a href="servicios.html">Servicios</a></li>
+        <li><a href="index.html#metodo">Método</a></li>
+        <li><a href="quienes-somos.html">Quiénes somos</a></li>
+        <li><a href="contacto.html" aria-current="page">Conversemos</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="contenido">
+    <section class="cabecera" style="padding-bottom:2.5rem">
+      <span class="cabecera-hexa" aria-hidden="true"></span>
+      <div class="contenedor">
+        <p class="antetitulo">Contacto</p>
+        <h1>Hablemos de <span class="texto-degradado">lo que viene.</span></h1>
+      </div>
+    </section>
+
+    <section aria-label="Datos y formulario de contacto" style="padding-bottom:5rem">
+      <div class="contenedor contacto">
+        <div class="panel-oscuro revela">
+          <img class="isotipo" src="../../img/isotipo.png" alt="Isotipo de Isaminga Digital" width="72" height="72">
+          <h2>Estamos en Temuco.</h2>
+          <dl>
+            <div><dt>Oficina</dt><dd>Trizano 250, Temuco. Atención presencial con cita previa.</dd></div>
+            <div><dt>WhatsApp</dt><dd><a href="https://wa.me/56996471981" target="_blank" rel="noopener">+56 9 9647 1981</a></dd></div>
+            <div><dt>Correo</dt><dd><a href="mailto:marcelo.jaramillo@isamingadigital.cl">marcelo.jaramillo@isamingadigital.cl</a></dd></div>
+          </dl>
+        </div>
+        <form class="formulario revela" data-mailto="marcelo.jaramillo@isamingadigital.cl">
+          <div class="campo"><label for="nombre">Nombre</label><input id="nombre" name="nombre" type="text" autocomplete="name" required></div>
+          <div class="campo"><label for="empresa">Empresa</label><input id="empresa" name="empresa" type="text" autocomplete="organization"></div>
+          <div class="campo ancho"><label for="correo">Correo electrónico</label><input id="correo" name="correo" type="email" autocomplete="email" required></div>
+          <div class="campo ancho"><label for="mensaje">¿Qué quieres mover en tu empresa?</label><textarea id="mensaje" name="mensaje" required></textarea></div>
+          <div class="ancho"><button class="boton boton-oscuro" type="submit">Enviar mensaje<svg class="flecha" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></button></div>
+          <p class="nota ancho">Al enviar se abre tu programa de correo con el mensaje listo.</p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="pie">
+    <div class="contenedor">
+      <div class="pie-grilla">
+        <div>
+          <img src="../../img/logo-horizontal.png" alt="Isaminga Digital" width="151" height="40">
+          <p>Consultoría de transformación digital con presencia en el sur de Chile.</p>
+        </div>
+        <nav aria-label="Enlaces del pie">
+          <h2>Sitio</h2>
+          <ul>
+            <li><a href="servicios.html">Servicios</a></li>
+            <li><a href="index.html#metodo">Método</a></li>
+            <li><a href="quienes-somos.html">Quiénes somos</a></li>
+            <li><a href="contacto.html" aria-current="page">Contacto</a></li>
+          </ul>
+        </nav>
+        <div>
+          <h2>Contacto</h2>
+          <ul>
+            <li>Trizano 250, Temuco</li>
+            <li>Atención con cita previa</li>
+            <li><a href="https://wa.me/56996471981" target="_blank" rel="noopener">+56 9 9647 1981</a></li>
+          </ul>
+        </div>
+      </div>
+      <p class="pie-legal">© 2026 Isaminga Digital. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+  <script src="app.js"></script>
+</body>
+</html>
