@@ -4,106 +4,261 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Propuestas de sitio | Isaminga Digital</title>
-  <meta name="description" content="Tres propuestas de diseño y contenido para el sitio de Isaminga Digital.">
+  <meta name="description" content="Las tres propuestas de sitio para Isaminga Digital, una encima de otra, con un botón para pasar de una a la siguiente.">
   <meta name="robots" content="noindex">
   <link rel="icon" type="image/png" href="../img/favicon.png">
+
+  <!--
+    Vista comparada de las propuestas.
+
+    Cada propuesta se sirve entera dentro de su propio documento, en un iframe:
+    así ninguna comparte estilos ni scripts con las otras y se ve exactamente
+    como se ve sola. El toggle solo cambia cuál se muestra.
+
+    El selector es un interruptor de varias posiciones (tipo píldora con un
+    pulsador que se desplaza), en tamaño chico. Esta versión:
+
+    - El ancho de la píldora se calcula desde el número de opciones, en vez de
+      estar fijo en 4,5 rem, que solo cuadra con tres.
+    - Anillo de foco con focus-visible.
+    - No escribe en localStorage hasta que alguien hace clic.
+    - La clave de localStorage y el sustantivo de los textos son configuración.
+    - Flechas izquierda y derecha, además del clic.
+    - Respeta prefers-reduced-motion.
+
+    Para llevarlo a otro proyecto: se copia este archivo, se cambia OPCIONES y
+    AJUSTES, y si el efecto no es un iframe se reescribe alMostrar().
+  -->
+
   <style>
-    @font-face { font-family: 'Inter'; font-style: normal; font-weight: 100 900; font-display: swap; src: url('../fonts/inter-latin.woff2') format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
-    @font-face { font-family: 'Inter'; font-style: normal; font-weight: 100 900; font-display: swap; src: url('../fonts/inter-latin-ext.woff2') format('woff2'); unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }
-    :root { --tinta: #1F2937; --suave: #4B5563; --fondo: #F6F7F9; --borde: #E5E7EB; --azul: #0448A3; }
+    /* Colores del toggle: pista gris translúcida y acento naranja. Para
+       vestirlo con la paleta de Isaminga: pista #D6DAE0, activo #0448A3,
+       anillo #FE8119. */
+    :root {
+      --toggle-pista: hsl(0 0% 63.9% / 0.4);
+      --toggle-pulsador: #fff;
+      --toggle-icono-primero: hsl(0 0% 63.9%);
+      --toggle-icono-resto: hsl(25 95% 53%);
+      --toggle-anillo: hsl(25 95% 53%);
+      --toggle-anillo-fondo: #fff;
+      --toggle-etiqueta-fondo: #1F2937;
+      --toggle-etiqueta-texto: #fff;
+    }
+
     *, *::before, *::after { box-sizing: border-box; }
-    body { margin: 0; font-family: 'Inter', system-ui, sans-serif; color: var(--tinta); background: var(--fondo); line-height: 1.6; }
-    a { color: var(--azul); }
-    :focus-visible { outline: 3px solid #FE8119; outline-offset: 3px; border-radius: 6px; }
-    .contenedor { max-width: 76rem; margin: 0 auto; padding: 0 1.25rem; }
-    @media (min-width: 768px) { .contenedor { padding: 0 2.5rem; } }
-    header { background: #fff; border-bottom: 1px solid var(--borde); }
-    header .contenedor { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding-top: 1rem; padding-bottom: 1rem; }
-    header img { height: 2.25rem; width: auto; }
-    header span { font-size: .85rem; color: var(--suave); }
-    .intro { padding: 3.5rem 0 2rem; }
-    h1 { font-size: clamp(2rem, 4.5vw, 3rem); line-height: 1.1; letter-spacing: -0.03em; margin: 0; }
-    .intro p { font-size: 1.1rem; color: var(--suave); margin: 1rem 0 0; max-width: 44rem; }
-    .aviso { display: flex; gap: .75rem; align-items: flex-start; margin-top: 1.5rem; background: #FFF7ED; border: 1px solid #FED7AA; color: #7C2D12; border-radius: .75rem; padding: 1rem 1.25rem; max-width: 44rem; font-size: .95rem; }
-    .tarjetas { display: grid; gap: 1.5rem; padding-bottom: 4rem; }
-    @media (min-width: 960px) { .tarjetas { grid-template-columns: repeat(3, 1fr); } }
-    .tarjeta { background: #fff; border: 1px solid var(--borde); border-radius: 1.25rem; overflow: hidden; display: flex; flex-direction: column; transition: transform .25s ease, box-shadow .25s ease; }
-    .tarjeta:hover { transform: translateY(-4px); box-shadow: 0 24px 50px -30px rgba(0,0,0,.35); }
-    .captura { display: block; aspect-ratio: 4 / 3; overflow: hidden; border-bottom: 1px solid var(--borde); background: #fff; }
-    .captura img { width: 100%; height: 100%; object-fit: cover; object-position: top; transition: object-position 4s ease; }
-    .tarjeta:hover .captura img { object-position: center 18%; }
-    @media (prefers-reduced-motion: reduce) { .tarjeta, .captura img { transition: none; } }
-    .cuerpo { padding: 1.5rem; display: flex; flex-direction: column; gap: .9rem; flex: 1; }
-    .letra { display: inline-grid; place-items: center; width: 2rem; height: 2rem; border-radius: .5rem; color: #fff; font-weight: 700; }
-    h2 { margin: 0; font-size: 1.35rem; letter-spacing: -0.01em; display: flex; align-items: center; gap: .75rem; }
-    .cuerpo p { margin: 0; color: var(--suave); }
-    .cuerpo p strong { color: var(--tinta); }
-    .paleta { display: flex; gap: .3rem; }
-    .paleta span { width: 1.5rem; height: 1.5rem; border-radius: .4rem; border: 1px solid rgba(0,0,0,.08); }
-    .rasgos { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: .4rem; font-size: .8rem; }
-    .rasgos li { background: var(--fondo); border: 1px solid var(--borde); padding: .2rem .6rem; border-radius: 999px; }
-    .enlaces { margin-top: auto; display: flex; flex-wrap: wrap; gap: .5rem 1rem; font-size: .92rem; padding-top: .5rem; }
-    .ver { display: inline-block; background: var(--tinta); color: #fff; text-decoration: none; font-weight: 600; padding: .6rem 1rem; border-radius: .6rem; }
-    .ver:hover { background: #000; }
-    footer { border-top: 1px solid var(--borde); padding: 1.5rem 0 2.5rem; font-size: .85rem; color: var(--suave); }
+    html, body { height: 100%; margin: 0; }
+    /* Blanco: es el fondo que pone el navegador cuando una página no define el
+       suyo, y un iframe es transparente. */
+    body { background: #fff; font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+
+    .solo-lectores {
+      position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+      overflow: hidden; clip-path: inset(50%); white-space: nowrap; border: 0;
+    }
+
+    .marco { display: block; width: 100%; height: 100%; border: 0; background: #fff; }
+
+    /* La posición es de la página, no del componente: se mueve desde AJUSTES. */
+    .zona {
+      position: fixed;
+      z-index: 10;
+      display: flex;
+      align-items: center;
+      gap: 0.625rem;
+    }
+
+    /* relative inline-flex items-center rounded-full, alto h-7 del tamaño sm. */
+    .toggle {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      flex: none;
+      height: 1.75rem;
+      padding: 0;
+      border: 0;
+      border-radius: 9999px;
+      background-color: var(--toggle-pista);
+      cursor: pointer;
+      transition: background-color 200ms cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    /* El ancho lo escribe el script, calculado desde el número de opciones. */
+
+    .toggle:focus { outline: 2px solid transparent; outline-offset: 2px; }
+    .toggle:focus-visible {
+      outline: 2px solid transparent;
+      outline-offset: 2px;
+      box-shadow: 0 0 0 2px var(--toggle-anillo-fondo), 0 0 0 4px var(--toggle-anillo);
+    }
+
+    /* inline-flex items-center justify-center rounded-full bg-white shadow-sm,
+       h-5 w-5 del tamaño sm. */
+    .pulsador {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      height: 1.25rem;
+      width: 1.25rem;
+      border-radius: 9999px;
+      background-color: var(--toggle-pulsador);
+      box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+      transition: transform 200ms cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .pulsador svg { height: 0.75rem; width: 0.75rem; }
+
+    .etiqueta {
+      padding: 0.25rem 0.625rem;
+      border-radius: 9999px;
+      background: var(--toggle-etiqueta-fondo);
+      color: var(--toggle-etiqueta-texto);
+      font-size: 0.75rem;
+      font-weight: 600;
+      line-height: 1.4;
+      white-space: nowrap;
+      box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.15);
+    }
+    /* En pantallas angostas la etiqueta se va: el sitio de abajo importa más. */
+    @media (max-width: 480px) { .etiqueta { display: none; } }
+
+    @media (prefers-reduced-motion: reduce) {
+      .toggle, .pulsador { transition: none; }
+    }
   </style>
 </head>
 <body>
-  <header>
-    <div class="contenedor">
-      <img src="../img/logo-horizontal.png" alt="Isaminga Digital" width="136" height="36">
-      <span>Propuestas de sitio web</span>
-    </div>
-  </header>
+  <h1 class="solo-lectores">Propuestas de sitio para Isaminga Digital</h1>
 
-  <main class="contenedor">
-    <section class="intro">
-      <h1>Tres caminos para el sitio de Isaminga Digital</h1>
-      <p>Cada propuesta tiene su propia voz, paleta y estructura. Todas usan el logo actual, los cinco servicios, los seis sectores y los datos de la oficina de Temuco. Elijan una, o combinen lo que más les guste de cada una.</p>
-      <p class="aviso"><span aria-hidden="true">✎</span><span><strong>Los textos son borradores en validación.</strong> Están escritos como texto final para que se lean de verdad, pero cada frase nueva debe confirmarla Marcelo antes de publicarse. Nada de lo que se ve aquí está publicado.</span></p>
-    </section>
+  <iframe class="marco" data-marco title="Cargando propuesta"></iframe>
 
-    <section class="tarjetas" aria-label="Propuestas">
-      <article class="tarjeta">
-        <a class="captura" href="A-consultor-cercano/index.html" tabindex="-1" aria-hidden="true"><img src="A-consultor-cercano/capturas/index-1440.png" alt="" loading="lazy"></a>
-        <div class="cuerpo">
-          <h2><span class="letra" style="background:#0448A3">A</span>Consultor senior cercano</h2>
-          <p><strong>Transmite</strong> cercanía y experiencia: se lee como la primera reunión, con las preguntas antes que la tecnología.</p>
-          <p><strong>Le habla mejor</strong> al dueño o gerente de una pyme que nunca contrató una consultoría y quiere que primero lo escuchen.</p>
-          <div class="paleta" aria-label="Paleta: azul corporativo, azul cielo, naranja, celeste y grafito"><span style="background:#0448A3"></span><span style="background:#0295D6"></span><span style="background:#FE8119"></span><span style="background:#B8E2F8"></span><span style="background:#3A3A3C"></span></div>
-          <ul class="rasgos"><li>Tuteo</li><li>Colores del logo</li><li>Títulos en Lexend</li><li>Sin placeholders</li></ul>
-          <p class="enlaces"><a class="ver" href="A-consultor-cercano/index.html">Ver propuesta A</a><a href="A-consultor-cercano/servicios.html">Servicios</a><a href="A-consultor-cercano/contacto.html">Contacto</a></p>
-        </div>
-      </article>
+  <div class="zona" data-zona>
+    <button type="button" class="toggle" data-boton>
+      <span class="pulsador" data-pulsador></span>
+    </button>
+    <span class="etiqueta" data-etiqueta hidden></span>
+  </div>
 
-      <article class="tarjeta">
-        <a class="captura" href="B-corporativo-sobrio/index.html" tabindex="-1" aria-hidden="true"><img src="B-corporativo-sobrio/capturas/index-1440.png" alt="" loading="lazy"></a>
-        <div class="cuerpo">
-          <h2><span class="letra" style="background:#1E3A5F">B</span>Corporativo sobrio</h2>
-          <p><strong>Transmite</strong> rigor y método: el trabajo se explica en cuatro etapas, cada una con un resultado para la gerencia.</p>
-          <p><strong>Le habla mejor</strong> a gerencias y directorios de empresas medianas que comparan consultoras y deben justificar la decisión.</p>
-          <div class="paleta" aria-label="Paleta: azul marino, azul, ámbar, gris claro y tinta"><span style="background:#1E3A5F"></span><span style="background:#2563EB"></span><span style="background:#F59E0B"></span><span style="background:#F1F5F9"></span><span style="background:#0F172A"></span></div>
-          <ul class="rasgos"><li>Trato de usted</li><li>Paleta corporativa</li><li>Títulos con serifa</li><li>Pendientes marcados</li></ul>
-          <p class="enlaces"><a class="ver" href="B-corporativo-sobrio/index.html">Ver propuesta B</a><a href="B-corporativo-sobrio/servicios.html">Líneas de práctica</a><a href="B-corporativo-sobrio/contacto.html">Contacto</a></p>
-        </div>
-      </article>
+  <script>
+    (function () {
+      'use strict'
 
-      <article class="tarjeta">
-        <a class="captura" href="C-moderno-aspiracional/index.html" tabindex="-1" aria-hidden="true"><img src="C-moderno-aspiracional/capturas/index-1440.png" alt="" loading="lazy"></a>
-        <div class="cuerpo">
-          <h2><span class="letra" style="background:#0A1A33">C</span>Moderno y aspiracional</h2>
-          <p><strong>Transmite</strong> energía y ambición, con un relato propio: la minga chilota que mueve la casa, presente en el nombre y en el isotipo, llevada a la empresa.</p>
-          <p><strong>Le habla mejor</strong> a empresas en crecimiento que quieren modernizarse y buscan una consultora con aire actual y seria.</p>
-          <div class="paleta" aria-label="Paleta: azul noche, azul, cielo, ámbar y brasa"><span style="background:#0A1A33"></span><span style="background:#0448A3"></span><span style="background:#0295D6"></span><span style="background:#FE8119"></span><span style="background:#E8321F"></span></div>
-          <ul class="rasgos"><li>Tuteo</li><li>Paleta del degradado del logo</li><li>Mucho movimiento</li><li>Casos de uso por sector</li></ul>
-          <p class="enlaces"><a class="ver" href="C-moderno-aspiracional/index.html">Ver propuesta C</a><a href="C-moderno-aspiracional/servicios.html">Servicios</a><a href="C-moderno-aspiracional/contacto.html">Contacto</a></p>
-        </div>
-      </article>
-    </section>
-  </main>
+      /* ------------------------------------------------------------------ *
+       * Configuración: esto es lo único que se cambia entre proyectos.      *
+       * ------------------------------------------------------------------ */
 
-  <footer>
-    <div class="contenedor">Prototipos de trabajo. Las fichas de cada propuesta y el detalle de los textos por validar están en la carpeta de propuestas.</div>
-  </footer>
+      // Una entrada por opción, en el orden en que se ciclan. Los iconos son
+      // de Lucide (ISC), que es la librería que usa el resto del sitio.
+      var OPCIONES = [
+        {
+          id: 'a-consultor-cercano',
+          nombre: 'A · Consultor cercano',
+          ruta: 'A-consultor-cercano/index.html',
+          icono: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>',
+        },
+        {
+          id: 'b-corporativo-sobrio',
+          nombre: 'B · Corporativo sobrio',
+          ruta: 'B-corporativo-sobrio/index.html',
+          icono: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"/><path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"/><path d="M10 6h4"/><path d="M10 10h4"/><path d="M10 14h4"/><path d="M10 18h4"/></svg>',
+        },
+        {
+          id: 'c-moderno-aspiracional',
+          nombre: 'C · Moderno aspiracional',
+          ruta: 'C-moderno-aspiracional/index.html',
+          icono: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275Z"/><path d="M5 3v4"/><path d="M19 17v4"/><path d="M3 5h4"/><path d="M17 19h4"/></svg>',
+        },
+      ]
+
+      var AJUSTES = {
+        // Clave de localStorage. Propia de cada proyecto: si dos sitios del
+        // mismo dominio usan la misma, se pisan la elección.
+        clave: 'isaminga-propuesta',
+        // Sustantivo de los textos: "Propuesta A · Consultor cercano".
+        sustantivo: 'Propuesta',
+        // Etiqueta con el nombre al lado de la píldora.
+        etiqueta: true,
+        // Dónde se ancla, en CSS. A la izquierda y centrado verticalmente.
+        posicion: { left: '1rem', top: '50%', transform: 'translateY(-50%)' },
+      }
+
+      /* ------------------------------------------------------------------ *
+       * Medidas del tamaño chico del interruptor.                           *
+       * ------------------------------------------------------------------ */
+
+      var ALTO = 1.75      // h-7
+      var PULSADOR = 1.25  // h-5 w-5
+      var MARGEN = 0.25    // translate-x-1 de la primera posición
+      var PASO = 1.375     // separación entre posiciones
+
+      // El ancho sale del número de opciones. Con tres da 4,5 rem y con
+      // cuatro da 5,875 rem. Así el pulsador nunca se sale.
+      var ANCHO = MARGEN * 2 + PULSADOR + PASO * (OPCIONES.length - 1)
+      var POSICIONES = OPCIONES.map(function (_, i) { return MARGEN + PASO * i })
+
+      /* ------------------------------------------------------------------ *
+       * Qué pasa al mostrar una opción. Acá es cambiar el iframe; si el      *
+       * proyecto destino hace otra cosa, se reescribe solo esta función.     *
+       * ------------------------------------------------------------------ */
+
+      function alMostrar(opcion, marco) {
+        if (marco.getAttribute('src') !== opcion.ruta) marco.setAttribute('src', opcion.ruta)
+        marco.title = AJUSTES.sustantivo + ' ' + opcion.nombre
+      }
+
+      /* ------------------------------------------------------------------ */
+
+      var marco = document.querySelector('[data-marco]')
+      var boton = document.querySelector('[data-boton]')
+      var pulsador = document.querySelector('[data-pulsador]')
+      var etiqueta = document.querySelector('[data-etiqueta]')
+      var zona = document.querySelector('[data-zona]')
+      if (!marco || !boton || !pulsador || OPCIONES.length === 0) return
+
+      boton.style.width = ANCHO + 'rem'
+      if (zona) for (var prop in AJUSTES.posicion) zona.style[prop] = AJUSTES.posicion[prop]
+      if (etiqueta) etiqueta.hidden = !AJUSTES.etiqueta
+
+      // La elección guardada manda; si no hay ninguna, se abre con la primera.
+      var indice = 0
+      try {
+        var guardado = localStorage.getItem(AJUSTES.clave)
+        for (var i = 0; i < OPCIONES.length; i++) if (OPCIONES[i].id === guardado) indice = i
+      } catch (e) {}
+
+      function aplicar(i, guardar) {
+        var opcion = OPCIONES[i]
+        var siguiente = OPCIONES[(i + 1) % OPCIONES.length]
+
+        alMostrar(opcion, marco)
+
+        pulsador.style.transform = 'translateX(' + POSICIONES[i] + 'rem)'
+        pulsador.style.color = i === 0 ? 'var(--toggle-icono-primero)' : 'var(--toggle-icono-resto)'
+        pulsador.innerHTML = opcion.icono
+
+        // title con la opción activa, aria-label con la siguiente.
+        boton.setAttribute('title', AJUSTES.sustantivo + ' ' + opcion.nombre)
+        boton.setAttribute('aria-label', 'Cambiar a ' + AJUSTES.sustantivo + ' ' + siguiente.nombre)
+        if (etiqueta) etiqueta.textContent = opcion.nombre
+
+        // Solo cuando alguien elige: la primera carga no debe dejar rastro.
+        if (guardar) {
+          try { localStorage.setItem(AJUSTES.clave, opcion.id) } catch (e) {}
+        }
+      }
+
+      function mover(paso) {
+        indice = (indice + paso + OPCIONES.length) % OPCIONES.length
+        aplicar(indice, true)
+      }
+
+      aplicar(indice, false)
+
+      boton.addEventListener('click', function () { mover(1) })
+
+      // Las flechas mueven en los dos sentidos: comparar es ir y volver.
+      boton.addEventListener('keydown', function (e) {
+        if (e.key === 'ArrowRight' || e.key === 'ArrowDown') { e.preventDefault(); mover(1) }
+        if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') { e.preventDefault(); mover(-1) }
+      })
+    })()
+  </script>
 </body>
 </html>
