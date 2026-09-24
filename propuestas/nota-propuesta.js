@@ -73,8 +73,6 @@
     '.np-colores { display: flex; gap: .3rem; margin-top: .3rem; }',
     '.np-colores span { width: 1.35rem; height: 1.35rem; border-radius: .35rem; border: 1px solid rgba(0,0,0,.1); }',
     '.np-aviso { margin: 1rem 0 0; padding: .65rem .8rem; border-radius: .6rem; background: #FFF7ED; border: 1px solid #FED7AA; color: #7C2D12; font-size: .82rem; }',
-    '.np-pie { margin: .9rem 0 0; font-size: .85rem; }',
-    '.np-pie a { color: #0448A3; font-weight: 600; }',
     '.np-pastilla { position: fixed; z-index: 1000; right: 1rem; bottom: 1rem; display: inline-flex; align-items: center; gap: .5rem; border: 0; border-radius: 999px; background: #1F2937; color: #fff; font-size: .85rem; font-weight: 600; padding: .6rem 1rem .6rem .6rem; cursor: pointer; box-shadow: 0 12px 30px -12px rgba(15,23,42,.6); }',
     '.np-pastilla b { display: inline-grid; place-items: center; width: 1.6rem; height: 1.6rem; border-radius: 999px; background: #fff; color: #1F2937; font-size: .8rem; }',
     '.np-pastilla:hover { background: #111827; }',
@@ -103,8 +101,7 @@
     '<div><dt>Tipografía</dt><dd>' + p.tipografia + '</dd></div>' +
     '<div><dt>Testimonios y cifras</dt><dd>' + p.pendientes + '</dd></div>' +
     '</dl>' +
-    '<p class="np-aviso">Los textos son borradores en validación con Marcelo.</p>' +
-    '<p class="np-pie"><a href="../index.html" target="_top">Ver las tres propuestas</a></p>'
+    '<p class="np-aviso">Todo el contenido es propuesto y debe ser actualizado.</p>'
 
   var pastilla = document.createElement('button')
   pastilla.type = 'button'
