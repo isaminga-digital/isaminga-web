@@ -60,7 +60,7 @@
   var estilos = document.createElement('style')
   estilos.textContent = [
     '.np-tarjeta, .np-pastilla { font-family: "Inter", system-ui, sans-serif; color: #1F2937; }',
-    '.np-tarjeta { position: fixed; z-index: 1000; right: 1rem; bottom: 1rem; width: min(23rem, calc(100vw - 2rem)); max-height: calc(100vh - 2rem); overflow: auto; background: #fff; border: 1px solid #E5E7EB; border-radius: 1rem; box-shadow: 0 24px 60px -20px rgba(15,23,42,.45); padding: 1.25rem 1.25rem 1.1rem; font-size: .9rem; line-height: 1.55; }',
+    '.np-tarjeta { position: fixed; z-index: 1000; right: 1rem; bottom: 1rem; width: min(23rem, calc(100vw - 2rem)); max-height: calc(100vh - 2rem); overflow: auto; background: #fff; border: 1px solid #E5E7EB; border-radius: 1rem; box-shadow: 0 24px 60px -20px rgba(15,23,42,.45); padding: 1rem 1.1rem .9rem; font-size: .875rem; line-height: 1.45; }',
     '.np-tarjeta[hidden], .np-pastilla[hidden] { display: none; }',
     '.np-entra { animation: np-entrar .35s cubic-bezier(.2,.8,.2,1) both; }',
     '@keyframes np-entrar { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: none; } }',
@@ -70,24 +70,25 @@
     '.np-tarjeta h2 { margin: .1rem 0 0; font-family: inherit; font-size: 1.1rem; line-height: 1.25; letter-spacing: -0.01em; font-weight: 700; color: #111827; }',
     '.np-cerrar { position: absolute; top: .75rem; right: .75rem; display: inline-grid; place-items: center; width: 2rem; height: 2rem; border: 0; border-radius: .5rem; background: transparent; color: #374151; cursor: pointer; }',
     '.np-cerrar:hover { background: #F3F4F6; }',
-    '.np-tarjeta dl { margin: 1rem 0 0; display: grid; gap: .65rem; }',
+    '.np-tarjeta dl { margin: .75rem 0 0; display: grid; gap: .45rem; }',
     '.np-tarjeta dt { font-size: .72rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: #4B5563; }',
     '.np-tarjeta dd { margin: .1rem 0 0; }',
     '.np-colores { display: flex; gap: .3rem; margin-top: .3rem; }',
     '.np-colores span { width: 1.35rem; height: 1.35rem; border-radius: .35rem; border: 1px solid rgba(0,0,0,.1); }',
-    '.np-aviso { margin: 1rem 0 0; padding: .65rem .8rem; border-radius: .6rem; background: #FFF7ED; border: 1px solid #FED7AA; color: #7C2D12; font-size: .82rem; }',
+    '.np-aviso { margin: .75rem 0 0; padding: .55rem .75rem; border-radius: .6rem; background: #FFF7ED; border: 1px solid #FED7AA; color: #7C2D12; font-size: .82rem; }',
     '.np-pastilla { position: fixed; z-index: 1000; right: 1rem; bottom: 1rem; display: inline-flex; align-items: center; gap: .5rem; border: 0; border-radius: 999px; background: #1F2937; color: #fff; font-size: .85rem; font-weight: 600; padding: .6rem 1rem .6rem .6rem; cursor: pointer; box-shadow: 0 12px 30px -12px rgba(15,23,42,.6); }',
     '.np-pastilla b { display: inline-grid; place-items: center; width: 1.6rem; height: 1.6rem; border-radius: 999px; background: #fff; color: #1F2937; font-size: .8rem; }',
     '.np-pastilla:hover { background: #111827; }',
     '.np-tarjeta :focus-visible, .np-pastilla:focus-visible { outline: 3px solid #FE8119; outline-offset: 2px; }',
     '@media (max-width: 600px) { .np-tarjeta { right: .5rem; left: .5rem; bottom: .5rem; width: auto; max-height: 45vh; } .np-pastilla { right: .75rem; bottom: .75rem; } }',
     '@media (prefers-reduced-motion: reduce) { .np-entra { animation: none; } }',
-    // Dentro del visor: el interruptor de propuestas mide 1.75rem y está centrado
-    // en vertical (top 50%), así que su borde inferior queda en 50% + .875rem;
-    // .75rem de separación da 50% + 1.625rem.
-    '.np-pastilla.np-visor { right: auto; bottom: auto; left: 1rem; top: calc(50% + 1.625rem); }',
-    '.np-tarjeta.np-visor { right: auto; bottom: auto; left: 1rem; top: calc(50% + 1.625rem); max-height: calc(50vh - 2.625rem); }',
-    '@media (max-width: 600px) { .np-pastilla.np-visor { left: .75rem; } .np-tarjeta.np-visor { left: .5rem; right: .5rem; bottom: auto; top: calc(50% + 1.625rem); max-height: calc(50vh - 2.5rem); } }',
+    // Dentro del visor: el interruptor de propuestas mide 1.75rem y tiene su
+    // centro a 11rem del borde superior (AJUSTES.posicion en index.html), así
+    // que su borde inferior queda en 11.875rem; .75rem de separación da
+    // 12.625rem. La tarjeta ocupa hasta 1rem del borde inferior.
+    '.np-pastilla.np-visor { right: auto; bottom: auto; left: 1rem; top: 12.625rem; }',
+    '.np-tarjeta.np-visor { right: auto; bottom: auto; left: 1rem; top: 12.625rem; max-height: calc(100vh - 13.625rem); }',
+    '@media (max-width: 600px) { .np-pastilla.np-visor { left: .75rem; } .np-tarjeta.np-visor { left: .5rem; right: .5rem; bottom: auto; top: 12.625rem; max-height: calc(100vh - 13.375rem); } }',
   ].join('\n')
   document.head.appendChild(estilos)
 

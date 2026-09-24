@@ -183,8 +183,11 @@
         // queda visible antes de desvanecerse (0 = siempre visible).
         etiqueta: true,
         etiquetaSegundos: 3,
-        // Dónde se ancla, en CSS. A la izquierda y centrado verticalmente.
-        posicion: { left: '1rem', top: '50%', transform: 'translateY(-50%)' },
+        // Dónde se ancla, en CSS. A la izquierda, con el centro a 11rem del
+        // borde superior: bajo el encabezado más alto de las propuestas y con
+        // sitio debajo para la tarjeta "Sobre esta propuesta" (nota-propuesta.js
+        // calcula su posición a partir de este mismo valor).
+        posicion: { left: '1rem', top: '11rem', transform: 'translateY(-50%)' },
       }
 
       /* ------------------------------------------------------------------ *
