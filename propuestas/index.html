@@ -27,6 +27,8 @@
     - Respeta prefers-reduced-motion.
     - La etiqueta con el nombre se desvanece a los 3 segundos y vuelve al
       cambiar de propuesta o al pasar el puntero por el interruptor.
+    - Al cambiar de propuesta, la tarjeta "Sobre esta propuesta" arranca
+      cerrada aunque en la anterior estuviera abierta.
 
     Para llevarlo a otro proyecto: se copia este archivo, se cambia OPCIONES y
     AJUSTES, y si el efecto no es un iframe se reescribe alMostrar().
@@ -210,6 +212,15 @@
        * ------------------------------------------------------------------ */
 
       function alMostrar(opcion, marco) {
+        // Cada cambio de propuesta arranca con la tarjeta "Sobre esta propuesta"
+        // cerrada: se borra el recuerdo de sesión que guarda nota-propuesta.js.
+        // El iframe es del mismo origen y la misma pestaña, así que comparte
+        // sessionStorage con esta página.
+        try {
+          Object.keys(sessionStorage)
+            .filter(function (k) { return k.indexOf('nota-propuesta-') === 0 })
+            .forEach(function (k) { sessionStorage.removeItem(k) })
+        } catch (e) {}
         if (marco.getAttribute('src') !== opcion.ruta) marco.setAttribute('src', opcion.ruta)
         marco.title = AJUSTES.sustantivo + ' ' + opcion.nombre
       }
