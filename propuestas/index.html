@@ -41,8 +41,7 @@
     :root {
       --toggle-pista: hsl(0 0% 63.9% / 0.4);
       --toggle-pulsador: #fff;
-      --toggle-icono-primero: hsl(0 0% 63.9%);
-      --toggle-icono-resto: hsl(25 95% 53%);
+      --toggle-icono: hsl(25 95% 53%);
       --toggle-anillo: hsl(25 95% 53%);
       --toggle-anillo-fondo: #fff;
       --toggle-etiqueta-fondo: #1F2937;
@@ -235,6 +234,7 @@
       if (!marco || !boton || !pulsador || OPCIONES.length === 0) return
 
       boton.style.width = ANCHO + 'rem'
+      pulsador.style.color = 'var(--toggle-icono)'
       if (zona) for (var prop in AJUSTES.posicion) zona.style[prop] = AJUSTES.posicion[prop]
       if (etiqueta) etiqueta.hidden = !AJUSTES.etiqueta
 
@@ -262,7 +262,6 @@
         alMostrar(opcion, marco)
 
         pulsador.style.transform = 'translateX(' + POSICIONES[i] + 'rem)'
-        pulsador.style.color = i === 0 ? 'var(--toggle-icono-primero)' : 'var(--toggle-icono-resto)'
         pulsador.innerHTML = opcion.icono
 
         // Sin title: la etiqueta ya muestra la opción activa y el tooltip del
