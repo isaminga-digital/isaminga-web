@@ -251,8 +251,9 @@
         pulsador.style.color = i === 0 ? 'var(--toggle-icono-primero)' : 'var(--toggle-icono-resto)'
         pulsador.innerHTML = opcion.icono
 
-        // title con la opción activa, aria-label con la siguiente.
-        boton.setAttribute('title', AJUSTES.sustantivo + ' ' + opcion.nombre)
+        // Sin title: la etiqueta ya muestra la opción activa y el tooltip del
+        // navegador la repetía. El aria-label anuncia la siguiente.
+        boton.removeAttribute('title')
         boton.setAttribute('aria-label', 'Cambiar a ' + AJUSTES.sustantivo + ' ' + siguiente.nombre)
         if (etiqueta) { etiqueta.textContent = opcion.nombre; mostrarEtiqueta() }
 

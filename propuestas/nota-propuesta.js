@@ -2,11 +2,14 @@
 //
 // Se incluye en las cuatro páginas de cada propuesta con
 //   <script src="../nota-propuesta.js" defer></script>
-// Detecta la propuesta por la carpeta de la URL y muestra una tarjeta que se
-// puede cerrar. Al cerrarla queda una pastilla para volver a abrirla. Durante
-// la sesión recuerda que se cerró, para no reaparecer en cada página de la
-// misma propuesta. Estilo neutro, igual en las tres: describe la propuesta y
-// no forma parte de su diseño.
+// Detecta la propuesta por la carpeta de la URL y deja una pastilla "Sobre esta
+// propuesta" que abre una tarjeta con la descripción. La tarjeta empieza
+// cerrada; si se abre, sigue abierta en las demás páginas de la misma
+// propuesta durante la sesión. Dentro del visor (propuestas/index.html) la
+// pastilla y la tarjeta se anclan a la izquierda, bajo el interruptor de
+// propuestas; en una propuesta abierta sola quedan abajo a la derecha. Estilo
+// neutro, igual en las tres: describe la propuesta y no forma parte de su
+// diseño.
 (function () {
   'use strict'
 
@@ -79,13 +82,21 @@
     '.np-tarjeta :focus-visible, .np-pastilla:focus-visible { outline: 3px solid #FE8119; outline-offset: 2px; }',
     '@media (max-width: 600px) { .np-tarjeta { right: .5rem; left: .5rem; bottom: .5rem; width: auto; max-height: 45vh; } .np-pastilla { right: .75rem; bottom: .75rem; } }',
     '@media (prefers-reduced-motion: reduce) { .np-entra { animation: none; } }',
+    // Dentro del visor: el interruptor de propuestas mide 1.75rem y está centrado
+    // en vertical (top 50%), así que su borde inferior queda en 50% + .875rem;
+    // .75rem de separación da 50% + 1.625rem.
+    '.np-pastilla.np-visor { right: auto; bottom: auto; left: 1rem; top: calc(50% + 1.625rem); }',
+    '.np-tarjeta.np-visor { right: auto; bottom: auto; left: 1rem; top: calc(50% + 1.625rem); max-height: calc(50vh - 2.625rem); }',
+    '@media (max-width: 600px) { .np-pastilla.np-visor { left: .75rem; } .np-tarjeta.np-visor { left: .5rem; right: .5rem; bottom: auto; top: calc(50% + 1.625rem); max-height: calc(50vh - 2.5rem); } }',
   ].join('\n')
   document.head.appendChild(estilos)
 
   var colores = p.paleta.map(function (c) { return '<span style="background:' + c + '"></span>' }).join('')
 
+  var enVisor = window.self !== window.top
+
   var tarjeta = document.createElement('section')
-  tarjeta.className = 'np-tarjeta'
+  tarjeta.className = 'np-tarjeta' + (enVisor ? ' np-visor' : '')
   tarjeta.setAttribute('role', 'dialog')
   tarjeta.setAttribute('aria-labelledby', 'np-titulo')
   tarjeta.innerHTML =
@@ -105,7 +116,7 @@
 
   var pastilla = document.createElement('button')
   pastilla.type = 'button'
-  pastilla.className = 'np-pastilla'
+  pastilla.className = 'np-pastilla' + (enVisor ? ' np-visor' : '')
   pastilla.setAttribute('aria-label', 'Abrir la descripción de la propuesta ' + p.letra)
   pastilla.innerHTML = '<b aria-hidden="true">' + p.letra + '</b>Sobre esta propuesta'
 
@@ -142,7 +153,8 @@
   document.body.appendChild(tarjeta)
   document.body.appendChild(pastilla)
 
-  // Se abre sola la primera vez; si ya se cerró en esta sesión, queda la pastilla.
-  if (leer() === 'cerrada') { tarjeta.hidden = true; pastilla.hidden = false }
-  else abrir(false)
+  // Empieza cerrada. Solo se abre sola si el visitante la abrió antes en esta
+  // sesión (y no la cerró), para que lo acompañe entre páginas de la propuesta.
+  if (leer() === 'abierta') abrir(false)
+  else { tarjeta.hidden = true; pastilla.hidden = false }
 })()
