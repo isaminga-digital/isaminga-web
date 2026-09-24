@@ -87,10 +87,15 @@ sin él las rutas absolutas se rompen bajo el subpath). El preview vive en el re
 `isaminga-digital.github.io`, que se sirve en la raíz:
 
 ```bash
-node tools/build.mjs --out=dist-preview   # incluye propuestas/
-# borrar dist-preview/CNAME, copiar el contenido a un checkout de
-# isaminga-digital/isaminga-digital.github.io, commit y push
+npm run preview   # -> dist-preview/: sin CNAME, sin sitemap, robots en Disallow, propuestas/ incluidas
+# copiar el contenido a un checkout de isaminga-digital/isaminga-digital.github.io, commit y push
 ```
+
+**Mientras no se elija una propuesta (decisión de Camilo, 24-09-2026), en el preview las cinco
+páginas del sitio redirigen al visor `/propuestas/`**, así quien abra el preview no ve el diseño
+anterior. Producción (la raíz de este repo) sigue con el sitio generado; para volver a mostrarlo
+en el preview, quitar la redirección en `paginaRedireccion` de `tools/build.mjs` o generar con
+`node tools/build.mjs --out=dist-preview` sin `--preview` y borrar `CNAME` a mano.
 
 ## Pendientes conocidos
 

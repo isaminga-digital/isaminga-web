@@ -6,7 +6,7 @@
     "build:css": "tailwindcss -c tailwind.config.cjs -i src/css/tailwind.css -o css/styles.css --minify",
     "build:html": "node tools/build.mjs --out=.",
     "build": "npm run build:css && npm run build:html",
-    "preview": "node tools/build.mjs --out=dist-preview",
+    "preview": "node tools/build.mjs --preview",
     "serve": "node tools/serve.mjs dist",
     "dev": "node tools/watch.mjs",
     "verify": "node tools/verify.mjs --port=8099",

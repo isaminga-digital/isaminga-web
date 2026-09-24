@@ -2,6 +2,7 @@
  * Generador del sitio de Isaminga Digital.
  *
  *   node tools/build.mjs [--out DIR]   -> isamingadigital.cl
+ *   node tools/build.mjs --preview      -> dist-preview/ para el repo espejo
  *
  * Variante de un solo dominio del generador de incba-web (ver
  * C:\Proyectos\INCBA\docs\Flujo-Sitios-Web-GitHub-Pages.md). Las páginas se
@@ -194,7 +195,32 @@ function sitemapXml(site) {
   return `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls}\n</urlset>\n`
 }
 
-export function build({ siteId, out }) {
+// Modo preview (--preview): salida para el repo espejo isaminga-digital.github.io.
+// Sin CNAME, sin sitemap, robots en Disallow, y cada página del sitio redirige
+// al visor de propuestas mientras no se elija una (decisión de Camilo,
+// 24-09-2026). Producción (--out=.) no cambia.
+const PREVIEW_DESTINO = '/propuestas/'
+
+function paginaRedireccion(site, destino, titulo) {
+  return `<!DOCTYPE html>
+<html lang="${site.lang}">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex">
+  <meta http-equiv="refresh" content="0; url=${destino}">
+  <title>${esc(titulo)}</title>
+  <script>location.replace('${destino}')</script>
+</head>
+<body>
+  <p>Las propuestas de sitio están en <a href="${destino}">${destino}</a>.</p>
+</body>
+</html>
+`
+}
+
+export function build({ siteId, out, preview = false }) {
+  if (preview && out === '.') throw new Error('--preview no puede escribir en la raíz del repo (es producción)')
   const site = SITES[siteId]
   if (!site) throw new Error(`sitio desconocido: ${siteId}`)
 
@@ -229,17 +255,17 @@ export function build({ siteId, out }) {
     for (const asset of ['css', 'js', 'img', 'fonts', 'propuestas']) {
       if (existsSync(join(ROOT, asset))) cpSync(join(ROOT, asset), join(dir, asset), { recursive: true })
     }
-    writeFileSync(join(dir, 'CNAME'), `${site.cname}\n`)
+    if (!preview) writeFileSync(join(dir, 'CNAME'), `${site.cname}\n`)
     writeFileSync(join(dir, '.nojekyll'), '')
   }
 
   for (const [slug, page] of built) {
     const archivo = join(dir, slug ? `${slug}.html` : 'index.html')
     mkdirSync(dirname(archivo), { recursive: true })
-    writeFileSync(archivo, page.html)
+    writeFileSync(archivo, preview ? paginaRedireccion(site, PREVIEW_DESTINO, page.title) : page.html)
   }
-  writeFileSync(join(dir, 'robots.txt'), robotsTxt(site))
-  if (site.sitemap) writeFileSync(join(dir, 'sitemap.xml'), sitemapXml(site))
+  writeFileSync(join(dir, 'robots.txt'), robotsTxt(preview ? { ...site, sitemap: false } : site))
+  if (site.sitemap && !preview) writeFileSync(join(dir, 'sitemap.xml'), sitemapXml(site))
 
   return { site, count: built.length, dir: out }
 }
@@ -257,7 +283,8 @@ if (process.argv[1] && fileURLToPath(import.meta.url) === resolve(process.argv[1
     })
   )
   const siteId = args.site || 'cl'
-  const out = args.out || DEFAULT_OUT[siteId]
-  const r = build({ siteId, out })
-  console.log(`${siteId}: ${r.count} páginas en ${r.dir}/ (${r.site.cname})`)
+  const preview = args.preview === true
+  const out = args.out || (preview ? 'dist-preview' : DEFAULT_OUT[siteId])
+  const r = build({ siteId, out, preview })
+  console.log(`${siteId}: ${r.count} páginas en ${r.dir}/ (${preview ? 'preview, redirigen a ' + PREVIEW_DESTINO : r.site.cname})`)
 }
