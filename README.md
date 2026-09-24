@@ -87,7 +87,7 @@ sin él las rutas absolutas se rompen bajo el subpath). El preview vive en el re
 `isaminga-digital.github.io`, que se sirve en la raíz:
 
 ```bash
-node tools/build.mjs --out=dist-preview
+node tools/build.mjs --out=dist-preview   # incluye propuestas/
 # borrar dist-preview/CNAME, copiar el contenido a un checkout de
 # isaminga-digital/isaminga-digital.github.io, commit y push
 ```

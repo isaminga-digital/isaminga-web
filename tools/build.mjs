@@ -225,7 +225,8 @@ export function build({ siteId, out }) {
   if (out !== '.') {
     rmSync(dir, { recursive: true, force: true })
     mkdirSync(dir, { recursive: true })
-    for (const asset of ['css', 'js', 'img', 'fonts']) {
+    // propuestas/ son páginas estáticas de revisión (noindex) que viajan con el sitio.
+    for (const asset of ['css', 'js', 'img', 'fonts', 'propuestas']) {
       if (existsSync(join(ROOT, asset))) cpSync(join(ROOT, asset), join(dir, asset), { recursive: true })
     }
     writeFileSync(join(dir, 'CNAME'), `${site.cname}\n`)
