@@ -25,6 +25,8 @@
     - La clave de localStorage y el sustantivo de los textos son configuración.
     - Flechas izquierda y derecha, además del clic.
     - Respeta prefers-reduced-motion.
+    - La etiqueta con el nombre se desvanece a los 3 segundos y vuelve al
+      cambiar de propuesta o al pasar el puntero por el interruptor.
 
     Para llevarlo a otro proyecto: se copia este archivo, se cambia OPCIONES y
     AJUSTES, y si el efecto no es un iframe se reescribe alMostrar().
@@ -115,12 +117,16 @@
       line-height: 1.4;
       white-space: nowrap;
       box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.15);
+      transition: opacity 300ms ease;
     }
+    /* Se desvanece sola pasados unos segundos; vuelve al cambiar de propuesta
+       o al pasar el puntero por el interruptor. */
+    .etiqueta.oculta { opacity: 0; pointer-events: none; }
     /* En pantallas angostas la etiqueta se va: el sitio de abajo importa más. */
     @media (max-width: 480px) { .etiqueta { display: none; } }
 
     @media (prefers-reduced-motion: reduce) {
-      .toggle, .pulsador { transition: none; }
+      .toggle, .pulsador, .etiqueta { transition: none; }
     }
   </style>
 </head>
@@ -173,8 +179,10 @@
         clave: 'isaminga-propuesta',
         // Sustantivo de los textos: "Propuesta A · Consultor cercano".
         sustantivo: 'Propuesta',
-        // Etiqueta con el nombre al lado de la píldora.
+        // Etiqueta con el nombre al lado de la píldora, y cuántos segundos
+        // queda visible antes de desvanecerse (0 = siempre visible).
         etiqueta: true,
+        etiquetaSegundos: 3,
         // Dónde se ancla, en CSS. A la izquierda y centrado verticalmente.
         posicion: { left: '1rem', top: '50%', transform: 'translateY(-50%)' },
       }
@@ -223,6 +231,16 @@
         for (var i = 0; i < OPCIONES.length; i++) if (OPCIONES[i].id === guardado) indice = i
       } catch (e) {}
 
+      var temporizadorEtiqueta = null
+      function mostrarEtiqueta() {
+        if (!etiqueta || !AJUSTES.etiqueta) return
+        etiqueta.classList.remove('oculta')
+        clearTimeout(temporizadorEtiqueta)
+        if (AJUSTES.etiquetaSegundos > 0) {
+          temporizadorEtiqueta = setTimeout(function () { etiqueta.classList.add('oculta') }, AJUSTES.etiquetaSegundos * 1000)
+        }
+      }
+
       function aplicar(i, guardar) {
         var opcion = OPCIONES[i]
         var siguiente = OPCIONES[(i + 1) % OPCIONES.length]
@@ -236,7 +254,7 @@
         // title con la opción activa, aria-label con la siguiente.
         boton.setAttribute('title', AJUSTES.sustantivo + ' ' + opcion.nombre)
         boton.setAttribute('aria-label', 'Cambiar a ' + AJUSTES.sustantivo + ' ' + siguiente.nombre)
-        if (etiqueta) etiqueta.textContent = opcion.nombre
+        if (etiqueta) { etiqueta.textContent = opcion.nombre; mostrarEtiqueta() }
 
         // Solo cuando alguien elige: la primera carga no debe dejar rastro.
         if (guardar) {
@@ -252,6 +270,8 @@
       aplicar(indice, false)
 
       boton.addEventListener('click', function () { mover(1) })
+      boton.addEventListener('mouseenter', mostrarEtiqueta)
+      boton.addEventListener('focus', mostrarEtiqueta)
 
       // Las flechas mueven en los dos sentidos: comparar es ir y volver.
       boton.addEventListener('keydown', function (e) {
