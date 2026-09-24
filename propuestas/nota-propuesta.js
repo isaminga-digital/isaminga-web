@@ -119,7 +119,7 @@
   pastilla.type = 'button'
   pastilla.className = 'np-pastilla' + (enVisor ? ' np-visor' : '')
   pastilla.setAttribute('aria-label', 'Abrir la descripción de la propuesta ' + p.letra)
-  pastilla.innerHTML = '<b aria-hidden="true">' + p.letra + '</b>Sobre esta propuesta'
+  pastilla.innerHTML = '<b aria-hidden="true">?</b>Sobre esta propuesta'
 
   var cerrar = tarjeta.querySelector('.np-cerrar')
 
