@@ -52,7 +52,7 @@ rojo anaranjado. La paleta toma esos puntos y agrega un azul noche para las secc
 - Encabezado flotante en cápsula, con sombra que crece al hacer scroll.
 - Hero asimétrico: titular de tres líneas a la izquierda y un panal de hexágonos (forma del isotipo) con el isotipo al
   centro y tres servicios en chips flotantes.
-- Cinta oscura inclinada con los cinco servicios en desplazamiento continuo (se detiene al pasar el puntero).
+- Cinta oscura con los cinco servicios en desplazamiento continuo (se detiene al pasar el puntero). Nació inclinada 1,2 grados; Camilo pidió dejarla recta (24-09-2026).
 - "La minga digital" en sección oscura con halos de luz azul y ámbar.
 - Servicios en mosaico asimétrico: una tesela grande oscura y cuatro claras, cada una con su verbo.
 - Método como pista de cuatro pasos con barra de progreso en degradado.

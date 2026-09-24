@@ -113,7 +113,7 @@ a { color: var(--azul); text-underline-offset: 3px; }
 @media (max-width: 480px) { .chip { font-size: .72rem; padding: .4rem .6rem; } .chip-2 { right: 0; } .chip-1 { left: 0; } }
 
 /* ---------- Cinta de servicios en movimiento ---------- */
-.cinta { background: var(--noche); color: var(--blanco); overflow: hidden; padding: 1.1rem 0; transform: rotate(-1.2deg); margin: 0 -1rem; }
+.cinta { background: var(--noche); color: var(--blanco); overflow: hidden; padding: 1.1rem 0; }
 .cinta-pista { display: flex; width: max-content; gap: 2.5rem; animation: desplazar 38s linear infinite; }
 .cinta:hover .cinta-pista { animation-play-state: paused; }
 .cinta span { font-family: var(--display); font-size: clamp(1.2rem, 2.2vw, 1.7rem); font-weight: 600; display: inline-flex; align-items: center; gap: 2.5rem; white-space: nowrap; }
