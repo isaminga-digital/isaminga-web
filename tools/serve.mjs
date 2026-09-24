@@ -31,6 +31,10 @@ const TIPOS = {
   '.png': 'image/png',
   '.jpg': 'image/jpeg',
   '.svg': 'image/svg+xml',
+  '.woff2': 'font/woff2',
+  '.ico': 'image/x-icon',
+  '.webp': 'image/webp',
+  '.md': 'text/plain; charset=utf-8',
 }
 
 function resolver(urlPath) {

@@ -8,6 +8,7 @@
     "build": "npm run build:css && npm run build:html",
     "preview": "node tools/build.mjs --out=dist-preview",
     "serve": "node tools/serve.mjs dist",
+    "dev": "node tools/watch.mjs",
     "verify": "node tools/verify.mjs --port=8099",
     "test:ui": "node --experimental-websocket tools/pruebas-ui.mjs http://localhost:8100"
   },

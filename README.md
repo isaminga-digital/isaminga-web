@@ -41,7 +41,13 @@ Secciones del inicio, en orden: `hero`, `servicios-principales`, `metodo-pasos`,
 `testimonios`, `metodo-fases-resumen`, `faq`. Las páginas internas usan su propia sección más
 `cta`. Cada página lleva exactamente un `<h1>`; el resto usa `<h2>`.
 
-Para verlo local, con las URLs resueltas como las resuelve GitHub Pages:
+Para trabajar en local, con las URLs resueltas como las resuelve GitHub Pages:
+
+```bash
+npm run dev                    # sirve la raíz (propuestas incluidas) en http://localhost:8080 y regenera al guardar en src/, js/ o tailwind.config.cjs
+```
+
+Sin vigilante:
 
 ```bash
 node tools/build.mjs           # -> dist/
