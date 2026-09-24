@@ -101,7 +101,7 @@
     '<div><dt>Tipografía</dt><dd>' + p.tipografia + '</dd></div>' +
     '<div><dt>Testimonios y cifras</dt><dd>' + p.pendientes + '</dd></div>' +
     '</dl>' +
-    '<p class="np-aviso">Todo el contenido es propuesto y debe ser actualizado.</p>'
+    '<p class="np-aviso">Primer enfoque. Los textos son de muestra e ilustran el tono; el contenido real se debe definir.</p>'
 
   var pastilla = document.createElement('button')
   pastilla.type = 'button'
